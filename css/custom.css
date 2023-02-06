@@ -301,6 +301,16 @@
     border-radius: 8px;
 }
 
+#aside-content>.card-widget.card-info>#card-info-btn:hover {
+    background-color: #eb3cbf;
+    border-radius: 8px;
+}
+
+#aside-content>.card-widget.card-info>#card-info-btn:active {
+    background-color: #c4209b;
+    border-radius: 8px;
+}
+
 /* 鼠标样式 */
 #cursor {
     position: fixed;
