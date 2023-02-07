@@ -3868,7 +3868,8 @@ h1.page-title + .tag-cloud-list {
   width: 100%;
   height: 100%;
   position: fixed;
-  background: var(--anzhiyu-card-bg);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(6px);
   z-index: 1001;
   opacity: 1;
   -ms-filter: none;
