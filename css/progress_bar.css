@@ -7,23 +7,23 @@
     z-index: 2000;
     position: fixed;
     margin: auto;
-    top: 4px;
+    top: 10px;
     left: 0;
     right: 0;
     height: 8px;
     border-radius: 8px;
-    width: 7rem;
+    width: 4rem;
     background: #eaecf2;
     border: 1px #e3e8f7;
-    overflow: hidden
-}
-
-.pace-inactive .pace-progress {
+    overflow: hidden;
+  }
+  
+  .pace-inactive .pace-progress {
     opacity: 0;
-    transition: .3s ease-in
-}
-
-.pace .pace-progress {
+    transition: 0.3s ease-in;
+  }
+  
+  .pace .pace-progress {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -42,14 +42,24 @@
     right: 100%;
     height: 100%;
     width: 100%;
-    /* linear-gradient(to right, #3494e6, #ec6ead) */
-    background: linear-gradient(to right, #43cea2, #3866ca);
-    animation: gradient 2s ease infinite;
-    background-size: 200%
-}
-
-.pace.pace-inactive {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    animation: gradient 1.5s ease infinite;
+    background-size: 200%;
+  }
+  
+  .pace.pace-inactive {
     opacity: 0;
-    transition: .3s;
-    top: -8px
-}
+    transition: 0.3s;
+    top: -8px;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }

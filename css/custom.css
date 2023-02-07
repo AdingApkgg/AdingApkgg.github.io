@@ -705,3 +705,9 @@ h6::before {
   [data-theme="dark"] #welcome-info {
     background: #212121;
   }
+
+/* loading加载动画 */
+.loading-img {
+  background: url(https://i.328888.xyz/2023/01/25/b8Vzb.png) no-repeat center center;
+  background-size: cover;
+}
