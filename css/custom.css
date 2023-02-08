@@ -1077,3 +1077,125 @@ h6::before {
     }
   }
   
+/* 信息卡片头像状态 */
+.card-info-avatar .author-status-box {
+    position: absolute;
+    bottom: 0;
+    left: calc(100% - 28px);
+    width: 28px;
+    height: 28px;
+    border: 1px solid #d0d7de;
+    border-radius: 2em;
+    background-color: #f8f8f8f8;
+    transition: 0.4s;
+    overflow: hidden;
+  }
+  
+  [data-theme="dark"] .card-info-avatar .author-status-box {
+    background-color: #222222f2;
+    border: 1px solid #5c6060;
+  }
+  
+  .card-info-avatar .author-status-box .author-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    padding: 0 5px;
+  }
+  
+  .card-info-avatar .author-status-box:hover {
+    width: 105px;
+  }
+  
+  .card-info-avatar .author-status-box:hover .author-status span {
+    width: 105px;
+    margin-left: 4px;
+  }
+  
+  .card-info-avatar .author-status-box .author-status span {
+    width: 0;
+    font-size: 12px;
+    height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: 0.4s;
+  }
+  
+  .card-widget .card-info-avatar {
+    display: inline-block;
+    position: relative;
+  }
+
+/* 信息卡片彩带 */
+.author_top:hover {
+    background: url(https://tuchuang.voooe.cn/images/2023/01/02/snow.gif);
+    background-size: cover;
+  }
+
+/* 个人信息卡片背景图 */
+[data-theme="light"] #aside-content > .card-widget.card-info {
+    background: rgba(255, 255, 255, 0.88);
+    background-image: url(https://sourcebucket.s3.ladydaily.com/img/snowflower.webp);
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 100%;
+  }
+  [data-theme="dark"] #aside-content > .card-widget.card-info {
+    background-image: url(https://picbed.adingapkggweb.top/personal-card/Asuna-dark.png);
+    background-repeat: no-repeat;
+    background-attachment: inherit;
+    background-size: 100%;
+  }
+
+/* 头像呼吸灯 */
+[data-theme="light"] .avatar-img {
+    animation: huxi_light 4s ease-in-out infinite;
+  }
+  [data-theme="dark"] .avatar-img {
+    animation: huxi_dark 4s ease-in-out infinite;
+  }
+  @keyframes huxi_light {
+    0% {
+      box-shadow: 0px 0px 1px 1px #e9f5fa;
+    }
+    50% {
+      box-shadow: 0px 0px 5px 5px #e9f5fa;
+    }
+    100% {
+      box-shadow: 0px 0px 1px 1px #e9f5fa;
+    }
+  }
+  @keyframes huxi_dark {
+    0% {
+      box-shadow: 0px 0px 1px 1px #39c5bb;
+    }
+    50% {
+      box-shadow: 0px 0px 5px 5px #39c5bb;
+    }
+    100% {
+      box-shadow: 0px 0px 1px 1px #39c5bb;
+    }
+  }
+
+/* 帧率检测 */
+#fps {
+    position: fixed;
+    /* 指定位置 */
+    left: 10px;
+    bottom: 10px;
+    z-index: 1919810;
+  }
+  [data-theme="light"] #fps {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: var(--backdrop-filter);
+    padding: 4px;
+    border-radius: 4px;
+  }
+  [data-theme="dark"] #fps {
+    background-color: rgba(0, 0, 0, 0.72);
+    backdrop-filter: var(--backdrop-filter);
+    padding: 4px;
+    border-radius: 4px;
+  }
