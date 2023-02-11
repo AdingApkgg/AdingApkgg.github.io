@@ -42,7 +42,7 @@ function owoBig() {
                             // 设置盒子样式
                             div.style.cssText = `display:flex; height:${height}px; width:${width}px; left:${left}px; top:${top}px;`;
                             // 在盒子中插入图片
-                            div.innerHTML = `<img src="${e.target.src}">`
+                            div.innerHTML = `<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="${e.target.src}">`
                         }, 300);
                     }
                 };

@@ -24,7 +24,7 @@ var leonus = {
                             t = 3 * l.path[0].clientWidth,
                             a = l.x - l.offsetX - (t - l.path[0].clientWidth) / 2,
                             i = l.y - l.offsetY;
-                        a + t > n.clientWidth && (a -= a + t - n.clientWidth + 10), a < 0 && (a = 10), o.style.cssText = `display:flex; height:${e}px; width:${t}px; left:${a}px; top:${i}px;`, o.innerHTML = `<img src="${l.target.src}">`
+                        a + t > n.clientWidth && (a -= a + t - n.clientWidth + 10), a < 0 && (a = 10), o.style.cssText = `display:flex; height:${e}px; width:${t}px; left:${a}px; top:${i}px;`, o.innerHTML = `<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="${l.target.src}">`
                     }), 300))
                 }, s.onmouseout = () => {
                     o.style.display = "none", e = 1, clearTimeout(t)
