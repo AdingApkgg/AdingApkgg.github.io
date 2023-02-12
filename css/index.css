@@ -182,7 +182,7 @@ template {
 #aside-content .card-archives ul.card-archive-list > .card-archive-list-item a span,
 #aside-content .card-categories ul.card-category-list > .card-category-list-item a span,
 .site-data > a .headline,
-#nav #blog_info,
+#nav #blog-info,
 #pagination .prev_info,
 #pagination .next_info,
 #sidebar #sidebar-menus .menus_items .site-page {
@@ -3853,7 +3853,7 @@ h1.page-title + .tag-cloud-list {
   -ms-filter: none;
   filter: none;
 }
-#nav #blog_info {
+#nav #blog-info {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -o-box-flex: 1;
@@ -3863,7 +3863,7 @@ h1.page-title + .tag-cloud-list {
   flex: 1;
   color: var(--light-grey);
 }
-#nav #blog_info .site-icon {
+#nav #blog-info .site-icon {
   margin-right: 6px;
   height: 36px;
   vertical-align: middle;
