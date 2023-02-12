@@ -1,0 +1,1 @@
+var anzhiyu_musicPlaying=!1,anzhiyu_musicFirst=!1;
