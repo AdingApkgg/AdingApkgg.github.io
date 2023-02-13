@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>VScode递增减数字或字母插件</title>
+      <link href="/e92f0b18f3c3/"/>
+      <url>/e92f0b18f3c3/</url>
+      
+        <content type="html"><![CDATA[<div class="note info simple"><p>参考：<a href="https://blog.csdn.net/weixin_49258413/article/details/122470600">vscode同时编辑多行，插入递增数字，递减数字，递增字母，递减字母。</a></p></div><h2 id="1-安装Increment-Selection"><a href="#1-安装Increment-Selection" class="headerlink" title="1.安装Increment Selection"></a>1.安装Increment Selection</h2><p>VScode插件搜索Increment Selection安装</p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdnimg.cn/80ec4b0e96094f14ba6f80213de457b6.png" alt=""></p><h2 id="2-递增数字，递减数字"><a href="#2-递增数字，递减数字" class="headerlink" title="2.递增数字，递减数字"></a>2.递增数字，递减数字</h2><h3 id="2-1-快捷键顺序（从零递增）"><a href="#2-1-快捷键顺序（从零递增）" class="headerlink" title="2.1 快捷键顺序（从零递增）"></a>2.1 快捷键顺序（从零递增）</h3><p>shift+alt+鼠标左键–选中多行。<br>ctrl+alt+i</p><h3 id="2-2-快捷键顺序（从任意数字开始递增）"><a href="#2-2-快捷键顺序（从任意数字开始递增）" class="headerlink" title="2.2 快捷键顺序（从任意数字开始递增）"></a>2.2 快捷键顺序（从任意数字开始递增）</h3><p>shift+alt+鼠标左键–选中多行。<br>输入任意数字，shift+ctrl+→键选中数字<br>ctrl+alt+i</p><h3 id="2-3-递减数字同理，区别在于从下往上选中（光标定位第10行，shift-alt-鼠标左键–选中第一行即可递减）"><a href="#2-3-递减数字同理，区别在于从下往上选中（光标定位第10行，shift-alt-鼠标左键–选中第一行即可递减）" class="headerlink" title="2.3 递减数字同理，区别在于从下往上选中（光标定位第10行，shift+alt+鼠标左键–选中第一行即可递减）"></a>2.3 递减数字同理，区别在于从下往上选中（光标定位第10行，shift+alt+鼠标左键–选中第一行即可递减）</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdnimg.cn/1edec987b66f49b5abfb7d0e85dc0b6a.gif" alt=""></p><h2 id="3-递增字母，递减字母"><a href="#3-递增字母，递减字母" class="headerlink" title="3.递增字母，递减字母"></a>3.递增字母，递减字母</h2><p>与递增递减数字同理，预先输入字母即可</p><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img-blog.csdnimg.cn/e415273ad3464ee8a9ff5315bf85ccc5.gif" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 转载 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> VScode </tag>
+            
+            <tag> VScode插件 </tag>
+            
+            <tag> 递增 </tag>
+            
+            <tag> 递减 </tag>
+            
+            <tag> 工具 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《三体》小说</title>
       <link href="/5ee26ba88865/"/>
       <url>/5ee26ba88865/</url>
