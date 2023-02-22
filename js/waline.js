@@ -1,1 +1,1 @@
-import{init}from"@waline/client";import"@waline/client/dist/waline.css";init({el:"#waline"});const waline=Waline.init({serverURL:"https://waline.adingapkggweb.top"});waline.update(),waline.update({lang:"zh-CN",login:"disable"});
+import{init}from"@waline/client";import"@waline/client/dist/waline.css";init({el:"#waline"});const waline=Waline.init({serverURL:"https://waline.adingapkggweb.top"});waline.update(),waline.update({lang:"zh-CN",login:"enable"});
