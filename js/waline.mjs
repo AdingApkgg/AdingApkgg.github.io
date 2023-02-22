@@ -1,6 +1,8 @@
-import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+import { init } from '@waline/client';
+
+import '@waline/client/dist/waline.css';
 
 init({
-    el: '#waline',
-    serverURL: 'https://waline.adingapkggweb.top',
+  el: '#waline',
+  // ...
 });
