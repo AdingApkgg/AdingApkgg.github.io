@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Ading阿定の博客</title>
   <icon>https://blog.ading.icu/icon.png</icon>
-  <subtitle>咸鱼一条</subtitle>
+  
   <link href="https://blog.ading.icu/atom.xml" rel="self"/>
   
   <link href="https://blog.ading.icu/"/>
