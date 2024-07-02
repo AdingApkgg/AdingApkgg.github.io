@@ -1,8 +1,0 @@
-# hexo robots.txt
-User-agent: *
-Allow: /
-
-Disallow: /404.html
-
-Sitemap: https://blog.saop.cc/sitemap.xml
-Sitemap: https://blog.saop.cc/baidusitemap.xml
