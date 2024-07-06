@@ -2,7 +2,7 @@
 
 (() => {
     /** 缓存库名称 */
-    const CACHE_NAME = 'kmarBlogCache'
+    const CACHE_NAME = 'blogCache'
     /** 控制信息存储地址（必须以`/`结尾） */
     const CTRL_PATH = 'https://id.v3/'
 
@@ -98,9 +98,54 @@
     }
 
     // noinspection JSFileReferences
-    let isCors = () => false
+    let cacheRules = {
+simple: {
+match: url =>
+      url.host === "blog.saop.cc" &&
+      url.pathname.match(/\.(woff2|woff|ttf|cur|webp|png|jpg|jpeg|avif)$/)}
+}
+
+let getRaceUrls = (srcUrl) => {
+  if (srcUrl.startsWith("https://npm.elemecdn.com")) {
+    const url = new URL(srcUrl);
+    return [
+      srcUrl,
+      `https://cdn.staticfile.net` + url.pathname,
+      `https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
+      `https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
+      `https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
+      `https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
+      `https://cdn.bootcdn.net/ajax/libs` + url.pathname,
+      `https://lib.baomitu.com/pjax` + url.pathname,
+      `https://registry.npmmirror.com` + url.pathname,
+      `https://unpkg.com` + url.pathname,
+      `https://cdn.jsdelivr.net/npm` + url.pathname,
+      `https://fastly.jsdelivr.net/npm` + url.pathname,
+    ];
+  }
+}
+let isCors = () => false
 let isMemoryQueue = () => false
-const fetchFile = fetchWithCors;
+const fetchFile = (request, banCache, urls) => {
+        if (!urls) {
+            urls = getRaceUrls(request.url)
+        }
+        if (!urls || !Promise.any) return fetchWithCors(request, banCache)
+        const res = urls.map(url => new Request(url, request))
+        const controllers = new Array(res.length)
+        // noinspection JSCheckFunctionSignatures
+        return Promise.any(
+            res.map((it, index) => fetchWithCors(
+                it, banCache,
+                {signal: (controllers[index] = new AbortController()).signal}
+            ).then(response => checkResponse(response) ? {index, response} : Promise.reject()))
+        ).then(it => {
+            for (let i in controllers) {
+                if (i !== it.index) controllers[i].abort()
+            }
+            return it.response
+        })
+    }
 const getSpareUrls = _ => {}
 
     // 检查请求是否成功
@@ -189,7 +234,7 @@ const getSpareUrls = _ => {}
                 )
             )
         } else {
-            const urls = null
+            const urls = getRaceUrls(request.url)
             if (urls) handleFetch(fetchFile(request, false, urls))
             // [modifyRequest else-if]
             else handleFetch(fetchWithCache(request).catch(err => new Response(err, {status: 499})))
