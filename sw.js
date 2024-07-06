@@ -106,13 +106,13 @@ match: url =>
 }
 
 let getRaceUrls = (srcUrl) => {
-  if (srcUrl.startsWith("https://npm.elemecdn.com")) {
+  if (srcUrl.startsWith("https://cdn.staticfile.net")) {
     const url = new URL(srcUrl);
     return [
       srcUrl,
-      `https://cdn.staticfile.net` + url.pathname,
-      `https://cdn.bootcdn.net/ajax/libs` + url.pathname,
       `https://lib.baomitu.com` + url.pathname,
+      `https://cdn.bootcdn.net/ajax/libs` + url.pathname,
+      `https://npm.elemecdn.com` + url.pathname,
       `https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
