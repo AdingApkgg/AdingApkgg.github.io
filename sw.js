@@ -2,7 +2,7 @@
 
 (() => {
     /** 缓存库名称 */
-    const CACHE_NAME = 'blogCache'
+    const CACHE_NAME = 'kmarBlogCache'
     /** 控制信息存储地址（必须以`/`结尾） */
     const CTRL_PATH = 'https://id.v3/'
 
@@ -101,7 +101,7 @@
     let cacheRules = {
 simple: {
 match: url =>
-      url.host === "blog.saop.cc" &&
+      url.host === "saop.cc" &&
       url.pathname.match(/\.(woff2|woff|ttf|cur|webp|png|jpg|jpeg|avif)$/)}
 }
 
