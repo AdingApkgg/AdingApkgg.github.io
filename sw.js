@@ -115,6 +115,8 @@ let getRaceUrls = (srcUrl) => {
       `https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
+      `https://cdn.bootcdn.net/ajax/libs` + url.pathname,
+      `https://lib.baomitu.com/pjax` + url.pathname,
       `https://registry.npmmirror.com` + url.pathname,
       `https://unpkg.com` + url.pathname,
       `https://cdn.jsdelivr.net/npm` + url.pathname,
