@@ -1,8 +1,7 @@
 <!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start --><script>
                 (() => {
                     let sw = navigator.serviceWorker
-                    let error = () =>
-      console.error("ServiceWorker 注册失败，可能是您的浏览器不支持该功能。")
+                    let error = () => console.error('Service Worker 注册失败！可能是由于您的浏览器不支持该功能！')
                     if (!sw?.register('/sw.js')
                         
                         ?.catch(error)
@@ -67,7 +66,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2024-07-06 13:51:38'
+  postUpdate: '2024-07-06 16:03:13'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {

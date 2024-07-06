@@ -2,7 +2,7 @@
 
 (() => {
     /** 缓存库名称 */
-    const CACHE_NAME = 'kmarBlogCache'
+    const CACHE_NAME = 'blogCache'
     /** 控制信息存储地址（必须以`/`结尾） */
     const CTRL_PATH = 'https://id.v3/'
 
@@ -100,8 +100,6 @@
     // noinspection JSFileReferences
     let cacheRules = {
 simple: {
-clean: true,
-search: false,
 match: url =>
       url.host === "blog.saop.cc" &&
       url.pathname.match(/\.(woff2|woff|ttf|cur)$/)}
@@ -112,11 +110,12 @@ let getRaceUrls = (srcUrl) => {
     const url = new URL(srcUrl);
     return [
       srcUrl,
-      `https://cdn.staticfile.net` + url.pathname,
+      `https://registry.npmmirror.com` + url.pathname,
       `https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
+      `https://cdn.staticfile.net` + url.pathname,
       `https://unpkg.com` + url.pathname,
       `https://cdn.jsdelivr.net/npm` + url.pathname,
       `https://fastly.jsdelivr.net/npm` + url.pathname,
