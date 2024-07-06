@@ -98,9 +98,7 @@
     }
 
     // noinspection JSFileReferences
-    let skipRequest = (request) =>
-  request.url.startsWith("https://picbed.saop.cc")
-let cacheRules = {
+    let cacheRules = {
 simple: {
 match: url =>
       url.host === "blog.saop.cc" &&
@@ -112,12 +110,12 @@ let getRaceUrls = (srcUrl) => {
     const url = new URL(srcUrl);
     return [
       srcUrl,
-      `https://registry.npmmirror.com` + url.pathname,
+      `https://cdn.staticfile.net` + url.pathname,
       `https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
       `https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M` + url.pathname,
-      `https://cdn.staticfile.net` + url.pathname,
+      `https://registry.npmmirror.com` + url.pathname,
       `https://unpkg.com` + url.pathname,
       `https://cdn.jsdelivr.net/npm` + url.pathname,
       `https://fastly.jsdelivr.net/npm` + url.pathname,
@@ -184,7 +182,7 @@ const getSpareUrls = _ => {}
         // [blockRequest call]
         if (request.method !== 'GET' || !request.url.startsWith('http')) return
         // [modifyRequest call]
-        if (skipRequest(request)) return;
+        // [skipRequest call]
         let cacheKey = url.hostname + url.pathname + url.search
         let cache
         if (isMemoryQueue(request)) {
