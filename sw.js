@@ -101,9 +101,9 @@
     let cacheRules = {
 simple: {
 match: url =>
-      url.host === "blog.saop.cc" &&
+      url.host === "saop.cc" &&
       url.pathname.match(
-        /\.(woff2|woff|ttf|cur|ico|avif|webp|png|jpg|jpeg|gif|css|js|json|html|mp4|mp3|m4a|moc|mtn|xml)$/
+        /\.(woff2|woff|ttf|cur|ico|avif|webp|bmp|svg|raw|png|jpg|jpeg|gif|css|js|json|html|mpv|mp4|mp3|m4a|moc|mtn|xml)$/
       )}
 }
 
