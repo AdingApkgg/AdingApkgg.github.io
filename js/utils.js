@@ -1,1 +1,297 @@
-(()=>{const e={debounce:(e,t=0,n=!1)=>{let o;return(...a)=>{const i=n&&!o;clearTimeout(o),o=setTimeout((()=>{o=null,n||e(...a)}),t),i&&e(...a)}},throttle:function(e,t,n={}){let o,a,i,d=0;const r=()=>{d=!1===n.leading?0:(new Date).getTime(),o=null,e.apply(a,i),o||(a=i=null)};return(...l)=>{const s=(new Date).getTime();d||!1!==n.leading||(d=s);const c=t-(s-d);a=this,i=l,c<=0||c>t?(o&&(clearTimeout(o),o=null),d=s,e.apply(a,i),o||(a=i=null)):o||!1===n.trailing||(o=setTimeout(r,c))}},overflowPaddingR:{add:()=>{const e=window.innerWidth-document.body.clientWidth;if(e>0){document.body.style.paddingRight=`${e}px`,document.body.style.overflow="hidden";const t=document.querySelector("#page-header.nav-fixed #menus");t&&(t.style.paddingRight=`${e}px`)}},remove:()=>{document.body.style.paddingRight="",document.body.style.overflow="";const e=document.querySelector("#page-header.nav-fixed #menus");e&&(e.style.paddingRight="")}},snackbarShow:(e,t=!1,n=2e3)=>{const{position:o,bgLight:a,bgDark:i}=GLOBAL_CONFIG.Snackbar,d="light"===document.documentElement.getAttribute("data-theme")?a:i;Snackbar.show({text:e,backgroundColor:d,showAction:t,duration:n,pos:o,customClass:"snackbar-css"})},diffDate:(e,t=!1)=>{const n=new Date,o=new Date(e),a=(n-o)/1e3/60,i=a/60,d=i/24,r=d/30,{dateSuffix:l}=GLOBAL_CONFIG;return t?r>12?o.toISOString().slice(0,10):r>=1?`${Math.floor(r)} ${l.month}`:d>=1?`${Math.floor(d)} ${l.day}`:i>=1?`${Math.floor(i)} ${l.hour}`:a>=1?`${Math.floor(a)} ${l.min}`:l.just:Math.floor(d)},loadComment:(e,t)=>{if("IntersectionObserver"in window){const n=new IntersectionObserver((e=>{e[0].isIntersecting&&(t(),n.disconnect())}),{threshold:[0]});n.observe(e)}else t()},scrollToDest:(e,t=500)=>{const n=window.scrollY,o=document.getElementById("page-header").classList.contains("fixed");if((n>e||o)&&(e-=70),"scrollBehavior"in document.documentElement.style)return void window.scrollTo({top:e,behavior:"smooth"});const a=performance.now(),i=o=>{const d=o-a,r=Math.min(d/t,1);window.scrollTo(0,n+(e-n)*r),r<1&&requestAnimationFrame(i)};requestAnimationFrame(i)},animateIn:(e,t)=>{e.style.display="block",e.style.animation=t},animateOut:(e,t)=>{const n=()=>{e.style.display="",e.style.animation="",e.removeEventListener("animationend",n)};e.addEventListener("animationend",n),e.style.animation=t},wrap:(e,t,n)=>{const o=document.createElement(t);for(const[e,t]of Object.entries(n))o.setAttribute(e,t);e.parentNode.insertBefore(o,e),o.appendChild(e)},isHidden:e=>0===e.offsetHeight&&0===e.offsetWidth,getEleTop:e=>{let t=e.offsetTop,n=e.offsetParent;for(;null!==n;)t+=n.offsetTop,n=n.offsetParent;return t},loadLightbox:e=>{const t=GLOBAL_CONFIG.lightbox;"medium_zoom"===t&&mediumZoom(e,{background:"var(--zoom-bg)"}),"fancybox"===t&&(Array.from(e).forEach((e=>{if("A"!==e.parentNode.tagName){const t=e.dataset.lazySrc||e.src,n=e.title||e.alt||"";btf.wrap(e,"a",{href:t,"data-fancybox":"gallery","data-caption":n,"data-thumb":t})}})),window.fancyboxRun||(Fancybox.bind("[data-fancybox]",{Hash:!1,Thumbs:{showOnStart:!1},Images:{Panzoom:{maxScale:4}},Carousel:{transition:"slide"},Toolbar:{display:{left:["infobar"],middle:["zoomIn","zoomOut","toggle1to1","rotateCCW","rotateCW","flipX","flipY"],right:["slideshow","thumbs","close"]}}}),window.fancyboxRun=!0))},setLoading:{add:e=>{e.insertAdjacentHTML("afterend",'\n        <div class="loading-container">\n          <div class="loading-item">\n            <div></div><div></div><div></div><div></div><div></div>\n          </div>\n        </div>\n      ')},remove:e=>{e.nextElementSibling.remove()}},updateAnchor:e=>{if(e!==window.location.hash){e||(e=location.pathname);const t=GLOBAL_CONFIG_SITE.title;window.history.replaceState({url:location.href,title:t},t,e)}},getScrollPercent:(()=>{let e,t,n,o;return(a,i)=>{e&&i.clientHeight===e||(e=i.clientHeight,t=window.innerHeight,n=i.offsetTop,o=Math.max(e-t,document.documentElement.scrollHeight-t));const d=(a-n)/o;return Math.max(0,Math.min(100,Math.round(100*d)))}})(),addEventListenerPjax:(e,t,n,o=!1)=>{e.addEventListener(t,n,o),btf.addGlobalFn("pjaxSendOnce",(()=>{e.removeEventListener(t,n,o)}))},removeGlobalFnEvent:(e,t=window)=>{const n=t.globalFn||{},o=n[e];o&&(Object.keys(o).forEach((e=>o[e]())),delete n[e])}};window.btf={...window.btf,...e}})();
+(() => {
+  const btfFn = {
+    debounce: (func, wait = 0, immediate = false) => {
+      let timeout
+      return (...args) => {
+        const later = () => {
+          timeout = null
+          if (!immediate) func(...args)
+        }
+        const callNow = immediate && !timeout
+        clearTimeout(timeout)
+        timeout = setTimeout(later, wait)
+        if (callNow) func(...args)
+      }
+    },
+
+    throttle: function (func, wait, options = {}) {
+      let timeout, context, args
+      let previous = 0
+
+      const later = () => {
+        previous = options.leading === false ? 0 : new Date().getTime()
+        timeout = null
+        func.apply(context, args)
+        if (!timeout) context = args = null
+      }
+
+      const throttled = (...params) => {
+        const now = new Date().getTime()
+        if (!previous && options.leading === false) previous = now
+        const remaining = wait - (now - previous)
+        context = this
+        args = params
+        if (remaining <= 0 || remaining > wait) {
+          if (timeout) {
+            clearTimeout(timeout)
+            timeout = null
+          }
+          previous = now
+          func.apply(context, args)
+          if (!timeout) context = args = null
+        } else if (!timeout && options.trailing !== false) {
+          timeout = setTimeout(later, remaining)
+        }
+      }
+
+      return throttled
+    },
+
+    overflowPaddingR: {
+      add: () => {
+        const paddingRight = window.innerWidth - document.body.clientWidth
+
+        if (paddingRight > 0) {
+          document.body.style.paddingRight = `${paddingRight}px`
+          document.body.style.overflow = 'hidden'
+          const menuElement = document.querySelector('#page-header.nav-fixed #menus')
+          if (menuElement) {
+            menuElement.style.paddingRight = `${paddingRight}px`
+          }
+        }
+      },
+      remove: () => {
+        document.body.style.paddingRight = ''
+        document.body.style.overflow = ''
+        const menuElement = document.querySelector('#page-header.nav-fixed #menus')
+        if (menuElement) {
+          menuElement.style.paddingRight = ''
+        }
+      }
+    },
+
+    snackbarShow: (text, showAction = false, duration = 2000) => {
+      const { position, bgLight, bgDark } = GLOBAL_CONFIG.Snackbar
+      const bg = document.documentElement.getAttribute('data-theme') === 'light' ? bgLight : bgDark
+      Snackbar.show({
+        text,
+        backgroundColor: bg,
+        showAction,
+        duration,
+        pos: position,
+        customClass: 'snackbar-css'
+      })
+    },
+
+    diffDate: (inputDate, more = false) => {
+      const dateNow = new Date()
+      const datePost = new Date(inputDate)
+      const diffMs = dateNow - datePost
+      const diffSec = diffMs / 1000
+      const diffMin = diffSec / 60
+      const diffHour = diffMin / 60
+      const diffDay = diffHour / 24
+      const diffMonth = diffDay / 30
+      const { dateSuffix } = GLOBAL_CONFIG
+
+      if (!more) return Math.floor(diffDay)
+
+      if (diffMonth > 12) return datePost.toISOString().slice(0, 10)
+      if (diffMonth >= 1) return `${Math.floor(diffMonth)} ${dateSuffix.month}`
+      if (diffDay >= 1) return `${Math.floor(diffDay)} ${dateSuffix.day}`
+      if (diffHour >= 1) return `${Math.floor(diffHour)} ${dateSuffix.hour}`
+      if (diffMin >= 1) return `${Math.floor(diffMin)} ${dateSuffix.min}`
+      return dateSuffix.just
+    },
+
+    loadComment: (dom, callback) => {
+      if ('IntersectionObserver' in window) {
+        const observerItem = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            callback()
+            observerItem.disconnect()
+          }
+        }, { threshold: [0] })
+        observerItem.observe(dom)
+      } else {
+        callback()
+      }
+    },
+
+    scrollToDest: (pos, time = 500) => {
+      const currentPos = window.scrollY
+      const isNavFixed = document.getElementById('page-header').classList.contains('fixed')
+      if (currentPos > pos || isNavFixed) pos = pos - 70
+
+      if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({
+          top: pos,
+          behavior: 'smooth'
+        })
+        return
+      }
+
+      const startTime = performance.now()
+      const animate = currentTime => {
+        const timeElapsed = currentTime - startTime
+        const progress = Math.min(timeElapsed / time, 1)
+        window.scrollTo(0, currentPos + (pos - currentPos) * progress)
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        }
+      }
+      requestAnimationFrame(animate)
+    },
+
+    animateIn: (ele, animation) => {
+      ele.style.display = 'block'
+      ele.style.animation = animation
+    },
+
+    animateOut: (ele, animation) => {
+      const handleAnimationEnd = () => {
+        ele.style.display = ''
+        ele.style.animation = ''
+        ele.removeEventListener('animationend', handleAnimationEnd)
+      }
+      ele.addEventListener('animationend', handleAnimationEnd)
+      ele.style.animation = animation
+    },
+
+    wrap: (selector, eleType, options) => {
+      const createEle = document.createElement(eleType)
+      for (const [key, value] of Object.entries(options)) {
+        createEle.setAttribute(key, value)
+      }
+      selector.parentNode.insertBefore(createEle, selector)
+      createEle.appendChild(selector)
+    },
+
+    isHidden: ele => ele.offsetHeight === 0 && ele.offsetWidth === 0,
+
+    getEleTop: ele => {
+      let actualTop = ele.offsetTop
+      let current = ele.offsetParent
+
+      while (current !== null) {
+        actualTop += current.offsetTop
+        current = current.offsetParent
+      }
+
+      return actualTop
+    },
+
+    loadLightbox: ele => {
+      const service = GLOBAL_CONFIG.lightbox
+
+      if (service === 'medium_zoom') {
+        mediumZoom(ele, { background: 'var(--zoom-bg)' })
+      }
+
+      if (service === 'fancybox') {
+        Array.from(ele).forEach(i => {
+          if (i.parentNode.tagName !== 'A') {
+            const dataSrc = i.dataset.lazySrc || i.src
+            const dataCaption = i.title || i.alt || ''
+            btf.wrap(i, 'a', { href: dataSrc, 'data-fancybox': 'gallery', 'data-caption': dataCaption, 'data-thumb': dataSrc })
+          }
+        })
+
+        if (!window.fancyboxRun) {
+          Fancybox.bind('[data-fancybox]', {
+            Hash: false,
+            Thumbs: {
+              showOnStart: false
+            },
+            Images: {
+              Panzoom: {
+                maxScale: 4
+              }
+            },
+            Carousel: {
+              transition: 'slide'
+            },
+            Toolbar: {
+              display: {
+                left: ['infobar'],
+                middle: [
+                  'zoomIn',
+                  'zoomOut',
+                  'toggle1to1',
+                  'rotateCCW',
+                  'rotateCW',
+                  'flipX',
+                  'flipY'
+                ],
+                right: ['slideshow', 'thumbs', 'close']
+              }
+            }
+          })
+          window.fancyboxRun = true
+        }
+      }
+    },
+
+    setLoading: {
+      add: ele => {
+        const html = `
+        <div class="loading-container">
+          <div class="loading-item">
+            <div></div><div></div><div></div><div></div><div></div>
+          </div>
+        </div>
+      `
+        ele.insertAdjacentHTML('afterend', html)
+      },
+      remove: ele => {
+        ele.nextElementSibling.remove()
+      }
+    },
+
+    updateAnchor: anchor => {
+      if (anchor !== window.location.hash) {
+        if (!anchor) anchor = location.pathname
+        const title = GLOBAL_CONFIG_SITE.title
+        window.history.replaceState({
+          url: location.href,
+          title
+        }, title, anchor)
+      }
+    },
+
+    getScrollPercent: (() => {
+      let docHeight, winHeight, headerHeight, contentMath
+
+      return (currentTop, ele) => {
+        if (!docHeight || ele.clientHeight !== docHeight) {
+          docHeight = ele.clientHeight
+          winHeight = window.innerHeight
+          headerHeight = ele.offsetTop
+          contentMath = Math.max(docHeight - winHeight, document.documentElement.scrollHeight - winHeight)
+        }
+
+        const scrollPercent = (currentTop - headerHeight) / contentMath
+        return Math.max(0, Math.min(100, Math.round(scrollPercent * 100)))
+      }
+    })(),
+
+    addEventListenerPjax: (ele, event, fn, option = false) => {
+      ele.addEventListener(event, fn, option)
+      btf.addGlobalFn('pjaxSendOnce', () => {
+        ele.removeEventListener(event, fn, option)
+      })
+    },
+
+    removeGlobalFnEvent: (key, parent = window) => {
+      const globalFn = parent.globalFn || {}
+      const keyObj = globalFn[key]
+      if (!keyObj) return
+
+      Object.keys(keyObj).forEach(i => keyObj[i]())
+
+      delete globalFn[key]
+    }
+  }
+
+  window.btf = { ...window.btf, ...btfFn }
+})()
