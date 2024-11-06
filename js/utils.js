@@ -1,7 +1,313 @@
-(()=>{var e={debounce:(o,n=0,a=!1)=>{let i;return(...e)=>{var t=a&&!i;clearTimeout(i),i=setTimeout(()=>{i=null,a||o(...e)},n),t&&o(...e)}},throttle:function(n,a,i={}){let r,l,d,s=0,m=()=>{s=!1===i.leading?0:(new Date).getTime(),r=null,n.apply(l,d),r||(l=d=null)};return(...e)=>{var t=(new Date).getTime(),o=(s||!1!==i.leading||(s=t),a-(t-s));l=this,d=e,o<=0||a<o?(r&&(clearTimeout(r),r=null),s=t,n.apply(l,d),r||(l=d=null)):r||!1===i.trailing||(r=setTimeout(m,o))}},overflowPaddingR:{add:()=>{var e,t=window.innerWidth-document.body.clientWidth;0<t&&(document.body.style.paddingRight=t+"px",document.body.style.overflow="hidden",e=document.querySelector("#page-header.nav-fixed #menus"))&&(e.style.paddingRight=t+"px")},remove:()=>{document.body.style.paddingRight="",document.body.style.overflow="";var e=document.querySelector("#page-header.nav-fixed #menus");e&&(e.style.paddingRight="")}},snackbarShow:(e,t=!1,o=2e3)=>{var{position:n,bgLight:a,bgDark:i}=GLOBAL_CONFIG.Snackbar,a="light"===document.documentElement.getAttribute("data-theme")?a:i;Snackbar.show({text:e,backgroundColor:a,showAction:t,duration:o,pos:n,customClass:"snackbar-css"})},diffDate:(e,t=!1)=>{var o=new Date,e=new Date(e),o=(o-e)/1e3/60,n=o/60,a=n/24,i=a/30,r=GLOBAL_CONFIG.dateSuffix;return t?12<i?e.toISOString().slice(0,10):1<=i?Math.floor(i)+" "+r.month:1<=a?Math.floor(a)+" "+r.day:1<=n?Math.floor(n)+" "+r.hour:1<=o?Math.floor(o)+" "+r.min:r.just:Math.floor(a)},loadComment:(e,o)=>{if("IntersectionObserver"in window){let t=new IntersectionObserver(e=>{e[0].isIntersecting&&(o(),t.disconnect())},{threshold:[0]});t.observe(e)}else o()},scrollToDest:(n,a=500)=>{let i=window.scrollY;var e=document.getElementById("page-header").classList.contains("fixed");if((i>n||e)&&(n-=70),"scrollBehavior"in document.documentElement.style)window.scrollTo({top:n,behavior:"smooth"});else{let t=performance.now(),o=e=>{e-=t,e=Math.min(e/a,1);window.scrollTo(0,i+(n-i)*e),e<1&&requestAnimationFrame(o)};requestAnimationFrame(o)}},animateIn:(e,t)=>{e.style.display="block",e.style.animation=t},animateOut:(e,t)=>{let o=()=>{e.style.display="",e.style.animation="",e.removeEventListener("animationend",o)};e.addEventListener("animationend",o),e.style.animation=t},wrap:(e,t,o)=>{var n,a,i=document.createElement(t);for([n,a]of Object.entries(o))i.setAttribute(n,a);e.parentNode.insertBefore(i,e),i.appendChild(e)},isHidden:e=>0===e.offsetHeight&&0===e.offsetWidth,getEleTop:e=>{let t=e.offsetTop,o=e.offsetParent;for(;null!==o;)t+=o.offsetTop,o=o.offsetParent;return t},loadLightbox:e=>{var t=GLOBAL_CONFIG.lightbox;"medium_zoom"===t&&mediumZoom(e,{background:"var(--zoom-bg)"}),"fancybox"===t&&(Array.from(e).forEach(e=>{var t,o;"A"!==e.parentNode.tagName&&(t=e.dataset.lazySrc||e.src,o=e.title||e.alt||"",btf.wrap(e,"a",{href:t,"data-fancybox":"gallery","data-caption":o,"data-thumb":t}))}),window.fancyboxRun||(Fancybox.bind("[data-fancybox]",{Hash:!1,Thumbs:{showOnStart:!1},Images:{Panzoom:{maxScale:4}},Carousel:{transition:"slide"},Toolbar:{display:{left:["infobar"],middle:["zoomIn","zoomOut","toggle1to1","rotateCCW","rotateCW","flipX","flipY"],right:["slideshow","thumbs","close"]}}}),window.fancyboxRun=!0))},setLoading:{add:e=>{e.insertAdjacentHTML("afterend",`
+(() => {
+  const btfFn = {
+    debounce: (func, wait = 0, immediate = false) => {
+      let timeout
+      return (...args) => {
+        const later = () => {
+          timeout = null
+          if (!immediate) func(...args)
+        }
+        const callNow = immediate && !timeout
+        clearTimeout(timeout)
+        timeout = setTimeout(later, wait)
+        if (callNow) func(...args)
+      }
+    },
+
+    throttle: function (func, wait, options = {}) {
+      let timeout, context, args
+      let previous = 0
+
+      const later = () => {
+        previous = options.leading === false ? 0 : new Date().getTime()
+        timeout = null
+        func.apply(context, args)
+        if (!timeout) context = args = null
+      }
+
+      const throttled = (...params) => {
+        const now = new Date().getTime()
+        if (!previous && options.leading === false) previous = now
+        const remaining = wait - (now - previous)
+        context = this
+        args = params
+        if (remaining <= 0 || remaining > wait) {
+          if (timeout) {
+            clearTimeout(timeout)
+            timeout = null
+          }
+          previous = now
+          func.apply(context, args)
+          if (!timeout) context = args = null
+        } else if (!timeout && options.trailing !== false) {
+          timeout = setTimeout(later, remaining)
+        }
+      }
+
+      return throttled
+    },
+
+    overflowPaddingR: {
+      add: () => {
+        const paddingRight = window.innerWidth - document.body.clientWidth
+
+        if (paddingRight > 0) {
+          document.body.style.paddingRight = `${paddingRight}px`
+          document.body.style.overflow = 'hidden'
+          const menuElement = document.querySelector('#page-header.nav-fixed #menus')
+          if (menuElement) {
+            menuElement.style.paddingRight = `${paddingRight}px`
+          }
+        }
+      },
+      remove: () => {
+        document.body.style.paddingRight = ''
+        document.body.style.overflow = ''
+        const menuElement = document.querySelector('#page-header.nav-fixed #menus')
+        if (menuElement) {
+          menuElement.style.paddingRight = ''
+        }
+      }
+    },
+
+    snackbarShow: (text, showAction = false, duration = 2000) => {
+      const { position, bgLight, bgDark } = GLOBAL_CONFIG.Snackbar
+      const bg = document.documentElement.getAttribute('data-theme') === 'light' ? bgLight : bgDark
+      Snackbar.show({
+        text,
+        backgroundColor: bg,
+        showAction,
+        duration,
+        pos: position,
+        customClass: 'snackbar-css'
+      })
+    },
+
+    diffDate: (inputDate, more = false) => {
+      const dateNow = new Date()
+      const datePost = new Date(inputDate)
+      const diffMs = dateNow - datePost
+      const diffSec = diffMs / 1000
+      const diffMin = diffSec / 60
+      const diffHour = diffMin / 60
+      const diffDay = diffHour / 24
+      const diffMonth = diffDay / 30
+      const { dateSuffix } = GLOBAL_CONFIG
+
+      if (!more) return Math.floor(diffDay)
+
+      if (diffMonth > 12) return datePost.toISOString().slice(0, 10)
+      if (diffMonth >= 1) return `${Math.floor(diffMonth)} ${dateSuffix.month}`
+      if (diffDay >= 1) return `${Math.floor(diffDay)} ${dateSuffix.day}`
+      if (diffHour >= 1) return `${Math.floor(diffHour)} ${dateSuffix.hour}`
+      if (diffMin >= 1) return `${Math.floor(diffMin)} ${dateSuffix.min}`
+      return dateSuffix.just
+    },
+
+    loadComment: (dom, callback) => {
+      if ('IntersectionObserver' in window) {
+        const observerItem = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) {
+            callback()
+            observerItem.disconnect()
+          }
+        }, { threshold: [0] })
+        observerItem.observe(dom)
+      } else {
+        callback()
+      }
+    },
+
+    scrollToDest: (pos, time = 500) => {
+      const currentPos = window.scrollY
+      const isNavFixed = document.getElementById('page-header').classList.contains('fixed')
+      if (currentPos > pos || isNavFixed) pos = pos - 70
+
+      if ('scrollBehavior' in document.documentElement.style) {
+        window.scrollTo({
+          top: pos,
+          behavior: 'smooth'
+        })
+        return
+      }
+
+      const startTime = performance.now()
+      const animate = currentTime => {
+        const timeElapsed = currentTime - startTime
+        const progress = Math.min(timeElapsed / time, 1)
+        window.scrollTo(0, currentPos + (pos - currentPos) * progress)
+        if (progress < 1) {
+          requestAnimationFrame(animate)
+        }
+      }
+      requestAnimationFrame(animate)
+    },
+
+    animateIn: (ele, animation) => {
+      ele.style.display = 'block'
+      ele.style.animation = animation
+    },
+
+    animateOut: (ele, animation) => {
+      const handleAnimationEnd = () => {
+        ele.style.display = ''
+        ele.style.animation = ''
+        ele.removeEventListener('animationend', handleAnimationEnd)
+      }
+      ele.addEventListener('animationend', handleAnimationEnd)
+      ele.style.animation = animation
+    },
+
+    wrap: (selector, eleType, options) => {
+      const createEle = document.createElement(eleType)
+      for (const [key, value] of Object.entries(options)) {
+        createEle.setAttribute(key, value)
+      }
+      selector.parentNode.insertBefore(createEle, selector)
+      createEle.appendChild(selector)
+    },
+
+    isHidden: ele => ele.offsetHeight === 0 && ele.offsetWidth === 0,
+
+    getEleTop: ele => {
+      let actualTop = ele.offsetTop
+      let current = ele.offsetParent
+
+      while (current !== null) {
+        actualTop += current.offsetTop
+        current = current.offsetParent
+      }
+
+      return actualTop
+    },
+
+    loadLightbox: ele => {
+      const service = GLOBAL_CONFIG.lightbox
+
+      if (service === 'medium_zoom') {
+        mediumZoom(ele, { background: 'var(--zoom-bg)' })
+      }
+
+      if (service === 'fancybox') {
+        Array.from(ele).forEach(i => {
+          if (i.parentNode.tagName !== 'A') {
+            const dataSrc = i.dataset.lazySrc || i.src
+            const dataCaption = i.title || i.alt || ''
+            btf.wrap(i, 'a', { href: dataSrc, 'data-fancybox': 'gallery', 'data-caption': dataCaption, 'data-thumb': dataSrc })
+          }
+        })
+
+        if (!window.fancyboxRun) {
+          Fancybox.bind('[data-fancybox]', {
+            Hash: false,
+            Thumbs: {
+              showOnStart: false
+            },
+            Images: {
+              Panzoom: {
+                maxScale: 4
+              }
+            },
+            Carousel: {
+              transition: 'slide'
+            },
+            Toolbar: {
+              display: {
+                left: ['infobar'],
+                middle: [
+                  'zoomIn',
+                  'zoomOut',
+                  'toggle1to1',
+                  'rotateCCW',
+                  'rotateCW',
+                  'flipX',
+                  'flipY'
+                ],
+                right: ['slideshow', 'thumbs', 'close']
+              }
+            }
+          })
+          window.fancyboxRun = true
+        }
+      }
+    },
+
+    setLoading: {
+      add: ele => {
+        const html = `
         <div class="loading-container">
           <div class="loading-item">
             <div></div><div></div><div></div><div></div><div></div>
           </div>
         </div>
-      `)},remove:e=>{e.nextElementSibling.remove()}},updateAnchor:e=>{var t;e!==window.location.hash&&(e=e||location.pathname,t=GLOBAL_CONFIG_SITE.title,window.history.replaceState({url:location.href,title:t},t,e))},getScrollPercent:(()=>{let o,n,a,i;return(e,t)=>{o&&t.clientHeight===o||(o=t.clientHeight,n=window.innerHeight,a=t.offsetTop,i=Math.max(o-n,document.documentElement.scrollHeight-n));t=(e-a)/i;return Math.max(0,Math.min(100,Math.round(100*t)))}})(),addEventListenerPjax:(e,t,o,n=!1)=>{e.addEventListener(t,o,n),btf.addGlobalFn("pjaxSendOnce",()=>{e.removeEventListener(t,o,n)})},removeGlobalFnEvent:(e,t=window)=>{t=t.globalFn||{};let o=t[e];o&&(Object.keys(o).forEach(e=>o[e]()),delete t[e])},switchComments:(o=document,n)=>{var a=o.querySelector("#switch-btn");if(a){let e=!1,t=o.querySelector("#post-comment");btf.addEventListenerPjax(a,"click",()=>{t.classList.toggle("move"),e||"function"!=typeof loadOtherComment||(e=!0,loadOtherComment(o,n))})}}};window.btf={...window.btf,...e}})();
+      `
+        ele.insertAdjacentHTML('afterend', html)
+      },
+      remove: ele => {
+        ele.nextElementSibling.remove()
+      }
+    },
+
+    updateAnchor: anchor => {
+      if (anchor !== window.location.hash) {
+        if (!anchor) anchor = location.pathname
+        const title = GLOBAL_CONFIG_SITE.title
+        window.history.replaceState({
+          url: location.href,
+          title
+        }, title, anchor)
+      }
+    },
+
+    getScrollPercent: (() => {
+      let docHeight, winHeight, headerHeight, contentMath
+
+      return (currentTop, ele) => {
+        if (!docHeight || ele.clientHeight !== docHeight) {
+          docHeight = ele.clientHeight
+          winHeight = window.innerHeight
+          headerHeight = ele.offsetTop
+          contentMath = Math.max(docHeight - winHeight, document.documentElement.scrollHeight - winHeight)
+        }
+
+        const scrollPercent = (currentTop - headerHeight) / contentMath
+        return Math.max(0, Math.min(100, Math.round(scrollPercent * 100)))
+      }
+    })(),
+
+    addEventListenerPjax: (ele, event, fn, option = false) => {
+      ele.addEventListener(event, fn, option)
+      btf.addGlobalFn('pjaxSendOnce', () => {
+        ele.removeEventListener(event, fn, option)
+      })
+    },
+
+    removeGlobalFnEvent: (key, parent = window) => {
+      const globalFn = parent.globalFn || {}
+      const keyObj = globalFn[key]
+      if (!keyObj) return
+
+      Object.keys(keyObj).forEach(i => keyObj[i]())
+
+      delete globalFn[key]
+    },
+
+    switchComments: (el = document, path) => {
+      const switchBtn = el.querySelector('#switch-btn')
+      if (!switchBtn) return
+
+      let switchDone = false
+      const postComment = el.querySelector('#post-comment')
+      const handleSwitchBtn = () => {
+        postComment.classList.toggle('move')
+        if (!switchDone && typeof loadOtherComment === 'function') {
+          switchDone = true
+          loadOtherComment(el, path)
+        }
+      }
+      btf.addEventListenerPjax(switchBtn, 'click', handleSwitchBtn)
+    }
+  }
+
+  window.btf = { ...window.btf, ...btfFn }
+})()
