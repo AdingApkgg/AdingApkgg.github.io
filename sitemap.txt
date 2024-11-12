@@ -1,5 +1,5 @@
-https://blog.saop.cc/p/3a1f/
 https://blog.saop.cc/friend.json
+https://blog.saop.cc/p/3a1f/
 https://blog.saop.cc/link/
 https://blog.saop.cc/movie/
 https://blog.saop.cc/about/
