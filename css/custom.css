@@ -1123,9 +1123,14 @@ body {
 /* twikoo评论美化 */
 .tk-comment,
 .tk-expand {
-  border-radius: 8px;
-  border: rgba(200, 255, 255, 0.5) solid 5px;
+  border-radius: 6px;
+  border: rgba(50, 50, 50, 0.2) solid 1px;
   padding: 5px;
+  transition: all .1s ease-in;
+}
+
+.tk-comment:hover {
+  border: rgba(200, 255, 255, 0.7) solid 3px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px 2px;
 }
 
