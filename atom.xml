@@ -6,7 +6,7 @@
   <link href="https://blog.saop.cc/atom.xml" rel="self"/>
   
   <link href="https://blog.saop.cc/"/>
-  <updated>2024-11-17T19:27:20.000Z</updated>
+  <updated>2024-12-31T10:40:00.000Z</updated>
   <id>https://blog.saop.cc/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>个人自用 rsync 文件同步常用命令</title>
+    <link href="https://blog.saop.cc/p/30664/"/>
+    <id>https://blog.saop.cc/p/30664/</id>
+    <published>2024-12-31T10:40:00.000Z</published>
+    <updated>2024-12-31T10:40:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近在使用 Linux 的过程中经常会传输文件，所以使用 rsync 来解决我的需求…</p><p>记录下我在使用 rsync 的过程中所常用到的命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将本地 test 文件夹同步传输到远程终端上</span><span class="token function">rsync</span> <span class="token parameter variable">-rv</span> ~/test i@i.cc:/home/i/<span class="token comment"># 将远程 test 文件夹同步传输到本地终端上</span><span class="token function">rsync</span> <span class="token parameter variable">-rv</span> i@i.cc:/home/i/test ~/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>更多方式可以此类推~</p>]]></content>
+    
+    
+    <summary type="html">这里记录了些博主个人自用的 rsync 文件同步常用命令，以便博主随时在任何终端上查阅..</summary>
+    
+    
+    
+    <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="命令" scheme="https://blog.saop.cc/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+    <category term="指令" scheme="https://blog.saop.cc/tags/%E6%8C%87%E4%BB%A4/"/>
+    
+    <category term="Linux" scheme="https://blog.saop.cc/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>历时千日原神，深渊终抵满星</title>
