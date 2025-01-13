@@ -4194,12 +4194,17 @@ pre[class*='language-'] pre > code.highlight {
   width: 100% !important;
 }
 #pagination .pagination-related {
-  width: 50%;
   height: 150px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   #pagination .pagination-related {
-    width: 100%;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -o-box-flex: 1;
+    box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
   }
 }
 #pagination .pagination-related .info-1 .info-item-2 {
@@ -4213,6 +4218,22 @@ pre[class*='language-'] pre > code.highlight {
   margin-top: 40px;
   width: 100%;
   border-radius: 6px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  #pagination.pagination-post {
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
 }
 .layout .pagination > * {
   display: inline-block;
