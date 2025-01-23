@@ -1130,7 +1130,7 @@ body {
 }
 
 .tk-comment:hover {
-  border: rgba(200, 255, 255, 0.7) solid 3px;
+  border: rgba(200, 255, 255, 0.7) solid 1px;
   box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px 2px;
 }
 
