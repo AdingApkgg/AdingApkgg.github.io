@@ -1,4 +1,5 @@
 https://blog.saop.cc/friend.json
+https://blog.saop.cc/p/8dc9/
 https://blog.saop.cc/donate/
 https://blog.saop.cc/p/30664/
 https://blog.saop.cc/p/59721/
@@ -37,7 +38,6 @@ https://blog.saop.cc/p/a69f/
 https://blog.saop.cc/p/8b22/
 https://blog.saop.cc/gallery/travel/
 https://blog.saop.cc/p/4d82/
-https://blog.saop.cc/p/8dc9/
 https://blog.saop.cc/p/7806/
 https://blog.saop.cc/music/
 https://blog.saop.cc/gallery/moe/
@@ -139,7 +139,7 @@ https://blog.saop.cc/tags/Twikoo/
 https://blog.saop.cc/tags/VScode/
 https://blog.saop.cc/tags/%E5%8D%9A%E5%AE%A2%E6%88%90%E7%AB%8B%E7%BA%AA%E5%BF%B5/
 https://blog.saop.cc/tags/%E9%93%A0%E4%BE%A0RC20/
-https://blog.saop.cc/tags/Aplayer/
+https://blog.saop.cc/tags/APlayer/
 https://blog.saop.cc/tags/ChatGPT/
 https://blog.saop.cc/tags/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/
 https://blog.saop.cc/tags/3DMigoto/
