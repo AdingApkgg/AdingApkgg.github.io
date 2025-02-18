@@ -15,7 +15,7 @@
     <atom:link href="https://blog.saop.cc/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>LINK START!</description>
-    <pubDate>Tue, 31 Dec 2024 10:40:00 GMT</pubDate>
+    <pubDate>Tue, 18 Feb 2025 22:11:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -28,7 +28,7 @@
       
       
       
-      <content:encoded><![CDATA[<p>最近在使用 Linux 的过程中经常会传输文件，所以使用 rsync 来解决我的需求…</p><p>记录下我在使用 rsync 的过程中所常用到的命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将本地 test 文件夹同步传输到远程终端上</span><span class="token function">rsync</span> <span class="token parameter variable">-rv</span> ~/test i@i.cc:/home/i/<span class="token comment"># 将远程 test 文件夹同步传输到本地终端上</span><span class="token function">rsync</span> <span class="token parameter variable">-rv</span> i@i.cc:/home/i/test ~/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>更多方式可以此类推~</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>最近在使用 Linux 的过程中经常会传输文件，所以使用 rsync 来解决我的需求…</p><p>记录下我在使用 rsync 的过程中所常用到的命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将本地 test 文件夹同步传输到远程终端上</span><span class="token function">rsync</span> <span class="token parameter variable">-ravzP</span> ~/test i@i.cc:/home/i/<span class="token comment"># 将远程 test 文件夹同步传输到本地终端上</span><span class="token function">rsync</span> <span class="token parameter variable">-ravzP</span> i@i.cc:/home/i/test ~/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>更多方式可以此类推~</p>]]></content:encoded>
       
       
       <category domain="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/">技术</category>
