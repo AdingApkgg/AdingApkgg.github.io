@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://blog.saop.cc/about/</loc>
+    
+    <lastmod>2025-04-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.saop.cc/p/30664/</loc>
     
     <lastmod>2025-02-18</lastmod>
@@ -77,15 +86,6 @@
     <loc>https://blog.saop.cc/movie/</loc>
     
     <lastmod>2024-11-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.saop.cc/about/</loc>
-    
-    <lastmod>2024-11-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
