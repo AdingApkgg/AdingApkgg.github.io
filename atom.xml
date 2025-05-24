@@ -6,7 +6,7 @@
   <link href="https://blog.saop.cc/atom.xml" rel="self"/>
   
   <link href="https://blog.saop.cc/"/>
-  <updated>2025-02-18T22:11:00.000Z</updated>
+  <updated>2025-05-24T11:00:00.000Z</updated>
   <id>https://blog.saop.cc/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Reflector 镜像列表更新常用命令与配置文件</title>
+    <link href="https://blog.saop.cc/p/59587/"/>
+    <id>https://blog.saop.cc/p/59587/</id>
+    <published>2025-05-24T11:00:00.000Z</published>
+    <updated>2025-05-24T11:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://xyne.dev/projects/reflector/">Reflector</a> 是一个 Python 脚本；它可以从 <a href="https://archlinux.org/mirrors/status/">Arch Linux Mirror Status</a> 页面获取最新的镜像列表，然后筛选出最新的镜像并按速度排序，最后将结果写入到 <code>/etc/pacman.d/mirrorlist</code> 文件。</p><p>这里记录了我的 <code>reflector</code> 常用命令与配置文件</p><h2 id="命令"><a class="markdownIt-Anchor" href="#命令"></a> 命令</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">reflector <span class="token parameter variable">--country</span> China <span class="token parameter variable">--latest</span> <span class="token number">5</span> <span class="token parameter variable">--sort</span> rate <span class="token parameter variable">--save</span> /etc/pacman.d/mirrorlist<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h2><pre class="line-numbers language-systemd" data-language="systemd"><code class="language-systemd">--save /etc/pacman.d/mirrorlist--country China--latest 5--sort rate<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>筛选出最新处于 China 的 5 个镜像并按速度排序，最后将结果写入到 <code>/etc/pacman.d/mirrorlist</code> 文件。</p>]]></content>
+    
+    
+    <summary type="html">使用 Reflector 自动更新 Arch Linux 镜像列表，筛选中国地区最新且速度最快的 5 个镜像，并保存至 /etc/pacman.d/mirrorlist 文件，提升软件包下载效率。</summary>
+    
+    
+    
+    <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="命令" scheme="https://blog.saop.cc/tags/%E5%91%BD%E4%BB%A4/"/>
+    
+    <category term="系统" scheme="https://blog.saop.cc/tags/%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="镜像" scheme="https://blog.saop.cc/tags/%E9%95%9C%E5%83%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>个人自用 rsync 文件同步常用命令</title>
     <link href="https://blog.saop.cc/p/30664/"/>
     <id>https://blog.saop.cc/p/30664/</id>
     <published>2024-12-31T10:40:00.000Z</published>
-    <updated>2025-02-18T22:11:00.000Z</updated>
+    <updated>2025-05-24T10:31:20.000Z</updated>
     
-    <content type="html"><![CDATA[<p>最近在使用 Linux 的过程中经常会传输文件，所以使用 rsync 来解决我的需求…</p><p>记录下我在使用 rsync 的过程中所常用到的命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 将本地 test 文件夹同步传输到远程终端上</span><span class="token function">rsync</span> <span class="token parameter variable">-ravzP</span> ~/test i@i.cc:/home/i/<span class="token comment"># 将远程 test 文件夹同步传输到本地终端上</span><span class="token function">rsync</span> <span class="token parameter variable">-ravzP</span> i@i.cc:/home/i/test ~/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>更多方式可以此类推~</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://samba.anu.edu.au/rsync/">rsync</a> 是一个开源工具，可以进行快速的增量文件传输。</p><p>最近在使用 Linux 的过程中经常会传输文件，所以使用 rsync 来解决我的需求…</p><p>记录下我在使用 rsync 的过程中所常用到的命令</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rsync</span> <span class="token parameter variable">-ravzP</span> ~/test i@i.cc:/home/i/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将本地 test 文件夹同步传输到远程终端上</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">rsync</span> <span class="token parameter variable">-ravzP</span> i@i.cc:/home/i/test ~/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将远程 test 文件夹同步传输到本地终端上</p>]]></content>
     
     
     <summary type="html">这里记录了些博主个人自用的 rsync 文件同步常用命令，以便博主随时在任何终端上查阅..</summary>
@@ -35,9 +60,7 @@
     
     <category term="命令" scheme="https://blog.saop.cc/tags/%E5%91%BD%E4%BB%A4/"/>
     
-    <category term="指令" scheme="https://blog.saop.cc/tags/%E6%8C%87%E4%BB%A4/"/>
-    
-    <category term="Linux" scheme="https://blog.saop.cc/tags/Linux/"/>
+    <category term="系统" scheme="https://blog.saop.cc/tags/%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -83,9 +106,7 @@
     
     <category term="命令" scheme="https://blog.saop.cc/tags/%E5%91%BD%E4%BB%A4/"/>
     
-    <category term="指令" scheme="https://blog.saop.cc/tags/%E6%8C%87%E4%BB%A4/"/>
-    
-    <category term="Linux" scheme="https://blog.saop.cc/tags/Linux/"/>
+    <category term="系统" scheme="https://blog.saop.cc/tags/%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -106,11 +127,7 @@
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-    <category term="三体" scheme="https://blog.saop.cc/tags/%E4%B8%89%E4%BD%93/"/>
-    
-    <category term="刘慈欣" scheme="https://blog.saop.cc/tags/%E5%88%98%E6%85%88%E6%AC%A3/"/>
-    
-    <category term="科幻小说" scheme="https://blog.saop.cc/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="小说" scheme="https://blog.saop.cc/tags/%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
@@ -131,11 +148,7 @@
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-    <category term="三体" scheme="https://blog.saop.cc/tags/%E4%B8%89%E4%BD%93/"/>
-    
-    <category term="刘慈欣" scheme="https://blog.saop.cc/tags/%E5%88%98%E6%85%88%E6%AC%A3/"/>
-    
-    <category term="科幻小说" scheme="https://blog.saop.cc/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="小说" scheme="https://blog.saop.cc/tags/%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
@@ -156,11 +169,9 @@
     <category term="加密" scheme="https://blog.saop.cc/categories/%E5%8A%A0%E5%AF%86/"/>
     
     
-    <category term="受孕" scheme="https://blog.saop.cc/tags/%E5%8F%97%E5%AD%95/"/>
+    <category term="心得" scheme="https://blog.saop.cc/tags/%E5%BF%83%E5%BE%97/"/>
     
     <category term="好康的" scheme="https://blog.saop.cc/tags/%E5%A5%BD%E5%BA%B7%E7%9A%84/"/>
-    
-    <category term="人生心得" scheme="https://blog.saop.cc/tags/%E4%BA%BA%E7%94%9F%E5%BF%83%E5%BE%97/"/>
     
   </entry>
   
@@ -181,12 +192,6 @@
     <category term="游戏" scheme="https://blog.saop.cc/categories/%E6%B8%B8%E6%88%8F/"/>
     
     
-    <category term="补票" scheme="https://blog.saop.cc/tags/%E8%A1%A5%E7%A5%A8/"/>
-    
-    <category term="我的世界" scheme="https://blog.saop.cc/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/"/>
-    
-    <category term="Minecraft" scheme="https://blog.saop.cc/tags/Minecraft/"/>
-    
   </entry>
   
   <entry>
@@ -206,17 +211,7 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="API" scheme="https://blog.saop.cc/tags/API/"/>
-    
-    <category term="CDN" scheme="https://blog.saop.cc/tags/CDN/"/>
-    
-    <category term="HTML" scheme="https://blog.saop.cc/tags/HTML/"/>
-    
-    <category term="Hexo" scheme="https://blog.saop.cc/tags/Hexo/"/>
-    
-    <category term="NexT" scheme="https://blog.saop.cc/tags/NexT/"/>
-    
-    <category term="Live2D" scheme="https://blog.saop.cc/tags/Live2D/"/>
+    <category term="框架" scheme="https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -236,14 +231,6 @@
     
     <category term="日常" scheme="https://blog.saop.cc/categories/%E6%97%A5%E5%B8%B8/"/>
     
-    
-    <category term="做梦" scheme="https://blog.saop.cc/tags/%E5%81%9A%E6%A2%A6/"/>
-    
-    <category term="控梦" scheme="https://blog.saop.cc/tags/%E6%8E%A7%E6%A2%A6/"/>
-    
-    <category term="睡觉" scheme="https://blog.saop.cc/tags/%E7%9D%A1%E8%A7%89/"/>
-    
-    <category term="清醒梦" scheme="https://blog.saop.cc/tags/%E6%B8%85%E9%86%92%E6%A2%A6/"/>
     
   </entry>
   
@@ -284,8 +271,6 @@
     
     <category term="日常" scheme="https://blog.saop.cc/categories/%E6%97%A5%E5%B8%B8/"/>
     
-    
-    <category term="博客成立纪念" scheme="https://blog.saop.cc/tags/%E5%8D%9A%E5%AE%A2%E6%88%90%E7%AB%8B%E7%BA%AA%E5%BF%B5/"/>
     
   </entry>
   
@@ -329,13 +314,11 @@
     <category term="加密" scheme="https://blog.saop.cc/categories/%E5%8A%A0%E5%AF%86/"/>
     
     
-    <category term="受孕" scheme="https://blog.saop.cc/tags/%E5%8F%97%E5%AD%95/"/>
+    <category term="心得" scheme="https://blog.saop.cc/tags/%E5%BF%83%E5%BE%97/"/>
     
     <category term="萝莉" scheme="https://blog.saop.cc/tags/%E8%90%9D%E8%8E%89/"/>
     
     <category term="好康的" scheme="https://blog.saop.cc/tags/%E5%A5%BD%E5%BA%B7%E7%9A%84/"/>
-    
-    <category term="人生心得" scheme="https://blog.saop.cc/tags/%E4%BA%BA%E7%94%9F%E5%BF%83%E5%BE%97/"/>
     
   </entry>
   
@@ -356,10 +339,6 @@
     <category term="日常" scheme="https://blog.saop.cc/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="固态硬盘" scheme="https://blog.saop.cc/tags/%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98/"/>
-    
-    <category term="铠侠RC20" scheme="https://blog.saop.cc/tags/%E9%93%A0%E4%BE%A0RC20/"/>
-    
   </entry>
   
   <entry>
@@ -378,10 +357,6 @@
     
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-    <category term="评论" scheme="https://blog.saop.cc/tags/%E8%AF%84%E8%AE%BA/"/>
-    
-    <category term="Twikoo" scheme="https://blog.saop.cc/tags/Twikoo/"/>
     
   </entry>
   
@@ -404,7 +379,7 @@
     
     <category term="代理" scheme="https://blog.saop.cc/tags/%E4%BB%A3%E7%90%86/"/>
     
-    <category term="Hexo" scheme="https://blog.saop.cc/tags/Hexo/"/>
+    <category term="框架" scheme="https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -425,9 +400,9 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="博客插件" scheme="https://blog.saop.cc/tags/%E5%8D%9A%E5%AE%A2%E6%8F%92%E4%BB%B6/"/>
+    <category term="主题" scheme="https://blog.saop.cc/tags/%E4%B8%BB%E9%A2%98/"/>
     
-    <category term="Butterfly" scheme="https://blog.saop.cc/tags/Butterfly/"/>
+    <category term="插件" scheme="https://blog.saop.cc/tags/%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
@@ -471,11 +446,7 @@
     
     <category term="原神" scheme="https://blog.saop.cc/tags/%E5%8E%9F%E7%A5%9E/"/>
     
-    <category term="崩铁" scheme="https://blog.saop.cc/tags/%E5%B4%A9%E9%93%81/"/>
-    
-    <category term="三蹦子" scheme="https://blog.saop.cc/tags/%E4%B8%89%E8%B9%A6%E5%AD%90/"/>
-    
-    <category term="人生心得" scheme="https://blog.saop.cc/tags/%E4%BA%BA%E7%94%9F%E5%BF%83%E5%BE%97/"/>
+    <category term="心得" scheme="https://blog.saop.cc/tags/%E5%BF%83%E5%BE%97/"/>
     
   </entry>
   
@@ -496,8 +467,6 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="npm" scheme="https://blog.saop.cc/tags/npm/"/>
-    
   </entry>
   
   <entry>
@@ -516,8 +485,6 @@
     
     <category term="日常" scheme="https://blog.saop.cc/categories/%E6%97%A5%E5%B8%B8/"/>
     
-    
-    <category term="软件推荐" scheme="https://blog.saop.cc/tags/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
     
   </entry>
   
@@ -538,7 +505,7 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Butterfly" scheme="https://blog.saop.cc/tags/Butterfly/"/>
+    <category term="主题" scheme="https://blog.saop.cc/tags/%E4%B8%BB%E9%A2%98/"/>
     
   </entry>
   
@@ -558,10 +525,6 @@
     
     <category term="索引" scheme="https://blog.saop.cc/categories/%E7%B4%A2%E5%BC%95/"/>
     
-    
-    <category term="哲♂学" scheme="https://blog.saop.cc/tags/%E5%93%B2%E2%99%82%E5%AD%A6/"/>
-    
-    <category term="兄贵本篇" scheme="https://blog.saop.cc/tags/%E5%85%84%E8%B4%B5%E6%9C%AC%E7%AF%87/"/>
     
   </entry>
   
@@ -584,7 +547,7 @@
     
     <category term="代理" scheme="https://blog.saop.cc/tags/%E4%BB%A3%E7%90%86/"/>
     
-    <category term="指令" scheme="https://blog.saop.cc/tags/%E6%8C%87%E4%BB%A4/"/>
+    <category term="命令" scheme="https://blog.saop.cc/tags/%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
@@ -605,9 +568,7 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="HTTP" scheme="https://blog.saop.cc/tags/HTTP/"/>
-    
-    <category term="HTTP状态码" scheme="https://blog.saop.cc/tags/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/"/>
+    <category term="文档" scheme="https://blog.saop.cc/tags/%E6%96%87%E6%A1%A3/"/>
     
   </entry>
   
@@ -628,9 +589,7 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="HTML" scheme="https://blog.saop.cc/tags/HTML/"/>
-    
-    <category term="HTML转义字符" scheme="https://blog.saop.cc/tags/HTML%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/"/>
+    <category term="文档" scheme="https://blog.saop.cc/tags/%E6%96%87%E6%A1%A3/"/>
     
   </entry>
   
@@ -651,9 +610,7 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="HTTP" scheme="https://blog.saop.cc/tags/HTTP/"/>
-    
-    <category term="媒体类型" scheme="https://blog.saop.cc/tags/%E5%AA%92%E4%BD%93%E7%B1%BB%E5%9E%8B/"/>
+    <category term="文档" scheme="https://blog.saop.cc/tags/%E6%96%87%E6%A1%A3/"/>
     
   </entry>
   
@@ -673,10 +630,6 @@
     
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-    <category term="API" scheme="https://blog.saop.cc/tags/API/"/>
-    
-    <category term="Meting" scheme="https://blog.saop.cc/tags/Meting/"/>
     
   </entry>
   
@@ -720,10 +673,6 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="IE" scheme="https://blog.saop.cc/tags/IE/"/>
-    
-    <category term="Edge" scheme="https://blog.saop.cc/tags/Edge/"/>
-    
   </entry>
   
   <entry>
@@ -742,10 +691,6 @@
     
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-    <category term="鸿蒙字体" scheme="https://blog.saop.cc/tags/%E9%B8%BF%E8%92%99%E5%AD%97%E4%BD%93/"/>
-    
-    <category term="HarmonyOS Sans" scheme="https://blog.saop.cc/tags/HarmonyOS-Sans/"/>
     
   </entry>
   
@@ -768,8 +713,6 @@
     
     <category term="镜像" scheme="https://blog.saop.cc/tags/%E9%95%9C%E5%83%8F/"/>
     
-    <category term="Google" scheme="https://blog.saop.cc/tags/Google/"/>
-    
   </entry>
   
   <entry>
@@ -789,9 +732,9 @@
     <category term="日常" scheme="https://blog.saop.cc/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="短篇小说" scheme="https://blog.saop.cc/tags/%E7%9F%AD%E7%AF%87%E5%B0%8F%E8%AF%B4/"/>
+    <category term="小说" scheme="https://blog.saop.cc/tags/%E5%B0%8F%E8%AF%B4/"/>
     
-    <category term="ChatGPT" scheme="https://blog.saop.cc/tags/ChatGPT/"/>
+    <category term="人工智能" scheme="https://blog.saop.cc/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
   </entry>
   
@@ -812,11 +755,11 @@
     <category term="加密" scheme="https://blog.saop.cc/categories/%E5%8A%A0%E5%AF%86/"/>
     
     
+    <category term="心得" scheme="https://blog.saop.cc/tags/%E5%BF%83%E5%BE%97/"/>
+    
     <category term="萝莉" scheme="https://blog.saop.cc/tags/%E8%90%9D%E8%8E%89/"/>
     
     <category term="好康的" scheme="https://blog.saop.cc/tags/%E5%A5%BD%E5%BA%B7%E7%9A%84/"/>
-    
-    <category term="人生心得" scheme="https://blog.saop.cc/tags/%E4%BA%BA%E7%94%9F%E5%BF%83%E5%BE%97/"/>
     
   </entry>
   
@@ -837,9 +780,7 @@
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-    <category term="中文文档" scheme="https://blog.saop.cc/tags/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"/>
-    
-    <category term="提问的智慧" scheme="https://blog.saop.cc/tags/%E6%8F%90%E9%97%AE%E7%9A%84%E6%99%BA%E6%85%A7/"/>
+    <category term="文档" scheme="https://blog.saop.cc/tags/%E6%96%87%E6%A1%A3/"/>
     
   </entry>
   
@@ -860,11 +801,11 @@
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-    <category term="RSS" scheme="https://blog.saop.cc/tags/RSS/"/>
+    <category term="插件" scheme="https://blog.saop.cc/tags/%E6%8F%92%E4%BB%B6/"/>
     
-    <category term="中文文档" scheme="https://blog.saop.cc/tags/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"/>
+    <category term="文档" scheme="https://blog.saop.cc/tags/%E6%96%87%E6%A1%A3/"/>
     
-    <category term="Hexo插件" scheme="https://blog.saop.cc/tags/Hexo%E6%8F%92%E4%BB%B6/"/>
+    <category term="框架" scheme="https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -885,11 +826,11 @@
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-    <category term="SEO" scheme="https://blog.saop.cc/tags/SEO/"/>
+    <category term="插件" scheme="https://blog.saop.cc/tags/%E6%8F%92%E4%BB%B6/"/>
     
-    <category term="中文文档" scheme="https://blog.saop.cc/tags/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"/>
+    <category term="文档" scheme="https://blog.saop.cc/tags/%E6%96%87%E6%A1%A3/"/>
     
-    <category term="Hexo插件" scheme="https://blog.saop.cc/tags/Hexo%E6%8F%92%E4%BB%B6/"/>
+    <category term="框架" scheme="https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -910,9 +851,7 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="APlayer" scheme="https://blog.saop.cc/tags/APlayer/"/>
-    
-    <category term="Butterfly" scheme="https://blog.saop.cc/tags/Butterfly/"/>
+    <category term="主题" scheme="https://blog.saop.cc/tags/%E4%B8%BB%E9%A2%98/"/>
     
   </entry>
   
@@ -935,12 +874,12 @@
     
     <category term="镜像" scheme="https://blog.saop.cc/tags/%E9%95%9C%E5%83%8F/"/>
     
-    <category term="ChatGPT" scheme="https://blog.saop.cc/tags/ChatGPT/"/>
+    <category term="人工智能" scheme="https://blog.saop.cc/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
     
   </entry>
   
   <entry>
-    <title>Markdown语法与外置标签写法汇总</title>
+    <title>Markdown 语法与外置标签写法汇总</title>
     <link href="https://blog.saop.cc/p/5561/"/>
     <id>https://blog.saop.cc/p/5561/</id>
     <published>2023-03-10T14:00:00.000Z</published>
@@ -949,16 +888,14 @@
     <content type="html"><![CDATA[<h1 id="markdown-语法自带格式"><a class="markdownIt-Anchor" href="#markdown-语法自带格式"></a> Markdown 语法自带格式</h1><div class="note info flat"><p>参考：<a href="https://blog.csdn.net/u014061630/article/details/81359144">Markdown 语法图文全面详解(10 分钟学会)</a></p></div><div class="note warning flat"><p>注意：此页面偶尔会存在 CSS 冲突问题!</p></div><h2 id="代码块"><a class="markdownIt-Anchor" href="#代码块"></a> 代码块</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">\</span>``<span class="token variable"><span class="token variable">`</span><span class="token function">sh</span><span class="token comment"># VSCode终端</span>hexo clean<span class="token punctuation">;</span> hexo shexo clean<span class="token punctuation">;</span> hexo g<span class="token punctuation">;</span> hexo d<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span><span class="token punctuation">;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"npm publish"</span><span class="token punctuation">;</span> <span class="token function">npm</span> version patch<span class="token punctuation">;</span><span class="token function">git</span> push<span class="token comment"># Cmder终端</span>hexo clean <span class="token operator">&amp;&amp;</span> hexo shexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span> <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"npm publish"</span> <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> version patch<span class="token function">git</span> push<span class="token punctuation">\</span><span class="token variable">`</span></span>``<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># VSCode终端</span>hexo clean<span class="token punctuation">;</span> hexo shexo clean<span class="token punctuation">;</span> hexo g<span class="token punctuation">;</span> hexo d<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span><span class="token punctuation">;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"npm publish"</span><span class="token punctuation">;</span> <span class="token function">npm</span> version patch<span class="token punctuation">;</span><span class="token function">git</span> push<span class="token comment"># Cmder终端</span>hexo clean <span class="token operator">&amp;&amp;</span> hexo shexo clean <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span> <span class="token operator">&amp;&amp;</span> <span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">"npm publish"</span> <span class="token operator">&amp;&amp;</span> <span class="token function">npm</span> version patch<span class="token function">git</span> push<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="多级标题"><a class="markdownIt-Anchor" href="#多级标题"></a> 多级标题</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown"># H1## H2### H3#### H4##### H5###### H6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><p>见本文章标题!</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="文字样式"><a class="markdownIt-Anchor" href="#文字样式"></a> 文字样式</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">&lt;u&gt;下划线演示&lt;&#x2F;u&gt;文字**加粗**演示文字*斜体*演示文本&#96;高亮&#96;演示文本~~删除~~线演示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><p><u>下划线演示</u></p><p>文字<strong>加粗</strong>演示</p><p>文字<em>斜体</em>演示</p><p>文本<code>高亮</code>演示</p><p>文本<s>删除</s>线演示</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><div class="note info flat"><p>上述要点可参考:<a href="https://blog.csdn.net/qq_43732429/article/details/108034518">【Markdown 语法】字体颜色大小及文字底色设置</a></p></div><h2 id="引用"><a class="markdownIt-Anchor" href="#引用"></a> 引用</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">&gt;  Java&gt; 二级引用演示&gt; MySQL&gt; &gt;外键&gt; &gt;&gt; &gt;事务&gt; &gt;&gt; &gt;**行级锁**(引用内部一样可以用格式)&gt;&gt; ....<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><blockquote><p>Java<br />二级引用演示<br />MySQL</p><blockquote><p>外键</p><p>事务</p><p><strong>行级锁</strong>(引用内部一样可以用格式)</p></blockquote><p>…</p></blockquote></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="分割线"><a class="markdownIt-Anchor" href="#分割线"></a> 分割线</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">---***<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></div><div class="tab-item-content"><hr /></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="列表-跟空格都可以"><a class="markdownIt-Anchor" href="#列表-跟空格都可以"></a> 列表(*,+,-跟空格都可以)</h2><h3 id="无序列表"><a class="markdownIt-Anchor" href="#无序列表"></a> 无序列表</h3><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">* Java* Python* ...+ Java+ Python+ ...- Java- Python- ...<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><ul><li>Java</li><li>Python</li><li>…</li></ul><ul><li>Java</li><li>Python</li><li>…</li></ul><ul><li>Java</li><li>Python</li><li>…</li></ul></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h3 id="有序列表"><a class="markdownIt-Anchor" href="#有序列表"></a> 有序列表</h3><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown"># 注意后面有空格1.2.3.4.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><ol><li></li><li></li><li></li><li></li></ol></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="图片"><a class="markdownIt-Anchor" href="#图片"></a> 图片</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">![code](&#x2F;img&#x2F;1720007073.webp)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></div><div class="tab-item-content"><p><img src="/img/1720007073.webp" alt="code" /></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="表格"><a class="markdownIt-Anchor" href="#表格"></a> 表格</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">| 项目标号 | 资金     | 备注 || -------- | -------- | ---- || 1        | 100，000 | 无   || 2        | 200，000 | 无   || 3        | 300,600  | 重要 |<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><table><thead><tr><th>项目标号</th><th>资金</th><th>备注</th></tr></thead><tbody><tr><td>1</td><td>100，000</td><td>无</td></tr><tr><td>2</td><td>200，000</td><td>无</td></tr><tr><td>3</td><td>300,600</td><td>重要</td></tr></tbody></table></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h1 id="butterfly-外置标签"><a class="markdownIt-Anchor" href="#butterfly-外置标签"></a> Butterfly 外置标签</h1><div class="note info flat"><p>这部分参考安知鱼:<a href="https://blog.anheyu.com/posts/d50a.html">安知鱼主题标签 Tag Plugins</a></p></div><h2 id="引用-note"><a class="markdownIt-Anchor" href="#引用-note"></a> 引用 note</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">通用配置</button><button type="button" class="tab">语法格式</button><button type="button" class="tab">参数配置</button><button type="button" class="tab">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">note:  # Note tag style values:  #  - simple    bs-callout old alert style. Default.  #  - modern    bs-callout new (v2-v3) alert style.  #  - flat      flat callout style with background, like on Mozilla or StackOverflow.  #  - disabled  disable all CSS styles import of note tag.  style: flat  icons: true  border_radius: 3  # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).  # Offset also applied to label tag variables. This option can work with disabled note tag.  light_bg_offset: 0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown"># 自带icon&#123;% note [class] [no-icon] [style] %&#125;Any content (support inline tags too.io).&#123;% endnote %&#125;# 外部icon&#123;% note [color] [icon] [style] %&#125;Any content (support inline tags too.io).&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><p>1.自带 icon</p><table><thead><tr><th>参数</th><th style="text-align:center">用法</th></tr></thead><tbody><tr><td>class</td><td style="text-align:center">【可选】标识，不同的标识有不同的配色 （ default / primary / success / info / warning / danger ）</td></tr><tr><td>no-icon</td><td style="text-align:center">【可选】不显示 icon</td></tr><tr><td>style</td><td style="text-align:center">【可选】可以覆盖配置中的 style （simple/modern/flat/disabled）</td></tr></tbody></table><p>2.外部 icon</p><table><thead><tr><th>参数</th><th style="text-align:center">用法</th></tr></thead><tbody><tr><td>class</td><td style="text-align:center">【可选】标识，不同的标识有不同的配色 （ default / blue / pink / red / purple / orange / green ）</td></tr><tr><td>no-icon</td><td style="text-align:center">【可选】可配置自定义 icon (只支持 fontawesome 图标, 也可以配置 no-icon )</td></tr><tr><td>style</td><td style="text-align:center">【可选】可以覆盖配置中的 style （simple/modern/flat/disabled）</td></tr></tbody></table></div><div class="tab-item-content"><details class="toggle" style="border: 1px solid blue"><summary class="toggle-button" style="background-color: blue;">1.自带icon</summary><div class="toggle-content"><p>1.<code>simple</code>样式</p><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">&#123;% note simple %&#125;默认 提示块标签&#123;% endnote %&#125;&#123;% note default simple %&#125;default 提示块标签&#123;% endnote %&#125;&#123;% note primary simple %&#125;primary 提示块标签&#123;% endnote %&#125;&#123;% note success simple %&#125;success 提示块标签&#123;% endnote %&#125;&#123;% note info simple %&#125;info 提示块标签&#123;% endnote %&#125;&#123;% note warning simple %&#125;warning 提示块标签&#123;% endnote %&#125;&#123;% note danger simple %&#125;danger 提示块标签&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>2.<code>modern</code>样式</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note modern %&#125;默认 提示块标签&#123;% endnote %&#125;&#123;% note default modern %&#125;default 提示块标签&#123;% endnote %&#125;&#123;% note primary modern %&#125;primary 提示块标签&#123;% endnote %&#125;&#123;% note success modern %&#125;success 提示块标签&#123;% endnote %&#125;&#123;% note info modern %&#125;info 提示块标签&#123;% endnote %&#125;&#123;% note warning modern %&#125;warning 提示块标签&#123;% endnote %&#125;&#123;% note danger modern %&#125;danger 提示块标签&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>3.<code>flat</code>样式</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note flat %&#125;默认 提示块标签&#123;% endnote %&#125;&#123;% note default flat %&#125;default 提示块标签&#123;% endnote %&#125;&#123;% note primary flat %&#125;primary 提示块标签&#123;% endnote %&#125;&#123;% note success flat %&#125;success 提示块标签&#123;% endnote %&#125;&#123;% note info flat %&#125;info 提示块标签&#123;% endnote %&#125;&#123;% note warning flat %&#125;warning 提示块标签&#123;% endnote %&#125;&#123;% note danger flat %&#125;danger 提示块标签&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>4.<code>disabled</code>样式</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note disabled %&#125;默认 提示块标签&#123;% endnote %&#125;&#123;% note default disabled %&#125;default 提示块标签&#123;% endnote %&#125;&#123;% note primary disabled %&#125;primary 提示块标签&#123;% endnote %&#125;&#123;% note success disabled %&#125;success 提示块标签&#123;% endnote %&#125;&#123;% note info disabled %&#125;info 提示块标签&#123;% endnote %&#125;&#123;% note warning disabled %&#125;warning 提示块标签&#123;% endnote %&#125;&#123;% note danger disabled %&#125;danger 提示块标签&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>5.<code>no-icon</code>样式</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note no-icon %&#125;默认 提示块标签&#123;% endnote %&#125;&#123;% note default no-icon %&#125;default 提示块标签&#123;% endnote %&#125;&#123;% note primary no-icon %&#125;primary 提示块标签&#123;% endnote %&#125;&#123;% note success no-icon %&#125;success 提示块标签&#123;% endnote %&#125;&#123;% note info no-icon %&#125;info 提示块标签&#123;% endnote %&#125;&#123;% note warning no-icon %&#125;warning 提示块标签&#123;% endnote %&#125;&#123;% note danger no-icon %&#125;danger 提示块标签&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></details><details class="toggle" style="border: 1px solid  blue"><summary class="toggle-button" style="background-color:  blue;">2.外部icon</summary><div class="toggle-content"><p>1.<code>simple</code>样式</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note 'fab fa-cc-visa' simple %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note blue 'fas fa-bullhorn' simple %&#125;2021 年快到了....&#123;% endnote %&#125;&#123;% note pink 'fas fa-car-crash' simple %&#125;小心开车 安全至上&#123;% endnote %&#125;&#123;% note red 'fas fa-fan' simple%&#125;这是三片呢？还是四片？&#123;% endnote %&#125;&#123;% note orange 'fas fa-battery-half' simple %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note purple 'far fa-hand-scissors' simple %&#125;剪刀石头布&#123;% endnote %&#125;&#123;% note green 'fab fa-internet-explorer' simple %&#125;前端最讨厌的浏览器&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>2.<code>modern</code>样式</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note 'fab fa-cc-visa' modern %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note blue 'fas fa-bullhorn' modern %&#125;2021 年快到了....&#123;% endnote %&#125;&#123;% note pink 'fas fa-car-crash' modern %&#125;小心开车 安全至上&#123;% endnote %&#125;&#123;% note red 'fas fa-fan' modern%&#125;这是三片呢？还是四片？&#123;% endnote %&#125;&#123;% note orange 'fas fa-battery-half' modern %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note purple 'far fa-hand-scissors' modern %&#125;剪刀石头布&#123;% endnote %&#125;&#123;% note green 'fab fa-internet-explorer' modern %&#125;前端最讨厌的浏览器&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>3.<code>flat</code>样式</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note 'fab fa-cc-visa' flat %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note blue 'fas fa-bullhorn' flat %&#125;2021 年快到了....&#123;% endnote %&#125;&#123;% note pink 'fas fa-car-crash' flat %&#125;小心开车 安全至上&#123;% endnote %&#125;&#123;% note red 'fas fa-fan' flat%&#125;这是三片呢？还是四片？&#123;% endnote %&#125;&#123;% note orange 'fas fa-battery-half' flat %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note purple 'far fa-hand-scissors' flat %&#125;剪刀石头布&#123;% endnote %&#125;&#123;% note green 'fab fa-internet-explorer' flat %&#125;前端最讨厌的浏览器&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>4.<code>disabled</code>样式</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note 'fab fa-cc-visa' disabled %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note blue 'fas fa-bullhorn' disabled %&#125;2021 年快到了....&#123;% endnote %&#125;&#123;% note pink 'fas fa-car-crash' disabled %&#125;小心开车 安全至上&#123;% endnote %&#125;&#123;% note red 'fas fa-fan' disabled %&#125;这是三片呢？还是四片？&#123;% endnote %&#125;&#123;% note orange 'fas fa-battery-half' disabled %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note purple 'far fa-hand-scissors' disabled %&#125;剪刀石头布&#123;% endnote %&#125;&#123;% note green 'fab fa-internet-explorer' disabled %&#125;前端最讨厌的浏览器&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>5.<code>no-icon</code>样式</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% note no-icon %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note blue no-icon %&#125;2021 年快到了....&#123;% endnote %&#125;&#123;% note pink no-icon %&#125;小心开车 安全至上&#123;% endnote %&#125;&#123;% note red no-icon %&#125;这是三片呢？还是四片？&#123;% endnote %&#125;&#123;% note orange no-icon %&#125;你是刷 Visa 还是 UnionPay&#123;% endnote %&#125;&#123;% note purple no-icon %&#125;剪刀石头布&#123;% endnote %&#125;&#123;% note green no-icon %&#125;前端最讨厌的浏览器&#123;% endnote %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></details></div><div class="tab-item-content"><details class="toggle" style="border: 1px solid  blue"><summary class="toggle-button" style="background-color:  blue;">1.自带icon</summary><div class="toggle-content"><p>1.<code>simple</code>样式</p><div class="note simple"><p>默认 提示块标签</p></div><div class="note default simple"><p>default 提示块标签</p></div><div class="note primary simple"><p>primary 提示块标签</p></div><div class="note success simple"><p>success 提示块标签</p></div><div class="note info simple"><p>info 提示块标签</p></div><div class="note warning simple"><p>warning 提示块标签</p></div><div class="note danger simple"><p>danger 提示块标签</p></div><p>2.<code>modern</code>样式</p><div class="note modern"><p>默认 提示块标签</p></div><div class="note default modern"><p>default 提示块标签</p></div><div class="note primary modern"><p>primary 提示块标签</p></div><div class="note success modern"><p>success 提示块标签</p></div><div class="note info modern"><p>info 提示块标签</p></div><div class="note warning modern"><p>warning 提示块标签</p></div><div class="note danger modern"><p>danger 提示块标签</p></div><p>3.<code>flat</code>样式</p><div class="note flat"><p>默认 提示块标签</p></div><div class="note default flat"><p>default 提示块标签</p></div><div class="note primary flat"><p>primary 提示块标签</p></div><div class="note success flat"><p>success 提示块标签</p></div><div class="note info flat"><p>info 提示块标签</p></div><div class="note warning flat"><p>warning 提示块标签</p></div><div class="note danger flat"><p>danger 提示块标签</p></div><p>4.<code>disabled</code>样式</p><div class="note disabled"><p>默认 提示块标签</p></div><div class="note default disabled"><p>default 提示块标签</p></div><div class="note primary disabled"><p>primary 提示块标签</p></div><div class="note success disabled"><p>success 提示块标签</p></div><div class="note info disabled"><p>info 提示块标签</p></div><div class="note warning disabled"><p>warning 提示块标签</p></div><div class="note danger disabled"><p>danger 提示块标签</p></div><p>5.<code>no-icon</code>样式</p><div class="note no-icon flat"><p>默认 提示块标签</p></div><div class="note default no-icon flat"><p>default 提示块标签</p></div><div class="note primary no-icon flat"><p>primary 提示块标签</p></div><div class="note success no-icon flat"><p>success 提示块标签</p></div><div class="note info no-icon flat"><p>info 提示块标签</p></div><div class="note warning no-icon flat"><p>warning 提示块标签</p></div><div class="note danger no-icon flat"><p>danger 提示块标签</p></div></div></details><details class="toggle" style="border: 1px solid  blue"><summary class="toggle-button" style="background-color:  blue;">2.外部icon</summary><div class="toggle-content"><p>1.<code>simple</code>样式</p><div class="note icon-padding simple"><i class="note-icon fab fa-cc-visa"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note blue icon-padding simple"><i class="note-icon fas fa-bullhorn"></i><p>2021 年快到了…</p></div><div class="note pink icon-padding simple"><i class="note-icon fas fa-car-crash"></i><p>小心开车 安全至上</p></div><div class="note red icon-padding simple"><i class="note-icon fas fa-fan"></i><p>这是三片呢？还是四片？</p></div><div class="note orange icon-padding simple"><i class="note-icon fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note purple icon-padding simple"><i class="note-icon far fa-hand-scissors"></i><p>剪刀石头布</p></div><div class="note green icon-padding simple"><i class="note-icon fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p></div><p>2.<code>modern</code>样式</p><div class="note icon-padding modern"><i class="note-icon fab fa-cc-visa"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note blue icon-padding modern"><i class="note-icon fas fa-bullhorn"></i><p>2021 年快到了…</p></div><div class="note pink icon-padding modern"><i class="note-icon fas fa-car-crash"></i><p>小心开车 安全至上</p></div><div class="note red icon-padding modern"><i class="note-icon fas fa-fan"></i><p>这是三片呢？还是四片？</p></div><div class="note orange icon-padding modern"><i class="note-icon fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note purple icon-padding modern"><i class="note-icon far fa-hand-scissors"></i><p>剪刀石头布</p></div><div class="note green icon-padding modern"><i class="note-icon fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p></div><p>3.<code>flat</code>样式</p><div class="note icon-padding flat"><i class="note-icon fab fa-cc-visa"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note blue icon-padding flat"><i class="note-icon fas fa-bullhorn"></i><p>2021 年快到了…</p></div><div class="note pink icon-padding flat"><i class="note-icon fas fa-car-crash"></i><p>小心开车 安全至上</p></div><div class="note red icon-padding flat"><i class="note-icon fas fa-fan"></i><p>这是三片呢？还是四片？</p></div><div class="note orange icon-padding flat"><i class="note-icon fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note purple icon-padding flat"><i class="note-icon far fa-hand-scissors"></i><p>剪刀石头布</p></div><div class="note green icon-padding flat"><i class="note-icon fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p></div><p>4.<code>disabled</code>样式</p><div class="note icon-padding disabled"><i class="note-icon fab fa-cc-visa"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note blue icon-padding disabled"><i class="note-icon fas fa-bullhorn"></i><p>2021 年快到了…</p></div><div class="note pink icon-padding disabled"><i class="note-icon fas fa-car-crash"></i><p>小心开车 安全至上</p></div><div class="note red icon-padding disabled"><i class="note-icon fas fa-fan"></i><p>这是三片呢？还是四片？</p></div><div class="note orange icon-padding disabled"><i class="note-icon fas fa-battery-half"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="note purple icon-padding disabled"><i class="note-icon far fa-hand-scissors"></i><p>剪刀石头布</p></div><div class="note green icon-padding disabled"><i class="note-icon fab fa-internet-explorer"></i><p>前端最讨厌的浏览器</p></div><p>5.<code>no-icon</code>样式</p><div class="note no-icon flat"><p>你是刷 Visa 还是 UnionPay</p></div><div class="note blue no-icon flat"><p>2021 年快到了…</p></div><div class="note pink no-icon flat"><p>小心开车 安全至上</p></div><div class="note red no-icon flat"><p>这是三片呢？还是四片？</p></div><div class="note orange no-icon flat"><p>你是刷 Visa 还是 UnionPay</p></div><div class="note purple no-icon flat"><p>剪刀石头布</p></div><div class="note green no-icon flat"><p>前端最讨厌的浏览器</p></div></div></details></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="时间轴-timeline"><a class="markdownIt-Anchor" href="#时间轴-timeline"></a> 时间轴 timeline</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">标签语法</button><button type="button" class="tab">配置参数</button><button type="button" class="tab">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">&#123;% timeline 时间线标题（可选）[,color] %&#125;&lt;!-- timeline 时间节点（标题） --&gt;正文内容&lt;!-- endtimeline --&gt;&lt;!-- timeline 时间节点（标题） --&gt;正文内容&lt;!-- endtimeline --&gt;&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><ol><li><code>title</code>:标题/时间线</li><li><code>color</code>:<code>timeline</code>颜色:default(留空) / blue / pink / red / purple / orange / green</li></ol></div><div class="tab-item-content"><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">&#123;% timeline 时间轴样式,blue %&#125;&lt;!-- timeline 2020-07-24 [2.6.6 -&gt; 3.0](https:&#x2F;&#x2F;github.com&#x2F;volantis-x&#x2F;hexo-theme-volantis&#x2F;releases) --&gt;1. 如果有 &#96;hexo-lazyload-image&#96; 插件，需要删除并重新安装最新版本，设置 &#96;lazyload.isSPA: true&#96;。2. 2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 &#96;use_cdn: true&#96; 则需要删除。3. 2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。4. 2.x 版本的置顶 &#96;top: true&#96; 改为了 &#96;pin: true&#96;，并且同样适用于 &#96;layout: page&#96; 的页面。5. 如果使用了 &#96;hexo-offline&#96; 插件，建议卸载，3.0 版本默认开启了 pjax 服务。&lt;!-- endtimeline --&gt;&lt;!-- timeline 2020-05-15 [2.6.3 -&gt; 2.6.6](https:&#x2F;&#x2F;github.com&#x2F;volantis-x&#x2F;hexo-theme-volantis&#x2F;releases&#x2F;tag&#x2F;2.6.6) --&gt;不需要额外处理。&lt;!-- endtimeline --&gt;&lt;!-- timeline 2020-04-20 [2.6.2 -&gt; 2.6.3](https:&#x2F;&#x2F;github.com&#x2F;volantis-x&#x2F;hexo-theme-volantis&#x2F;releases&#x2F;tag&#x2F;2.6.3) --&gt;1. 全局搜索 &#96;seotitle&#96; 并替换为 &#96;seo_title&#96;。2. group 组件的索引规则有变，使用 group 组件的文章内，&#96;group: group_name&#96; 对应的组件名必须是 &#96;group_name&#96;。2. group 组件的列表名优先显示文章的 &#96;short_title&#96; 其次是 &#96;title&#96;。&lt;!-- endtimeline --&gt;&#123;% endtimeline %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><div class="timeline blue"><div class='timeline-item headline'>        <div class='timeline-item-title'>          <div class='item-circle'><p>时间轴样式</p></div>        </div>      </div><div class='timeline-item'>        <div class='timeline-item-title'>          <div class='item-circle'><p>2020-07-24 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases">2.6.6 -&gt; 3.0</a></p></div>        </div>        <div class='timeline-item-content'><ol><li>如果有 <code>hexo-lazyload-image</code> 插件，需要删除并重新安装最新版本，设置 <code>lazyload.isSPA: true</code>。</li><li>2.x 版本的 css 和 js 不适用于 3.x 版本，如果使用了 <code>use_cdn: true</code> 则需要删除。</li><li>2.x 版本的 fancybox 标签在 3.x 版本中被重命名为 gallery 。</li><li>2.x 版本的置顶 <code>top: true</code> 改为了 <code>pin: true</code>，并且同样适用于 <code>layout: page</code> 的页面。</li><li>如果使用了 <code>hexo-offline</code> 插件，建议卸载，3.0 版本默认开启了 pjax 服务。</li></ol></div>      </div><div class='timeline-item'>        <div class='timeline-item-title'>          <div class='item-circle'><p>2020-05-15 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.6">2.6.3 -&gt; 2.6.6</a></p></div>        </div>        <div class='timeline-item-content'><p>不需要额外处理。</p></div>      </div><div class='timeline-item'>        <div class='timeline-item-title'>          <div class='item-circle'><p>2020-04-20 <a href="https://github.com/volantis-x/hexo-theme-volantis/releases/tag/2.6.3">2.6.2 -&gt; 2.6.3</a></p></div>        </div>        <div class='timeline-item-content'><ol><li>全局搜索 <code>seotitle</code> 并替换为 <code>seo_title</code>。</li><li>group 组件的索引规则有变，使用 group 组件的文章内，<code>group: group_name</code> 对应的组件名必须是 <code>group_name</code>。</li><li>group 组件的列表名优先显示文章的 <code>short_title</code> 其次是 <code>title</code>。</li></ol></div>      </div></div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="相册-gallery"><a class="markdownIt-Anchor" href="#相册-gallery"></a> 相册 gallery</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">标签语法</button><button type="button" class="tab">参数配置</button><button type="button" class="tab">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><p>1.gallerygroup 相册图库</p><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">&lt;div class&#x3D;&quot;gallery-group-main&quot;&gt;&#123;% galleryGroup name description link img-url %&#125;&#123;% galleryGroup name description link img-url %&#125;&#123;% galleryGroup name description link img-url %&#125;&lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>2.gallery 相册</p><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">&#123;% gallery %&#125;markdown 圖片格式&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><ul><li>gallerygroup 相册图库</li></ul><table><thead><tr><th>参数名</th><th>释义</th></tr></thead><tbody><tr><td>name</td><td>图库名字</td></tr><tr><td>description</td><td>图库描述</td></tr><tr><td>link</td><td>链接到对应相册的地址</td></tr><tr><td>img-url</td><td>图库封面</td></tr></tbody></table><ul><li><p>gallery 相册</p><p>区别于旧版的 Gallery 相册,新的 Gallery 相册会自动根据图片长度进行排版，书写也更加方便，与 markdown 格式一样。可根据需要插入到相应的 md。无需再自己配置长宽。<strong>建议在粘贴时故意使用长短、大小、横竖不一的图片</strong>，会有更好的效果。（尺寸完全相同的图片只会平铺输出，效果很糟糕）</p></li></ul></div><div class="tab-item-content"><p>1.gallerygroup 相册图库</p><pre class="line-numbers language-Markdown" data-language="Markdown"><code class="language-Markdown">&lt;div class&#x3D;&quot;gallery-group-main&quot;&gt;&#123;% galleryGroup MC 在Rikkaの六花服务器里留下的足迹 &#39;&#x2F;gallery&#x2F;MC&#x2F;&#39; https:&#x2F;&#x2F;cdn.cbd.int&#x2F;akilar-candyassets@1.0.36&#x2F;image&#x2F;1.jpg %&#125;&#123;% galleryGroup Gundam 哦咧哇gundam哒！ &#39;&#x2F;gallery&#x2F;Gundam&#x2F;&#39; https:&#x2F;&#x2F;cdn.cbd.int&#x2F;akilar-candyassets@1.0.36&#x2F;image&#x2F;20200907110508327.png %&#125;&#123;% galleryGroup I-am-Akilar 某种意义上也算自拍吧 &#39;&#x2F;gallery&#x2F;I-am-Akilar&#x2F;&#39; https:&#x2F;&#x2F;cdn.cbd.int&#x2F;akilar-candyassets@1.0.36&#x2F;image&#x2F;20200907113116651.png %&#125;&lt;&#x2F;div&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>2.gallery 相册</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% gallery %&#125;![](https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg)![](https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg)&#123;% endgallery %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><p>1.gallerygroup 相册图库</p><div class="gallery-group-main"><figure class="gallery-group">    <img class="gallery-group-img no-lightbox" src='https://cdn.cbd.int/akilar-candyassets@1.0.36/image/1.jpg' alt="Group Image Gallery">    <figcaption>      <div class="gallery-group-name">MC</div>      <p>在Rikkaの六花服务器里留下的足迹</p>      <a href='/gallery/MC/'></a>    </figcaption>  </figure><figure class="gallery-group">    <img class="gallery-group-img no-lightbox" src='https://cdn.cbd.int/akilar-candyassets@1.0.36/image/20200907110508327.png' alt="Group Image Gallery">    <figcaption>      <div class="gallery-group-name">Gundam</div>      <p>哦咧哇gundam哒！</p>      <a href='/gallery/Gundam/'></a>    </figcaption>  </figure><figure class="gallery-group">    <img class="gallery-group-img no-lightbox" src='https://cdn.cbd.int/akilar-candyassets@1.0.36/image/20200907113116651.png' alt="Group Image Gallery">    <figcaption>      <div class="gallery-group-name">I-am-Akilar</div>      <p>某种意义上也算自拍吧</p>      <a href='/gallery/I-am-Akilar/'></a>    </figcaption>  </figure></div>2.gallery 相册<div class="gallery-container" data-type="data" data-button="" data-limit="10" data-first="10">    <div class="gallery-items">[{"url":"https://i.loli.net/2019/12/25/Fze9jchtnyJXMHN.jpg","alt":"","title":""},{"url":"https://i.loli.net/2019/12/25/ryLVePaqkYm4TEK.jpg","alt":"","title":""}]</div>  </div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="分栏-tab"><a class="markdownIt-Anchor" href="#分栏-tab"></a> 分栏 tab</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">标签语法</button><button type="button" class="tab">配置参数</button><button type="button" class="tab">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs Unique name, [index] %&#125;<span class="token comment">&lt;!-- tab [Tab caption] [@icon] --></span>Any content (support inline tags too).<span class="token comment">&lt;!-- endtab --></span>&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><ol><li><p>Unique name :</p><ul><li><p>选项卡块标签的唯一名称，不带逗号。</p></li><li><p>将在#id 中用作每个标签及其索引号的前缀。</p></li><li><p>如果名称中包含空格，则对于生成#id，所有空格将由破折号代替。</p></li><li><p>仅当前帖子/页面的 URL 必须是唯一的！</p></li></ul></li><li><p>[index]:</p><ul><li><p>活动选项卡的索引号。</p></li><li><p>如果未指定，将选择第一个标签（1）。</p></li><li><p>如果 index 为-1，则不会选择任何选项卡。</p></li><li><p>可选参数。</p></li></ul></li><li><p>[Tab caption]:</p><ul><li><p>当前选项卡的标题。</p></li><li><p>如果未指定标题，则带有制表符索引后缀的唯一名称将用作制表符的标题。</p></li><li><p>如果未指定标题，但指定了图标，则标题将为空。</p></li><li><p>可选参数。</p></li></ul></li><li><p>[@icon]:</p><ul><li><p>FontAwesome 图标名称（全名，看起来像“ fas fa-font”）</p></li><li><p>可以指定带空格或不带空格；</p></li><li><p>例如’Tab caption @icon’ 和 ‘Tab caption@icon’.</p></li><li><p>可选参数。</p></li></ul></li></ol></div><div class="tab-item-content"><p>1.Demo 1 - 预设选择第一个【默认】</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test1 %&#125;<span class="token comment">&lt;!-- tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 1.</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span><span class="token comment">&lt;!-- tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 2.</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span><span class="token comment">&lt;!-- tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 3.</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span>&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>2.Demo 2 - 预设选择 tabs</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test2, 3 %&#125;<span class="token comment">&lt;!-- tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 1.</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span><span class="token comment">&lt;!-- tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 2.</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span><span class="token comment">&lt;!-- tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 3.</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span>&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>3.Demo 3 - 没有预设值</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test3, -1 %&#125;<span class="token comment">&lt;!-- tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 1.</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span><span class="token comment">&lt;!-- tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 2.</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span><span class="token comment">&lt;!-- tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">This is Tab 3.</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span>&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>4.Demo 4 - 自定义 Tab 名 + 只有 icon + icon 和 Tab 名</p><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% tabs test4 %&#125;<span class="token comment">&lt;!-- tab 第一个Tab --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">tab 名字为第一个 Tab</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span><span class="token comment">&lt;!-- tab @fab fa-apple-pay --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">只有图标 没有 Tab 名字</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span><span class="token comment">&lt;!-- tab 炸弹@fas fa-bomb --></span><span class="token bold"><span class="token punctuation">**</span><span class="token content">名字+icon</span><span class="token punctuation">**</span></span><span class="token comment">&lt;!-- endtab --></span>&#123;% endtabs %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><p>1.Demo 1 - 预设选择第一个【默认】</p><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">test1 1</button><button type="button" class="tab">test1 2</button><button type="button" class="tab">test1 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><p>2.Demo 2 - 预设选择 tabs</p><div class="tabs"><div class="nav-tabs"><button type="button" class="tab">test2 1</button><button type="button" class="tab">test2 2</button><button type="button" class="tab active">test2 3</button></div><div class="tab-contents"><div class="tab-item-content"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content active"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><p>3.Demo 3 - 没有预设值</p><div class="tabs"><div class="nav-tabs no-default"><button type="button" class="tab">test3 1</button><button type="button" class="tab">test3 2</button><button type="button" class="tab">test3 3</button></div><div class="tab-contents"><div class="tab-item-content"><p><strong>This is Tab 1.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 2.</strong></p></div><div class="tab-item-content"><p><strong>This is Tab 3.</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><p>4.Demo 4 - 自定义 Tab 名 + 只有 icon + icon 和 Tab 名</p><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">第一个Tab</button><button type="button" class="tab"><i class="fab fa-apple-pay"></i></button><button type="button" class="tab"><i class="fas fa-bomb"></i>炸弹</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>tab 名字为第一个 Tab</strong></p></div><div class="tab-item-content"><p><strong>只有图标 没有 Tab 名字</strong></p></div><div class="tab-item-content"><p><strong>名字+icon</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="隐藏块"><a class="markdownIt-Anchor" href="#隐藏块"></a> 隐藏块</h2><div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">标签语法</button><button type="button" class="tab">参数配置</button><button type="button" class="tab">示例源码</button><button type="button" class="tab">渲染演示</button></div><div class="tab-contents"><div class="tab-item-content active"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% hideBlock display,bg,color %&#125;content&#123;% endhideBlock %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><ol><li>content：要隐藏的内容</li><li>display：展示前按钮显示的文字（可选）</li><li>bg：按钮的背景颜色（可选）</li><li>color：按钮显示的文字的颜色（可选）</li></ol></div><div class="tab-item-content"><pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown">&#123;% hideBlock 点我预览, blue %&#125;这里有张图片：<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://registry.npmmirror.com/js-asuna/latest/files/pic/Asuna/Asuna16x9.webp<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Asuna<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>&#123;% endhideBlock %&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></div><div class="tab-item-content"><div class="hide-block"><button type="button" class="hide-button" style="background-color:  blue;">点我预览</button><div class="hide-content"><p>这里有张图片：<br /><img src="https://registry.npmmirror.com/js-asuna/latest/files/pic/Asuna/Asuna16x9.webp" alt="Asuna" /></p></div></div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>]]></content>
     
     
-    <summary type="html">本文汇总Markdown格式以及外置标签在网页端的渲染效果，可作为文档进行查询</summary>
+    <summary type="html">本文汇总 Markdown 格式以及外置标签在网页端的渲染效果，可作为文档进行查询</summary>
     
     
     
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="外置标签" scheme="https://blog.saop.cc/tags/%E5%A4%96%E7%BD%AE%E6%A0%87%E7%AD%BE/"/>
-    
-    <category term="Markdown" scheme="https://blog.saop.cc/tags/Markdown/"/>
+    <category term="文档" scheme="https://blog.saop.cc/tags/%E6%96%87%E6%A1%A3/"/>
     
   </entry>
   
@@ -979,12 +916,10 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="校园网" scheme="https://blog.saop.cc/tags/%E6%A0%A1%E5%9B%AD%E7%BD%91/"/>
-    
   </entry>
   
   <entry>
-    <title>原神mod模组安装教程</title>
+    <title>原神 mod 模组安装教程</title>
     <link href="https://blog.saop.cc/p/704e/"/>
     <id>https://blog.saop.cc/p/704e/</id>
     <published>2023-02-21T15:00:00.000Z</published>
@@ -993,7 +928,7 @@
     <content type="html"><![CDATA[<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2><p>安装<a href="https://blog.saop.cc/p/ea5c/">原神私服</a>mod 模组仅支持 Windows 系统，其他系统请退出此教程！</p><p>需具备一点计算机基础知识（真 • 一点即可），否则请退出此教程，谢谢！</p><p>操作过程中，如出现任何问题，请评论留言，不想看教程怎么办？（那你还玩什么 mod，请退出此教程）</p><p>请不要在官服使用 mod，会封号！！</p><p>请不要在同一个角色或武器等其他物品上打多个 mod，轻则出现 bug（模型抽搐），重则游戏闪退，蓝屏死机电脑报废！！</p><p>删掉所有的杀毒软件，或者关掉也行（前提是你能关的掉）</p><blockquote><p>白嫖党们如果搞成功了记得点击右下角评论按钮留个言呗(～￣ ▽ ￣)～</p></blockquote><h2 id="mod-模组工具使用"><a class="markdownIt-Anchor" href="#mod-模组工具使用"></a> mod 模组工具使用</h2><blockquote><p>123 云盘（解压码：<a href="http://saop.cc">saop.cc</a>）：<a href="https://www.123pan.com/s/VMelVv-MI1zH.html">https://www.123pan.com/s/VMelVv-MI1zH.html</a></p><p>天翼云盘（访问码：0gx0）：<a href="https://cloud.189.cn/web/share?code=3yuUbiQFFV73">https://cloud.189.cn/web/share?code=3yuUbiQFFV73</a></p></blockquote><p>从云盘上下载到<code>YS MOD.zip</code>压缩文件，解压至任意文件夹或分区盘内，然后进入<code>YS MOD</code>&gt;<code>3dmigoto</code>文件夹，</p><p><img src="/img/202304230046952.webp" alt="3dmigoto文件夹" /></p><p>使用<code>记事本</code>编辑<code>d3dx.ini</code>文件，<kbd>Win</kbd> + <kbd>F</kbd> 打开搜索框，搜索<code>YuanShen.exe</code>点击查找。</p><p><img src="/img/202304230048511.webp" alt="d3dx.ini" /></p><p>将<code>Z:\ys\yscn\Genshin Impact\Genshin Impact Game\YuanShen.exe</code>替换为你的原神私服游戏本体<code>YuanShen.exe</code>的执行程序路径，然后 <kbd>Ctrl</kbd> + <kbd>S</kbd> 保存后退出。</p><p>路径填写方法参照预留的路径<code>Z:\ys\yscn\Genshin Impact\Genshin Impact Game\YuanShen.exe</code>填写，别说你不会填（请退出此教程）</p><p>然后右键以管理员身份运行文件夹内的<code>3DMigoto Loader.exe</code>执行文件以运行 mod 工具，接着进入你的原神私服游戏，进入时，仔细聆听有无<code>滴~</code>的一声出现，有则代表 mod 工具正常运行，如发生闪退情况，那就多进几次就好，进入游戏到能够操作游戏角色后，多切换几个女角色即可看到效果 😏~</p><p><img src="/img/202302212248058.webp" alt="雷神の私服" /></p><p><kbd>ins</kbd> 或者数字小键盘 <kbd>0</kbd> 是 mod 软件的信息提示开关，<kbd>u</kbd> 可以关闭原神 UI</p><p>如果都无效那就自行研究一下哪个键可以。</p><p>如果 mod 装的太多，进游戏会弹出很多信息提示，只需等一会就会消失。</p><h2 id="mod-模组文件安装"><a class="markdownIt-Anchor" href="#mod-模组文件安装"></a> mod 模组文件安装</h2><blockquote><p>123 云盘 mod 模组文件分流 1：<a href="https://www.123pan.com/s/VMelVv-kVmzH">https://www.123pan.com/s/VMelVv-kVmzH</a></p><p>123 云盘 mod 模组文件分流 2：<a href="https://www.123pan.com/s/VMelVv-oVmzH">https://www.123pan.com/s/VMelVv-oVmzH</a></p><p>Mod 模组网站：<a href="https://gamebanana.com/mods/games/8552">https://gamebanana.com/mods/games/8552</a></p><p>神秘链接 😏：<a href="https://github.com/SilentNightSound/GI-Model-Importer">https://github.com/SilentNightSound/GI-Model-Importer</a></p></blockquote><p>通过 mod 模组文件网盘下载到心仪的 mod 模组文件，然后下一步</p><p>或者前往 mod 模组网站进行更多的挑选，此网站需魔法上网，如不知魔法上网是什么，请不要使用此链接</p><p>下载到 mod 模组压缩文件后，将文件解压到<code>3dmigoto\Mods\mod</code>文件夹内</p><p>需保证是一个一个文件夹的形式，如果是散落的文件，请自行<code>新建文件夹</code>（文件夹名需是英文的），</p><p>将散落文件放入其中，然后按照上面的流程进入游戏即可</p>]]></content>
     
     
-    <summary type="html">关于原神mod模组安装的详细教程</summary>
+    <summary type="html">关于原神 mod 模组安装的详细教程</summary>
     
     
     
@@ -1001,10 +936,6 @@
     
     
     <category term="原神" scheme="https://blog.saop.cc/tags/%E5%8E%9F%E7%A5%9E/"/>
-    
-    <category term="原神mod" scheme="https://blog.saop.cc/tags/%E5%8E%9F%E7%A5%9Emod/"/>
-    
-    <category term="3DMigoto" scheme="https://blog.saop.cc/tags/3DMigoto/"/>
     
   </entry>
   
@@ -1025,16 +956,14 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="博客主题" scheme="https://blog.saop.cc/tags/%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98/"/>
+    <category term="插件" scheme="https://blog.saop.cc/tags/%E6%8F%92%E4%BB%B6/"/>
     
-    <category term="博客插件" scheme="https://blog.saop.cc/tags/%E5%8D%9A%E5%AE%A2%E6%8F%92%E4%BB%B6/"/>
-    
-    <category term="WordPress" scheme="https://blog.saop.cc/tags/WordPress/"/>
+    <category term="框架" scheme="https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
-    <title>Hexo下Markdown语法失效总结</title>
+    <title>Hexo 下 Markdown 语法失效总结</title>
     <link href="https://blog.saop.cc/p/b45a/"/>
     <id>https://blog.saop.cc/p/b45a/</id>
     <published>2023-02-14T21:00:00.000Z</published>
@@ -1043,18 +972,14 @@
     <content type="html"><![CDATA[<div class="note info simple"><p>参考：<a href="https://www.jianshu.com/p/e19eff4311f4">hexo 下 Markdown 语法失效总结</a></p></div><h2 id="问题汇总"><a class="markdownIt-Anchor" href="#问题汇总"></a> 问题汇总</h2><ol><li>多级有序列表序号显示异常问题</li><li>table 表格显示异常，不显示问题</li></ol><h2 id="多级有序列表序号显示异常"><a class="markdownIt-Anchor" href="#多级有序列表序号显示异常"></a> <strong>多级有序列表序号显示异常</strong></h2><p>Markdown 无法实现&quot;多级有序列表&quot;, 而且在&quot;有序列表&quot;中断时, 会重新从 1 开始排序。即在 sublime text 中，正常显示的有序序列，写 hexo 静态 blog 显示异常，如下图。</p><p><img src="/img/202304142302241.webp" alt="" /></p><h3 id="解决"><a class="markdownIt-Anchor" href="#解决"></a> <strong>解决</strong></h3><p>直接删除上一个序号最后与本序号之间的空行<br />发现了一篇解决方案<a href="https://www.jianshu.com/p/20405c2980dc">hexo 下 markdown 语法 有序列表序号不匹配</a> 他是在序号之间的每一段正文左侧添加空格，但是并没有解决我的问题。我又尝试着把序号最后与下一个序号之间的空行删掉，问题竟然解决了。</p><h3 id="存在问题"><a class="markdownIt-Anchor" href="#存在问题"></a> <strong>存在问题</strong></h3><p>我在解决了下一个表格不显示问题之后，发现序号展示又异常了。因为表格需要与上方正文之间有两个空行。因此，序号正常显示和表格正常显示只能选择一种。现在我还没有找到两全其美的方法。如果你解决了，请在下方评论留言。</p><h3 id="结果展示"><a class="markdownIt-Anchor" href="#结果展示"></a> <strong>结果展示</strong></h3><p><a href="https://www.sunhong.vip/2019/03/11/%E8%AF%BB%E3%80%8AHTTP%E5%9B%BE%E8%A7%A3%E3%80%8B-Chapt-2/#more">读《HTTP 图解》-Chapt 2</a></p><h2 id="table-表格显示异常不显示"><a class="markdownIt-Anchor" href="#table-表格显示异常不显示"></a> table 表格显示异常，不显示</h2><p>table 表格显示异常，我的是直接不显示表格。如下图。</p><p><img src="/img/202304142302245.webp" alt="table表格不显示" /></p><h3 id="解决-2"><a class="markdownIt-Anchor" href="#解决-2"></a> <strong>解决</strong></h3><p>表格和正文之间空两行。<br />刚开始一直以为是 hexo 的表格格式不太一样，我就直接把其他人的表格复制到之前创建的表格上方，表格可以用了，尝试删除复制的表格后，仍可以用。后来发现，表格和正文之间需要两个空行。</p><h3 id="结果展示-2"><a class="markdownIt-Anchor" href="#结果展示-2"></a> <strong>结果展示</strong></h3><p><img src="/img/202304142302243.webp" alt="" /></p>]]></content>
     
     
-    <summary type="html">Hexo框架下的Markdown语法失效问题总结</summary>
+    <summary type="html">Hexo 框架下的 Markdown 语法失效问题总结</summary>
     
     
     
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-    <category term="Hexo" scheme="https://blog.saop.cc/tags/Hexo/"/>
-    
-    <category term="语法失效" scheme="https://blog.saop.cc/tags/%E8%AF%AD%E6%B3%95%E5%A4%B1%E6%95%88/"/>
-    
-    <category term="Markdown" scheme="https://blog.saop.cc/tags/Markdown/"/>
+    <category term="框架" scheme="https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -1077,8 +1002,6 @@
     
     <category term="命令" scheme="https://blog.saop.cc/tags/%E5%91%BD%E4%BB%A4/"/>
     
-    <category term="git" scheme="https://blog.saop.cc/tags/git/"/>
-    
   </entry>
   
   <entry>
@@ -1097,10 +1020,6 @@
     
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
-    
-    <category term="插件" scheme="https://blog.saop.cc/tags/%E6%8F%92%E4%BB%B6/"/>
-    
-    <category term="VScode" scheme="https://blog.saop.cc/tags/VScode/"/>
     
   </entry>
   
@@ -1121,11 +1040,7 @@
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-    <category term="三体" scheme="https://blog.saop.cc/tags/%E4%B8%89%E4%BD%93/"/>
-    
-    <category term="刘慈欣" scheme="https://blog.saop.cc/tags/%E5%88%98%E6%85%88%E6%AC%A3/"/>
-    
-    <category term="科幻小说" scheme="https://blog.saop.cc/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="小说" scheme="https://blog.saop.cc/tags/%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
@@ -1146,12 +1061,10 @@
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="CDN" scheme="https://blog.saop.cc/tags/CDN/"/>
-    
   </entry>
   
   <entry>
-    <title>ASCII字符画生成</title>
+    <title>ASCII 字符画生成</title>
     <link href="https://blog.saop.cc/p/c9df/"/>
     <id>https://blog.saop.cc/p/c9df/</id>
     <published>2023-02-08T23:30:00.000Z</published>
@@ -1160,14 +1073,12 @@
     <content type="html"><![CDATA[<div class="note info simple"><p>参考：<a href="https://blog.csdn.net/qq_31708763/article/details/119712041">在线生成 ascii 字符画网站字符图案在线生成工具</a></p></div><h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2><p>有时候会看到 Redis 或者其他软件，安装完成后或者在 Web 开发者调试的时候会在控制台输出好看的文字图案。<br />这里记录一下字符画生成工具。</p><h2 id="效果"><a class="markdownIt-Anchor" href="#效果"></a> 效果</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"> █████╗ ███████╗██╗   ██╗███╗   ██╗ █████╗██╔══██╗██╔════╝██║   ██║████╗  ██║██╔══██╗███████║███████╗██║   ██║██╔██╗ ██║███████║██╔══██║╚════██║██║   ██║██║╚██╗██║██╔══██║██║  ██║███████║╚██████╔╝██║ ╚████║██║  ██║╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝ ________  ________  ___  ________   ________<span class="token operator">|</span><span class="token punctuation">\</span>   __  <span class="token punctuation">\</span><span class="token operator">|</span><span class="token punctuation">\</span>   ___ <span class="token punctuation">\</span><span class="token operator">|</span><span class="token punctuation">\</span>  <span class="token punctuation">\</span><span class="token operator">|</span><span class="token punctuation">\</span>   ___  <span class="token punctuation">\</span><span class="token operator">|</span><span class="token punctuation">\</span>   ____<span class="token punctuation">\</span><span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span><span class="token operator">|</span><span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span>_<span class="token operator">|</span><span class="token punctuation">\</span> <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span><span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span>___<span class="token operator">|</span> <span class="token punctuation">\</span> <span class="token punctuation">\</span>   __  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span><span class="token punctuation">\</span> <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span><span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span>  ___  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span>_<span class="token punctuation">\</span><span class="token punctuation">\</span> <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span><span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span> <span class="token punctuation">\</span>  <span class="token punctuation">\</span><span class="token operator">|</span><span class="token punctuation">\</span>  <span class="token punctuation">\</span>   <span class="token punctuation">\</span> <span class="token punctuation">\</span>__<span class="token punctuation">\</span> <span class="token punctuation">\</span>__<span class="token punctuation">\</span> <span class="token punctuation">\</span>_______<span class="token punctuation">\</span> <span class="token punctuation">\</span>__<span class="token punctuation">\</span> <span class="token punctuation">\</span>__<span class="token punctuation">\</span><span class="token punctuation">\</span> <span class="token punctuation">\</span>__<span class="token punctuation">\</span> <span class="token punctuation">\</span>_______<span class="token punctuation">\</span>    <span class="token punctuation">\</span><span class="token operator">|</span>__<span class="token operator">|</span><span class="token punctuation">\</span><span class="token operator">|</span>__<span class="token operator">|</span><span class="token punctuation">\</span><span class="token operator">|</span>_______<span class="token operator">|</span><span class="token punctuation">\</span><span class="token operator">|</span>__<span class="token operator">|</span><span class="token punctuation">\</span><span class="token operator">|</span>__<span class="token operator">|</span> <span class="token punctuation">\</span><span class="token operator">|</span>__<span class="token operator">|</span><span class="token punctuation">\</span><span class="token operator">|</span>_______<span class="token operator">|</span>          _____                    _____                    _____                    _____                    _____         /<span class="token punctuation">\</span>    <span class="token punctuation">\</span>                  /<span class="token punctuation">\</span>    <span class="token punctuation">\</span>                  /<span class="token punctuation">\</span>    <span class="token punctuation">\</span>                  /<span class="token punctuation">\</span>    <span class="token punctuation">\</span>                  /<span class="token punctuation">\</span>    <span class="token punctuation">\</span>        /::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>                /::<span class="token punctuation">\</span>____<span class="token punctuation">\</span>                /::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>                /::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>                /::<span class="token punctuation">\</span>____<span class="token punctuation">\</span>       /::::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>              /:::/    /               /::::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>              /::::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>              /::::<span class="token operator">|</span>   <span class="token operator">|</span>      /::::::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>            /:::/    /               /::::::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>            /::::::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>            /:::::<span class="token operator">|</span>   <span class="token operator">|</span>     /:::/<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>          /:::/    /               /:::/<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>          /:::/<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>          /::::::<span class="token operator">|</span>   <span class="token operator">|</span>    /:::/__<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>        /:::/    /               /:::/__<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>        /:::/  <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>        /:::/<span class="token operator">|</span>::<span class="token operator">|</span>   <span class="token operator">|</span>   /::::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>      /:::/    /                <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>      /:::/    <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>      /:::/ <span class="token operator">|</span>::<span class="token operator">|</span>   <span class="token operator">|</span>  /::::::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>    /:::/    /      _____    ___<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>    /:::/    / <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>    /:::/  <span class="token operator">|</span>::<span class="token operator">|</span>   <span class="token operator">|</span> _____ /:::/<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>____<span class="token punctuation">\</span>  /:::/____/      /<span class="token punctuation">\</span>    <span class="token punctuation">\</span>  /<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>  /:::/    /   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span> ___<span class="token punctuation">\</span>  /:::/   <span class="token operator">|</span>::<span class="token operator">|</span>   <span class="token operator">|</span>/<span class="token punctuation">\</span>    <span class="token punctuation">\</span>/:::/  <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token operator">|</span>    <span class="token operator">||</span>:::<span class="token operator">|</span>    /      /::<span class="token punctuation">\</span>____<span class="token punctuation">\</span>/::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>____<span class="token punctuation">\</span>/:::/____/     <span class="token punctuation">\</span>:::<span class="token operator">|</span>    <span class="token operator">|</span>/:: /    <span class="token operator">|</span>::<span class="token operator">|</span>   /::<span class="token punctuation">\</span>____<span class="token punctuation">\</span><span class="token punctuation">\</span>::/    <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>  /:::<span class="token operator">|</span>____<span class="token operator">||</span>:::<span class="token operator">|</span>____<span class="token punctuation">\</span>     /:::/    /<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>::/    /<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>     /:::<span class="token operator">|</span>____<span class="token operator">|</span><span class="token punctuation">\</span>::/    /<span class="token operator">|</span>::<span class="token operator">|</span>  /:::/    / <span class="token punctuation">\</span>/_____/<span class="token punctuation">\</span>:::<span class="token punctuation">\</span>/:::/    /  <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>   /:::/    /  <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>/____/  <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>   /:::/    /  <span class="token punctuation">\</span>/____/ <span class="token operator">|</span>::<span class="token operator">|</span> /:::/    /          <span class="token punctuation">\</span>::::::/    /    <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span> /:::/    /    <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span>       <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    <span class="token punctuation">\</span> /:::/    /           <span class="token operator">|</span>::<span class="token operator">|</span>/:::/    /           <span class="token punctuation">\</span>::::/    /      <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    /:::/    /      <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>   <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>____<span class="token punctuation">\</span>       <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>    /:::/    /            <span class="token operator">|</span>::::::/    /            <span class="token punctuation">\</span>::/____/        <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>__/:::/    /        <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>  /:::/    /        <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>  /:::/    /             <span class="token operator">|</span>:::::/    /             ~~               <span class="token punctuation">\</span>::::::::/    /          <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>/:::/    /          <span class="token punctuation">\</span>:::<span class="token punctuation">\</span>/:::/    /              <span class="token operator">|</span>::::/    /                               <span class="token punctuation">\</span>::::::/    /            <span class="token punctuation">\</span>::::::/    /            <span class="token punctuation">\</span>::::::/    /               /:::/    /                                <span class="token punctuation">\</span>::::/    /              <span class="token punctuation">\</span>::::/    /              <span class="token punctuation">\</span>::::/    /               /:::/    /                                 <span class="token punctuation">\</span>::/____/                <span class="token punctuation">\</span>::/    /                <span class="token punctuation">\</span>::/____/                <span class="token punctuation">\</span>::/    /                                  ~~                       <span class="token punctuation">\</span>/____/                  ~~                       <span class="token punctuation">\</span>/____/██████  ██    ██ ████████ ████████ ███████ ██████  ███████ ██      ██    ████   ██ ██    ██    ██       ██    ██      ██   ██ ██      ██       ██  ████████  ██    ██    ██       ██    █████   ██████  █████   ██        ██████   ██ ██    ██    ██       ██    ██      ██   ██ ██      ██         ████████   ██████     ██       ██    ███████ ██   ██ ██      ███████    ██<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><img src="/img/202304142302242.webp" alt="ASUNA" /></p><p><img src="/img/202304142302240.webp" alt="BUTTERFLY" /></p><h2 id="生成工具"><a class="markdownIt-Anchor" href="#生成工具"></a> 生成工具</h2><blockquote><p>根据文字生成字符画：<br /><a href="http://patorjk.com/software/taag">http://patorjk.com/software/taag</a> &gt; <a href="http://www.network-science.de/ascii/">http://www.network-science.de/ascii/</a></p><p>根据图片生成字符画：<br /><a href="http://www.degraeve.com/img2txt.php">http://www.degraeve.com/img2txt.php</a> &gt; <a href="http://life.chacuo.net/convertphoto2char">http://life.chacuo.net/convertphoto2char</a></p><p>根据流程图生成字符画：<br /><a href="http://asciiflow.com/">http://asciiflow.com/</a></p><p>idea 插件<br /><a href="https://github.com/OBKoro1/koro1FileHeader">https://github.com/OBKoro1/koro1FileHeader</a></p></blockquote>]]></content>
     
     
-    <summary type="html">生成ascii字符画字符图案</summary>
+    <summary type="html">生成 ASCII 字符画字符图案</summary>
     
     
     
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
-    
-    <category term="ASCII" scheme="https://blog.saop.cc/tags/ASCII/"/>
     
   </entry>
   
@@ -1211,8 +1122,6 @@
     <category term="加密" scheme="https://blog.saop.cc/categories/%E5%8A%A0%E5%AF%86/"/>
     
     
-    <category term="涩图" scheme="https://blog.saop.cc/tags/%E6%B6%A9%E5%9B%BE/"/>
-    
     <category term="好康的" scheme="https://blog.saop.cc/tags/%E5%A5%BD%E5%BA%B7%E7%9A%84/"/>
     
   </entry>
@@ -1234,9 +1143,7 @@
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-    <category term="刘慈欣" scheme="https://blog.saop.cc/tags/%E5%88%98%E6%85%88%E6%AC%A3/"/>
-    
-    <category term="科幻小说" scheme="https://blog.saop.cc/tags/%E7%A7%91%E5%B9%BB%E5%B0%8F%E8%AF%B4/"/>
+    <category term="小说" scheme="https://blog.saop.cc/tags/%E5%B0%8F%E8%AF%B4/"/>
     
   </entry>
   
@@ -1259,10 +1166,6 @@
     
     <category term="原神" scheme="https://blog.saop.cc/tags/%E5%8E%9F%E7%A5%9E/"/>
     
-    <category term="私服" scheme="https://blog.saop.cc/tags/%E7%A7%81%E6%9C%8D/"/>
-    
-    <category term="Grasscutter" scheme="https://blog.saop.cc/tags/Grasscutter/"/>
-    
   </entry>
   
   <entry>
@@ -1284,9 +1187,7 @@
     
     <category term="原神" scheme="https://blog.saop.cc/tags/%E5%8E%9F%E7%A5%9E/"/>
     
-    <category term="私服指令" scheme="https://blog.saop.cc/tags/%E7%A7%81%E6%9C%8D%E6%8C%87%E4%BB%A4/"/>
-    
-    <category term="Grasscutter" scheme="https://blog.saop.cc/tags/Grasscutter/"/>
+    <category term="命令" scheme="https://blog.saop.cc/tags/%E5%91%BD%E4%BB%A4/"/>
     
   </entry>
   
@@ -1309,14 +1210,10 @@
     
     <category term="原神" scheme="https://blog.saop.cc/tags/%E5%8E%9F%E7%A5%9E/"/>
     
-    <category term="私服" scheme="https://blog.saop.cc/tags/%E7%A7%81%E6%9C%8D/"/>
-    
-    <category term="Grasscutter" scheme="https://blog.saop.cc/tags/Grasscutter/"/>
-    
   </entry>
   
   <entry>
-    <title>安装ImageMagick扩展</title>
+    <title>安装 ImageMagick 扩展</title>
     <link href="https://blog.saop.cc/p/8ba6/"/>
     <id>https://blog.saop.cc/p/8ba6/</id>
     <published>2023-01-30T20:00:00.000Z</published>
@@ -1332,14 +1229,12 @@
     <category term="转载" scheme="https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-    <category term="IIS" scheme="https://blog.saop.cc/tags/IIS/"/>
-    
-    <category term="WordPress" scheme="https://blog.saop.cc/tags/WordPress/"/>
+    <category term="框架" scheme="https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
-    <title>使WP的URL链接支持中文</title>
+    <title>使 WP 的 URL 链接支持中文</title>
     <link href="https://blog.saop.cc/p/7e2d/"/>
     <id>https://blog.saop.cc/p/7e2d/</id>
     <published>2023-01-30T19:09:00.000Z</published>
@@ -1348,14 +1243,14 @@
     <content type="html"><![CDATA[<h2 id="网站访问中文-url-时遭遇-404"><a class="markdownIt-Anchor" href="#网站访问中文-url-时遭遇-404"></a> 网站访问中文 URL 时遭遇 404</h2><ul><li>设置了 WordPress 的固定链接为文章名 % postname%，然后标题还是中文的，访问时遭遇 404。</li><li>分类名和标签名是中文的，访问时遭遇 404。</li><li>URL 链接中带有中文字符或符号等。</li></ul><p><img src="/img/202304142300408.webp" alt="网站访问中文URL时遭遇404" /></p><p>生成的 url 就会因为含有中文而无法被支持，显示 404。</p><h2 id="解决方法"><a class="markdownIt-Anchor" href="#解决方法"></a> 解决方法</h2><p>进入站点目录下的 wp-includes 目录，编辑 class-wp.php 文件。</p><pre class="line-numbers language-php" data-language="php"><code class="language-php">找到<span class="token variable">$pathinfo</span>         <span class="token operator">=</span> <span class="token keyword">isset</span><span class="token punctuation">(</span> <span class="token variable">$_SERVER</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'PATH_INFO'</span><span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token variable">$_SERVER</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'PATH_INFO'</span><span class="token punctuation">]</span> <span class="token punctuation">:</span> <span class="token string single-quoted-string">''</span><span class="token punctuation">;</span>可以直接搜索<span class="token variable">$_SERVER</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'PATH_INFO'</span><span class="token punctuation">]</span>将这行的第二个<span class="token variable">$_SERVER</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'PATH_INFO'</span><span class="token punctuation">]</span>替换为<span class="token function">mb_convert_encoding</span><span class="token punctuation">(</span><span class="token variable">$_SERVER</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'PATH_INFO'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'UTF-8'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'GBK'</span><span class="token punctuation">)</span>再找到<span class="token keyword">list</span><span class="token punctuation">(</span> <span class="token variable">$req_uri</span> <span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">explode</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'?'</span><span class="token punctuation">,</span> <span class="token variable">$_SERVER</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'REQUEST_URI'</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>将<span class="token variable">$_SERVER</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'REQUEST_URI'</span><span class="token punctuation">]</span>替换为<span class="token function">mb_convert_encoding</span><span class="token punctuation">(</span><span class="token variable">$_SERVER</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'REQUEST_URI'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'UTF-8'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'GBK'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>执行完上面操作然后保存，这下 WordPress URL 里就可以支持中文字符了！</p>]]></content>
     
     
-    <summary type="html">使WordPress的URL链接支持中文教程</summary>
+    <summary type="html">使 WordPress 的 URL 链接支持中文教程</summary>
     
     
     
     <category term="技术" scheme="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="WordPress" scheme="https://blog.saop.cc/tags/WordPress/"/>
+    <category term="框架" scheme="https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
@@ -1376,7 +1271,7 @@
     <category term="空值" scheme="https://blog.saop.cc/categories/%E7%A9%BA%E5%80%BC/"/>
     
     
-    <category term="Hexo" scheme="https://blog.saop.cc/tags/Hexo/"/>
+    <category term="框架" scheme="https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
