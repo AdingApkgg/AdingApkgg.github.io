@@ -223,7 +223,7 @@ template {
 .search-dialog hr:before {
   display: inline-block;
   font-weight: 600;
-  font-family: 'Font Awesome 6 Free';
+  font-family: 'Font Awesome 7 Free', 'Font Awesome 6 Free';
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
 }
@@ -1550,6 +1550,10 @@ blockquote footer cite:before {
 }
 blockquote > :last-child {
   margin-bottom: 0 !important;
+}
+.fa-fw {
+  width: 1.25em;
+  text-align: center;
 }
 :root {
   --hl-color: #90a4ae;
@@ -2912,9 +2916,6 @@ pre[class*='language-'] pre > code.highlight {
   overflow: hidden;
   margin-bottom: 20px;
   padding: 20px 24px;
-}
-#aside-content .card-widget:last-child {
-  margin-bottom: 0;
 }
 #aside-content .card-info .author-info-name {
   font-weight: 500;
