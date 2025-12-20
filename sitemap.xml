@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.saop.cc/friend.json</loc>
+    
+    <lastmod>2025-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.saop.cc/p/35045/</loc>
     
     <lastmod>2025-10-20</lastmod>
@@ -23,15 +32,6 @@
     <loc>https://blog.saop.cc/mai/</loc>
     
     <lastmod>2025-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.saop.cc/friend.json</loc>
-    
-    <lastmod>2025-10-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -569,15 +569,6 @@
   </url>
   
   <url>
-    <loc>https://blog.saop.cc/p/85e4/</loc>
-    
-    <lastmod>2023-06-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.saop.cc/p/8d9f/</loc>
     
     <lastmod>2023-06-21</lastmod>
@@ -588,6 +579,15 @@
   
   <url>
     <loc>https://blog.saop.cc/p/f605/</loc>
+    
+    <lastmod>2023-06-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.saop.cc/p/85e4/</loc>
     
     <lastmod>2023-06-21</lastmod>
     
@@ -796,7 +796,7 @@
 
   <url>
     <loc>https://blog.saop.cc/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -804,105 +804,105 @@
   
   <url>
     <loc>https://blog.saop.cc/tags/%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E5%8E%9F%E7%A5%9E/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2025-10-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.saop.cc/tags/%E6%8A%BD%E5%8D%A1/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E5%B0%8F%E8%AF%B4/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.saop.cc/tags/%E6%8A%BD%E5%8D%A1/</loc>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E5%A5%BD%E5%BA%B7%E7%9A%84/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E6%8F%92%E4%BB%B6/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E6%96%87%E6%A1%A3/</loc>
-    <lastmod>2025-10-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.saop.cc/tags/%E4%B8%BB%E9%A2%98/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E9%95%9C%E5%83%8F/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.saop.cc/tags/%E4%B8%BB%E9%A2%98/</loc>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E8%90%9D%E8%8E%89/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E4%BB%A3%E7%90%86/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/tags/%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -911,49 +911,49 @@
   
   <url>
     <loc>https://blog.saop.cc/categories/%E7%A9%BA%E5%80%BC/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/categories/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/categories/%E8%BD%AC%E8%BD%BD/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/categories/%E5%8A%A0%E5%AF%86/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/categories/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.saop.cc/categories/%E7%B4%A2%E5%BC%95/</loc>
-    <lastmod>2025-10-28</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
