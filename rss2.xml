@@ -15,8 +15,31 @@
     <atom:link href="https://blog.saop.cc/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>LINK START!</description>
-    <pubDate>Tue, 23 Dec 2025 19:13:00 GMT</pubDate>
+    <pubDate>Thu, 05 Feb 2026 22:15:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>macOS Tahoe 如何用自己的视频做动态壁纸（替换 Aerial 方法）</title>
+      <link>https://blog.saop.cc/p/26508/</link>
+      <guid>https://blog.saop.cc/p/26508/</guid>
+      <pubDate>Thu, 05 Feb 2026 22:15:00 GMT</pubDate>
+      
+      <description>在 macOS 26.2（Tahoe）里，用 ffmpeg 把 webm 转成 mov，然后替换系统 aerials 文件夹里的文件，实现自定义视频动态壁纸。附带实际路径和注意事项，小心备份哦。</description>
+      
+      
+      
+      <content:encoded><![CDATA[<p>把自己的视频变成 macOS Tahoe 的动态壁纸，其实挺安静的一件事。</p><p>文件夹路径是<br /><code>~/Library/Application Support/com.apple.wallpaper/aerials/videos/</code></p><p>里面通常只有一两个 .mov 文件，比如<br /><code>4C108785-A7BA-422E-9C79-B0129F1D5550.mov</code>（445MB 左右那种）。</p><p>步骤像这样：</p><ol><li>先去「系统设置 &gt; 壁纸」，下载一个 Tahoe 的 Aerial 动态壁纸，让文件夹有内容。</li><li>备份原 .mov 文件到别处（很重要）。</li><li>如果你的视频是 webm，用 ffmpeg 转成 mov（视觉接近无损）：</li></ol><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ffmpeg <span class="token parameter variable">-i</span> input.webm <span class="token parameter variable">-c:v</span> libx264 <span class="token parameter variable">-crf</span> <span class="token number">18</span> <span class="token parameter variable">-preset</span> slow <span class="token parameter variable">-pix_fmt</span> yuv420p <span class="token parameter variable">-c:a</span> aac <span class="token parameter variable">-b:a</span> 192k output.mov<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>或者更“苹果味”的 ProRes：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">ffmpeg <span class="token parameter variable">-i</span> input.webm <span class="token parameter variable">-c:v</span> prores_ks <span class="token parameter variable">-profile:v</span> <span class="token number">3</span> <span class="token parameter variable">-c:a</span> pcm_s16le output.mov<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ol start="4"><li>把转好的文件重命名成和原文件一模一样的名字（比如 4C108785-… .mov）。</li><li>替换进去。</li><li>回到壁纸设置，选那个被替换的 Aerial，应该就能看到你的视频在锁屏和偶尔桌面动了。</li></ol><p>桌面通常只播放一小段（省电），解锁或切换空间会再动一下。锁屏会更完整地循环。<br />如果黑屏，检查一下转出的 mov 是否能用 QuickTime 正常播放。H.264 + AAC 最稳。<br />慢慢试，不急……弄坏了还原备份就好。<br />深夜里调壁纸的感觉，其实挺温柔的，像给屏幕换了一段属于自己的呼吸。</p>]]></content:encoded>
+      
+      
+      <category domain="https://blog.saop.cc/categories/%E6%8A%80%E6%9C%AF/">技术</category>
+      
+      
+      <category domain="https://blog.saop.cc/tags/%E7%B3%BB%E7%BB%9F/">系统</category>
+      
+      
+      <comments>https://blog.saop.cc/p/26508/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Podman Compose 常用命令速查</title>

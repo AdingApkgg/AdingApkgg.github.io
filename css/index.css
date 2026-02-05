@@ -199,6 +199,7 @@ template {
 #aside-content .aside-list > .aside-list-item .content > .name,
 #aside-content .aside-list > .aside-list-item .content > .title,
 #aside-content .aside-list > .aside-list-item .content > .comment,
+#page-header #site-title,
 #post-info .post-title,
 .pagination-related .info .info-1 .info-item-2,
 .pagination-related .info .info-2 .info-item-1,
@@ -1945,6 +1946,13 @@ blockquote > :last-child {
   --hlscrollbar-bg: #1f1f1f;
   --hlexpand-bg: linear-gradient(180deg, rgba(23,23,23,0.6), rgba(23,23,23,0.9));
 }
+@-moz-document url-prefix() {
+  scrollbar-color: var(--hlscrollbar-bg) transparent;
+}
+.container pre[class*='language-']::-webkit-scrollbar-thumb,
+.container figure.highlight.default pre::-webkit-scrollbar-thumb {
+  background: var(--hlscrollbar-bg);
+}
 .container pre[class*='language-'].line-numbers {
   position: relative;
   padding-left: 3.8em;
@@ -2068,12 +2076,6 @@ pre[class*='language-'] pre > code.highlight {
   outline: 0.4em solid #c94922;
   outline-offset: 0.4em;
 }
-@-moz-document url-prefix() {
-  scrollbar-color: var(--hlscrollbar-bg) transparent;
-}
-.container pre[class*='language-']::-webkit-scrollbar-thumb {
-  background: var(--hlscrollbar-bg);
-}
 .container pre[class*='language-']:not(.line-numbers) {
   padding: 10px 20px;
 }
@@ -2137,6 +2139,9 @@ pre[class*='language-'] pre > code.highlight {
 .container figure.highlight figcaption a:hover,
 .container figure.highlight .caption a:hover {
   border-bottom-color: var(--hl-color);
+}
+.container figure.highlight.default pre {
+  padding: 10px 20px;
 }
 .container figure.highlight.copy-true {
   -webkit-user-select: all;
@@ -4686,6 +4691,7 @@ pre[class*='language-'] pre > code.highlight {
   margin: 0;
   color: var(--white);
   font-size: 1.85em;
+  -webkit-line-clamp: 3;
 }
 @media screen and (min-width: 768px) {
   #page-header #site-title {
@@ -5703,13 +5709,13 @@ pre[class*='language-'] pre > code.highlight {
   display: none;
   padding: 0 0 15px;
   width: 100%;
-  border-radius: 6px;
 }
 .post-reward .reward-main .reward-all {
   display: inline-block;
   margin: 0;
   padding: 20px 10px;
   background: var(--reward-pop);
+  border-radius: 6px;
 }
 .post-reward .reward-main .reward-all:before {
   position: absolute;
