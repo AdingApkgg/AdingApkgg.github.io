@@ -1,5 +1,5 @@
 (() => {const CACHE_NAME = 'SaopBlogCache';
-const INFINITE_CACHE = Symbol();
+const BASE_URL = 'https://blog.saop.cc/';
 const VERSION_PATH = 'https://id.v3/';
 const ESCAPE = 0;
 const INVALID_KEY = 'X-Swpp-Invalid';
@@ -25,16 +25,15 @@ const matchCacheRule = (url) => {
         'cdn.staticfile.org',
         's1.hdslb.com'];
 
-        // @ts-ignore - INFINITE_CACHE 是 swpp 在 SW 上下文中注入的全局变量
-        if (cdnHosts.includes(hostname)) return INFINITE_CACHE;
+        // 负数 = 永久缓存（非本站资源等价于缓存 24h）
+        if (cdnHosts.includes(hostname)) return -1;
 
         // 本站资源
         if (hostname === 'blog.saop.cc') {
           // HTML 页面不缓存，保证内容实时更新
           if (pathname.endsWith('/') || pathname.endsWith('.html')) return null;
           // 字体文件 → 永久缓存
-          // @ts-ignore
-          if (/\.(woff2?|ttf|otf|eot)$/.test(pathname)) return INFINITE_CACHE;
+          if (/\.(woff2?|ttf|otf|eot)$/.test(pathname)) return -1;
           // JS / CSS → 缓存 3 天
           if (/\.(js|css)$/.test(pathname)) return 3 * 24 * 60 * 60 * 1000;
           // 图片 → 缓存 7 天
@@ -111,8 +110,16 @@ const isValidCache = (response, rule) => {
                 const headers = response.headers;
                 if (headers.has(INVALID_KEY))
                     return false;
-                if (rule === INFINITE_CACHE)
-                    return true;
+                // 只有本站资源允许永久缓存
+                if (rule < 0) {
+                    const url = response.url;
+                    const baseLength = BASE_URL.length;
+                    if (url.startsWith(BASE_URL) && (url.length === baseLength || url[baseLength] === '/')) {
+                        return true;
+                    }
+                    // 将rule设置为一天（24小时）
+                    rule = 24 * 60 * 60 * 1000;
+                }
                 const storage = headers.get(STORAGE_TIMESTAMP);
                 if (!storage)
                     return true;
