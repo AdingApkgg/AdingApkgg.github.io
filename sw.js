@@ -11,6 +11,9 @@ const matchCacheRule = (url) => {
         const hostname = url.hostname;
         const pathname = url.pathname;
 
+        // 视频/音频文件不缓存（SW 缓存会破坏 Range 请求，导致 seek 失败）
+        if (/\.(mp4|webm|ogg|mp3|wav|flac|m4a|mkv|avi|mov)$/i.test(pathname)) return null;
+
         // CDN 资源 → 永久缓存（URL 含版本号，内容不变）
         const cdnHosts = [
         'registry.npmmirror.com',
