@@ -4,5 +4,51 @@ Allow: /
 
 Disallow: /404.html
 
+# —— AI / LLM 爬虫：全部放行（GEO：争取被 AI 答案引擎抓取与引用）——
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# 站点地图
 Sitemap: https://blog.saop.cc/sitemap.xml
 Sitemap: https://blog.saop.cc/baidusitemap.xml
+
+# LLM 内容索引（llms.txt 提案）: https://blog.saop.cc/llms.txt

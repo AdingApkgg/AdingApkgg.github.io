@@ -1,0 +1,201 @@
+# 定の栈
+
+> LINK START!
+
+本文件为 AI / LLM 提供站点主要内容的结构化索引（llms.txt 提案格式）。站点：https://blog.saop.cc
+
+## DevOps
+
+- [AI 写得出功能，写不好 Dockerfile：Next.js 自托管踩坑记录](https://blog.saop.cc/p/48603/): standalone 镜像、镜像源、PM2 与 systemd、Service Worker，几个项目部署阶段来回的记录
+- [多个 AI 一起写代码时，我给它们划的边界](https://blog.saop.cc/p/45365/): 规则文件分裂、pre commit 门禁、AI 产出怎么过人工 review，记录几个项目的做法
+- [9 个 commit，没有一个人类作者：AI 独自写完一个项目之后](https://blog.saop.cc/p/13487/): 接手一个 git log 里全是同一个 AI author 的项目，记录它做得好的和做砸的
+- [Podman Compose 常用命令速查](https://blog.saop.cc/p/61957/): Podman Compose 的常用命令速查表
+
+## Web Development
+
+- [Next.js 渲染模式排查笔记：force-dynamic、hydration 与构建期没有数据库](https://blog.saop.cc/p/39074/): 记录几个 Next.js 项目里反复踩到的渲染模式问题
+- [让 Claude 少写错数据层：Prisma、Drizzle 和几条结构化做法](https://blog.saop.cc/p/18875/): 同一个 AI 在 Prisma、Drizzle 和裸 SQL 上犯的错完全不一样，记录下我用来兜底的几条做法
+- [我的 CLAUDE.md 只有一行：约定文件到底该写多少](https://blog.saop.cc/p/6494/): 从 create next app 到上线只用了 13 个 commit，顺便记录知识到底该落在哪儿
+- [同一个月，把主页搬出 Next.js，又把 Hugo 站搬进来](https://blog.saop.cc/p/42765/): 两件方向相反的迁移，顺便说清楚什么站需要服务端、什么站不需要
+- [Hugo 中文阅读时间计算模版](https://blog.saop.cc/p/35045/): 使用 Plain 方法与 strings.RuneCount 功能计算 CJK 语言阅读时间
+- [手动重加载不蒜子计数](https://blog.saop.cc/p/20816/): 手动重新加载 busuanzi 不蒜子计数
+- [网页添加 Live2D 看板娘](https://blog.saop.cc/p/3a1f/): 记录一下在 Hexo 框架的 NexT 与 Butterfly 主题站点上使用 CDN 方式引入安装 Live2D 看板娘 Asuna 的一些过程，也可支持通用 HTML 写法..
+- [基于 Butterfly 主题的轮播插件美化](https://blog.saop.cc/p/4d82/): 基于 Butterfly 主题的 SwiperBar 轮播插件，文章置顶滚动栏美化微调记录
+- [本站使用的一些 npm 模块插件](https://blog.saop.cc/p/5b01/): 分享些本站使用的 npm 模块插件
+- [Butterfly主题公告栏插入a标签按钮](https://blog.saop.cc/p/7a98/): 在Hexo的Butterfly主题aside公告栏里插入a标签按钮
+- [HTML转义字符对照表](https://blog.saop.cc/p/85e4/): HTML转义字符对照表
+- [HTTP Content-type对照表](https://blog.saop.cc/p/8d9f/): HTTP Content type对照表
+- [为你的博客更换鸿蒙字体](https://blog.saop.cc/p/9195/): 为你的Hexo博客的中英文更换上HarmonyOS Sans鸿蒙字体
+- [hexo-generator-feed插件中文文档](https://blog.saop.cc/p/f65f/): Hexo博客RSS订阅文件生成的插件中文文档
+- [hexo-filter-nofollow插件中文文档](https://blog.saop.cc/p/d4ad/): 为网站使用到的所有外链添加nofollow属性, 可以有效地加强网站SEO和防止权重流失
+- [Butterfly 主题 HTML5 音乐播放器 APlayer 美化调整](https://blog.saop.cc/p/8dc9/): Butterfly 主题 HTML5 播放器 Aplayer 的美化与调整过程记录，顺便 debug
+- [CDN整理汇总](https://blog.saop.cc/p/7d0c/): 常用的CDN整理汇总
+- [Hello World](https://blog.saop.cc/p/hello-world/): 你好，世界！
+
+## 技术教程
+
+- [macOS Tahoe 如何用自己的视频做动态壁纸（替换 Aerial 方法）](https://blog.saop.cc/p/26508/): 在 macOS 26.2（Tahoe）里，用 ffmpeg 把 webm 转成 mov，然后替换系统 aerials 文件夹里的文件，实现自定义视频动态壁纸。附带实际路径和注意事项，小心备份哦。
+- [部署Meting-API](https://blog.saop.cc/p/300/): 无服务器部署属于自己的Meting API服务
+- [解决打开IE强制跳转Edge浏览器](https://blog.saop.cc/p/caaa/): 解决打开Internet Explorer会强制跳转Microsoft Edge浏览器
+- [无服务器部署Google谷歌镜像](https://blog.saop.cc/p/bcec/): 利用Vercel平台的Web托管服务部署属于自己的Google谷歌镜像站，实现中国境内正常访问谷歌搜索引擎
+- [突破天翼校园网限制开启移动热点](https://blog.saop.cc/p/950c/): 突破天翼校园网开启移动热点被检测的限制
+
+## Linux
+
+- [创建 Swap 文件](https://blog.saop.cc/p/8360/): 如何在 Linux 系统中创建和使用 Swap 文件
+- [Arch Linux 个人常用命令记录](https://blog.saop.cc/p/21346/): 站长 Arch Linux 的一些常用命令记录
+
+## Technology
+
+- [Cursor 2025](https://blog.saop.cc/p/65212/): Cursor 2025 年度回顾
+
+## 视频游戏
+
+- [入坑舞萌 DX 历时两月终抵 w0 与首鸟加](https://blog.saop.cc/p/32982/): 入坑舞萌 maimai DX 历时两月终抵 w0 与 SSS+ 首鸟加
+
+## 教育科技
+
+- [多邻国 600 天连胜](https://blog.saop.cc/p/2668/): 多邻国坚持了 600 天连胜，可以卸载了！
+
+## 游戏
+
+- [原神五周年纪念](https://blog.saop.cc/p/40844/): 原神五周年追迹寻心纪念图册
+- [站长18周岁啦！](https://blog.saop.cc/p/19676/): 庆祝站长达到18周岁啦！人生最后一个大转折点
+- [Minecraft 15 周年骨折价补票入正](https://blog.saop.cc/p/3403/): Minecraft 我的世界 15 周年打骨折的价格让我蠢蠢欲动，从而补票入正了
+- [站长16周岁啦！](https://blog.saop.cc/p/c2ca/): 庆祝站长达到16周岁啦！人生的又一个转折点
+- [抽出1命万叶了！](https://blog.saop.cc/p/e481/): 【原神抽卡】抽出1命万叶了！
+
+## Celebration
+
+- [Asuna 成年生日](https://blog.saop.cc/p/21255/): Asuna 18 岁成年生日礼快乐
+
+## 游戏体验
+
+- [告别绝区零](https://blog.saop.cc/p/40152/): 记录退坑《绝区零》的点滴感受，分享抽卡截图留念，并期待《原神》UGC上线的全新乐趣。
+
+## 动漫
+
+- [一位动漫迷的追番日志与热情之旅](https://blog.saop.cc/p/29369/): 通过一位狂热动漫迷的视角，探索多彩的动漫世界！这篇博文记录了一份详尽的待追和已追动漫列表，从备受期待的《Clannad》、《魔法少女小圆》到已完成的《鬼灭之刃》、《刀剑神域》和《你的名字》等经典作品。…
+
+## 航空
+
+- [起飞日志](https://blog.saop.cc/p/10876/): 搞什么飞机，这有啥好记的...
+
+## Software Tools
+
+- [Reflector 镜像列表更新常用命令与配置文件](https://blog.saop.cc/p/59587/): 使用 Reflector 自动更新 Arch Linux 镜像列表，筛选中国地区最新且速度最快的 5 个镜像，并保存至 /etc/pacman.d/mirrorlist 文件，提升软件包下载效率。
+
+## 技术
+
+- [个人自用 rsync 文件同步常用命令](https://blog.saop.cc/p/30664/): 这里记录了些博主个人自用的 rsync 文件同步常用命令，以便博主随时在任何终端上查阅..
+
+## 游戏心得
+
+- [历时千日原神，深渊终抵满星](https://blog.saop.cc/p/59721/): 从入坑原神到现在，历时千日，终于能够顺畅的凹满深渊星星了！距离首次凹满星都过去好久了..
+
+## 科幻文学
+
+- [《三体III：死神永生》](https://blog.saop.cc/p/59189/): 《三体I：地球往事》、《三体II：黑暗森林》、《三体III：死神永生》 长篇小说转载
+- [《三体II：黑暗森林》](https://blog.saop.cc/p/23780/): 《三体I：地球往事》、《三体II：黑暗森林》、《三体III：死神永生》 长篇小说转载
+- [《三体I：地球往事》](https://blog.saop.cc/p/1890/): 《三体I：地球往事》、《三体II：黑暗森林》、《三体III：死神永生》 长篇小说转载
+- [《流浪地球》](https://blog.saop.cc/p/7dab/): 《流浪地球》中篇小说转载
+
+## 梦境体验
+
+- [记第二次清醒控梦体验](https://blog.saop.cc/p/10db/): 记录一下前段时间经历自己人生中第二次有关于清醒梦的控梦体验过程..
+
+## 游戏攻略
+
+- [晶蝶终于收集到了x9999上限！](https://blog.saop.cc/p/26b4/): 历时许久，原神的晶蝶数终于收集到了9999个！吃满背包的单个物品存储上限数，针布戳..
+- [原神 mod 模组安装教程](https://blog.saop.cc/p/704e/): 关于原神 mod 模组安装的详细教程
+- [原神胡桃复刻抽卡记录](https://blog.saop.cc/p/7cb2/): 分享原神胡桃复刻抽卡记录的过程
+
+## 博客
+
+- [博客成立一周年了！](https://blog.saop.cc/p/8b7e/): 庆祝博客成立的首个周年！抽送一些东西
+
+## 游戏更新
+
+- [终于出雾切辣！](https://blog.saop.cc/p/d9c4/): 芜湖 ，历经两年左右，心心念念的雾切终于出辣！2024年的首日就是好运，在蓝池顺便也整出了一直没有的莫娜！
+
+## 科技产品评测
+
+- [双11剁手铠侠RC20固态体验](https://blog.saop.cc/p/1cf1/): 因旧固态步入终年，所以购入新固态硬盘“铠侠RC20”继续让电脑发光发热！
+
+## 网站管理
+
+- [Twikoo评论系统备份更改数据](https://blog.saop.cc/p/3ef1/): Twikoo评论系统，备份更改数据评论的数据
+
+## 编程和技术
+
+- [解决Hexo推送时的spawn failed报错](https://blog.saop.cc/p/a69f/): 解决Hexo使用hexo d命令推送时出现的spawn failed报错
+
+## Gaming
+
+- [原神60级毕业啦！](https://blog.saop.cc/p/7806/): 历经614天升级漫漫路，终于原神60级毕业啦！
+
+## 软件工具
+
+- [显示器屏幕亮度调节工具推荐](https://blog.saop.cc/p/245f/): 使用Monitorian工具调节显示器屏幕亮度
+
+## 动画娱乐
+
+- [关于niconico上兄贵本篇的收集](https://blog.saop.cc/p/7b61/): 关于niconico动画网站上兄贵本篇的收集
+
+## 网络配置
+
+- [常用代理设置汇总](https://blog.saop.cc/p/2633/): 常用的代理设置指令汇总
+
+## 网络技术
+
+- [HTTP状态码释义](https://blog.saop.cc/p/f605/): 常见HTTP状态码释义
+
+## 科幻
+
+- [有关科技创新的未来世界的小说。(ChatGPT)](https://blog.saop.cc/p/cf72/): 一个由ChatGPT 3.5 turbo编写的有关科技创新未来世界的小说。
+
+## 信息技术
+
+- [提问的智慧](https://blog.saop.cc/p/8778/): 在黑客的世界里，当你拋出一个技术问题时，最终是否能得到有用的回答，往往取决于你所提问和追问的方式。本指南将教你如何正确地提问以获得你满意的答案。
+
+## 人工智能
+
+- [ChatGPT注册&使用&调教&镜像整合](https://blog.saop.cc/p/cb39/): ChatGPT 3.5的注册与使用和调教&镜像整合
+
+## 技术文档
+
+- [Markdown 语法与外置标签写法汇总](https://blog.saop.cc/p/5561/): 本文汇总 Markdown 格式以及外置标签在网页端的渲染效果，可作为文档进行查询
+
+## WordPress
+
+- [WordPress自用插件和主题推荐](https://blog.saop.cc/p/22/): 关于WordPress自用的一些插件和主题推荐
+- [使 WP 的 URL 链接支持中文](https://blog.saop.cc/p/7e2d/): 使 WordPress 的 URL 链接支持中文教程
+
+## 技术指南
+
+- [Hexo 下 Markdown 语法失效总结](https://blog.saop.cc/p/b45a/): Hexo 框架下的 Markdown 语法失效问题总结
+
+## 软件开发
+
+- [Git常用基本命令使用详细大全](https://blog.saop.cc/p/4b08/): 亿些Git常用基本命令使用详细大全
+- [VScode递增减数字或字母插件](https://blog.saop.cc/p/e97d/): VScode同时编辑多行，插入递增数字，递减数字，递增字母，递减字母插件
+
+## 计算机科学
+
+- [ASCII 字符画生成](https://blog.saop.cc/p/c9df/): 生成 ASCII 字符画字符图案
+
+## 游戏帮助
+
+- [原神私服常见问题](https://blog.saop.cc/p/8b22/): 原神私服常见问题解决
+
+## Game Guides
+
+- [原神私服常用指令](https://blog.saop.cc/p/5b6e/): 原神私服常用指令分享
+
+## 游戏教程
+
+- [原神私服游玩教程整合](https://blog.saop.cc/p/3155/): 原神私服游玩教程整合与相关工具的使用
+
+## 软件安装
+
+- [安装 ImageMagick 扩展](https://blog.saop.cc/p/8ba6/): 安装ImageMagick扩展以供WP使用
