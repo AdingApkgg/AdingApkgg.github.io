@@ -142,13 +142,13 @@
 
 - [关于niconico上兄贵本篇的收集](https://blog.saop.cc/p/7b61/): 关于niconico动画网站上兄贵本篇的收集
 
-## 网络配置
-
-- [常用代理设置汇总](https://blog.saop.cc/p/2633/): 常用的代理设置指令汇总
-
 ## 网络技术
 
 - [HTTP状态码释义](https://blog.saop.cc/p/f605/): 常见HTTP状态码释义
+
+## 网络配置
+
+- [常用代理设置汇总](https://blog.saop.cc/p/2633/): 常用的代理设置指令汇总
 
 ## 科幻
 
