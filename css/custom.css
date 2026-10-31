@@ -1249,6 +1249,20 @@ body {
   position: relative;
 }
 
+/* APlayer.min.css 是 media="print" 异步加载的，赶不上时 .aplayer 会退回上面的
+   position:relative，200 条播放列表跟着进文档流，页面被撑高六七千像素。钉死浮层。 */
+.aplayer.aplayer-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  z-index: 99;
+  overflow: visible;
+  max-width: 400px;
+  box-shadow: none;
+}
+
 .aplayer.aplayer-fixed .aplayer-lrc:after,
 .aplayer.aplayer-fixed .aplayer-lrc:before {
   display: none;
@@ -1378,5 +1392,30 @@ body {
   100% {
     transform: translate(0, -105%);
     opacity: 1;
+  }
+}
+
+.page.type-shuoshuo #article-container .shuoshuo-item {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.page.type-shuoshuo #article-container .shuoshuo-item:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .page.type-shuoshuo #article-container .shuoshuo-item {
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .page.type-shuoshuo #article-container .shuoshuo-item:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+
+/* 说说页的分页条在窄屏下会把输入框挤没，给点收缩余地 */
+@media (max-width: 768px) {
+  .page.type-shuoshuo .shuoshuo-navigation {
+    gap: 6px;
   }
 }

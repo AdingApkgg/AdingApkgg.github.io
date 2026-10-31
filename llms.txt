@@ -6,6 +6,10 @@
 
 ## DevOps
 
+- [八条线同时跑的时候，我在干什么](https://blog.saop.cc/p/30870/): 用 AI 并行维护一堆技术栈完全不同的项目：规则怎么分层、任务怎么隔离、代价记在哪
+- [拿线上停机换来的那条注释](https://blog.saop.cc/p/18687/): 一次「安全的失败方向」判断错了，把站点整下线；记录一个迁移文件的锁策略怎么改
+- [把密钥挪出 _config.yml 之后，每条命令都得记得带上另一份配置](https://blog.saop.cc/p/58604/): 一次配置去敏、llms.txt 与 AI 爬虫放行的记录，以及「公开的配置」和「能构建的配置」不是一回事
+- [从 Vercel 搬走之后，平台替我兜的底一条条露出来了](https://blog.saop.cc/p/95117/): 一次 VPS 自托管迁移里的两夜：0.0.0.0 跳转、镜像标签、BuildKit 缓存、空对空校验与公开桶备份
 - [AI 写得出功能，写不好 Dockerfile：Next.js 自托管踩坑记录](https://blog.saop.cc/p/48603/): standalone 镜像、镜像源、PM2 与 systemd、Service Worker，几个项目部署阶段来回的记录
 - [多个 AI 一起写代码时，我给它们划的边界](https://blog.saop.cc/p/45365/): 规则文件分裂、pre commit 门禁、AI 产出怎么过人工 review，记录几个项目的做法
 - [9 个 commit，没有一个人类作者：AI 独自写完一个项目之后](https://blog.saop.cc/p/13487/): 接手一个 git log 里全是同一个 AI author 的项目，记录它做得好的和做砸的
@@ -13,6 +17,14 @@
 
 ## Web Development
 
+- [合并之后 typecheck 是绿的](https://blog.saop.cc/p/28388/): 一次没冲突、没报错的 merge 把 292 行广告归因运行时整段删掉，靠一行 grep 才发现；顺手记下把 8 个事件分车道时定的那些规则
+- [隧道后面的服务器以为自己在 http 里](https://blog.saop.cc/p/19237/): 反向代理进来之后 origin 变 http、容器里没有宿主机的代理；两个都在运行时配置解决
+- [让 Service Worker 自己下台](https://blog.saop.cc/p/10258/): 一个还在跑着旧缓存的 SW，既不能直接删，也不能留着；记录一次 1107 行删除的退役过程
+- [把 EXISTS 从 FILTER 里拿出来之后](https://blog.saop.cc/p/23192/): 一条统计 SQL 从 1.5 秒降到 0.64 秒，代价是发现 Postgres 的通用计划和 JIT 各有自己的时机
+- [188 个播放器，0 个能响：一次主题升级暴露的旧故障](https://blog.saop.cc/p/74213/): Butterfly 5.7 移除 APlayer 支持之后，从 0 修到 167，以及默认后端早就停服这件事
+- [一个日期输入框的跨年陷阱：保存前先把那一年读回来](https://blog.saop.cc/p/63890/): 公开的每日次数与年度热力图，以及 0 既是值又是默认值时最容易被覆盖的东西
+- [限流挡在写行之前：一次验证码被自己作废的排查](https://blog.saop.cc/p/82406/): better auth 的 OTP 行、找回密码的注册预言机，以及「拒绝必须有出路」
+- [客户端 CSV 就是唯一事实来源：C1 到 C68，把数值一条条交还回去](https://blog.saop.cc/p/71342/): 一个私服前端停止手抄数值的 68 步，以及怎么把「读没读」做成会红的 oracle
 - [Next.js 渲染模式排查笔记：force-dynamic、hydration 与构建期没有数据库](https://blog.saop.cc/p/39074/): 记录几个 Next.js 项目里反复踩到的渲染模式问题
 - [让 Claude 少写错数据层：Prisma、Drizzle 和几条结构化做法](https://blog.saop.cc/p/18875/): 同一个 AI 在 Prisma、Drizzle 和裸 SQL 上犯的错完全不一样，记录下我用来兜底的几条做法
 - [我的 CLAUDE.md 只有一行：约定文件到底该写多少](https://blog.saop.cc/p/6494/): 从 create next app 到上线只用了 13 个 commit，顺便记录知识到底该落在哪儿
@@ -23,8 +35,8 @@
 - [基于 Butterfly 主题的轮播插件美化](https://blog.saop.cc/p/4d82/): 基于 Butterfly 主题的 SwiperBar 轮播插件，文章置顶滚动栏美化微调记录
 - [本站使用的一些 npm 模块插件](https://blog.saop.cc/p/5b01/): 分享些本站使用的 npm 模块插件
 - [Butterfly主题公告栏插入a标签按钮](https://blog.saop.cc/p/7a98/): 在Hexo的Butterfly主题aside公告栏里插入a标签按钮
-- [HTML转义字符对照表](https://blog.saop.cc/p/85e4/): HTML转义字符对照表
 - [HTTP Content-type对照表](https://blog.saop.cc/p/8d9f/): HTTP Content type对照表
+- [HTML转义字符对照表](https://blog.saop.cc/p/85e4/): HTML转义字符对照表
 - [为你的博客更换鸿蒙字体](https://blog.saop.cc/p/9195/): 为你的Hexo博客的中英文更换上HarmonyOS Sans鸿蒙字体
 - [hexo-generator-feed插件中文文档](https://blog.saop.cc/p/f65f/): Hexo博客RSS订阅文件生成的插件中文文档
 - [hexo-filter-nofollow插件中文文档](https://blog.saop.cc/p/d4ad/): 为网站使用到的所有外链添加nofollow属性, 可以有效地加强网站SEO和防止权重流失
@@ -142,13 +154,13 @@
 
 - [关于niconico上兄贵本篇的收集](https://blog.saop.cc/p/7b61/): 关于niconico动画网站上兄贵本篇的收集
 
-## 网络技术
-
-- [HTTP状态码释义](https://blog.saop.cc/p/f605/): 常见HTTP状态码释义
-
 ## 网络配置
 
 - [常用代理设置汇总](https://blog.saop.cc/p/2633/): 常用的代理设置指令汇总
+
+## 网络技术
+
+- [HTTP状态码释义](https://blog.saop.cc/p/f605/): 常见HTTP状态码释义
 
 ## 科幻
 
