@@ -208,8 +208,8 @@
 
 ### リファレンス
 
-- [HTMLエスケープ文字対応表](https://blog.saop.cc/ja/p/85e4/): HTMLエスケープ文字対応表
 - [HTTP Content-type 対照表](https://blog.saop.cc/ja/p/8d9f/): HTTP Content type 対照表
+- [HTMLエスケープ文字対応表](https://blog.saop.cc/ja/p/85e4/): HTMLエスケープ文字対応表
 - [HTTPステータスコードの意味](https://blog.saop.cc/ja/p/f605/): 一般的なHTTPステータスコードの意味
 - [hexo-generator-feedプラグインの中国語ドキュメント](https://blog.saop.cc/ja/p/f65f/): HexoブログのRSS購読ファイルを生成するプラグインの中国語ドキュメント
 - [hexo-filter-nofollowプラグインの中国語ドキュメント](https://blog.saop.cc/ja/p/d4ad/): サイトで使用されるすべての外部リンクにnofollow属性を追加し、サイトのSEOを効果的に強化するとともに、リンクパワーの流出を防ぎます
