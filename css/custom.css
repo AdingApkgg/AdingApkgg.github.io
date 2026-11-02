@@ -1419,3 +1419,210 @@ body {
     gap: 6px;
   }
 }
+
+/* ===== 三语（zh / ja / en）排版 =====
+   日文页 <html lang="ja">，中文页 <html lang="zh-CN">，英文页 lang="en"（不动）。 */
+
+/* 语言字体栈。主题默认栈把 PingFang SC、Hiragino Sans GB、微软雅黑排在前面，
+   日文汉字因此会拿到简体字形；这里按 :lang() 分语言覆盖。
+   中文栈与主题栈保持同序（只在末尾补足简体回退字体），中文页渲染不变。 */
+:root {
+  --cjk-font-ja: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic",
+    YuGothic, Meiryo, "Noto Sans JP", "Source Han Sans JP", "Noto Sans CJK JP",
+    HarmonyOS_Regular, -apple-system, "Quicksand", "Segoe UI", sans-serif;
+  --cjk-font-zh: HarmonyOS_Regular, -apple-system, "Quicksand",
+    "Nimbus Roman No9 L", "PingFang SC", "Hiragino Sans GB", "Noto Serif SC",
+    "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC",
+    "WenQuanYi Micro Hei", "ST Heiti", sans-serif;
+}
+
+/* 排除图标字体元素：Font Awesome 的 .fa-solid 、.fas 、.far 、.fab 等，以及各类
+   icon 相关类名（如 .iconfont 、.aplayer-icon）自带 font-family，
+   如果被换成 CJK 字体，图标会变成空白方块。
+   custom.css 在主题 CSS 和 Font Awesome CSS 之后加载，同权重时本文件生效，
+   所以这里必须显式排除。代码块靠更高优先级的主题规则（含 !important）保住等宽字体。 */
+:lang(ja):not([class*="fa" i]):not([class*="icon" i]) {
+  font-family: var(--cjk-font-ja);
+}
+
+:lang(zh):not([class*="fa" i]):not([class*="icon" i]),
+:lang(zh-CN):not([class*="fa" i]):not([class*="icon" i]) {
+  font-family: var(--cjk-font-zh);
+}
+
+/* 日文正文：禁则处理用 strict；中西文自动间距显式写成 normal
+   （等价于 ideograph-alpha + ideograph-numeric），不依赖浏览器默认值，
+   也绝不在正文里插入空白字符。不认识该属性的旧浏览器会整条忽略。 */
+:lang(ja) {
+  line-break: strict;
+  text-autospace: normal;
+}
+
+/* 日文标题：习惯字距 0.05em + 短语级断行。
+   word-break: auto-phrase 是渐进增强，不支持就忽略；日文绝不用 break-all。 */
+:lang(ja) :is(h1, h2, h3, h4, h5, h6) {
+  letter-spacing: 0.05em;
+  line-break: strict;
+  word-break: auto-phrase;
+}
+
+/* 标题里嵌入的西文 / 代码片段恢复常规字距。
+   纯西文片段若没有语言标记，CSS 无法识别，需标注 lang="en" 才能命中；
+   代码元素则始终命中。 */
+:lang(ja) :is(h1, h2, h3, h4, h5, h6) :is(code, kbd, samp, var, :lang(en)) {
+  letter-spacing: normal;
+}
+
+/* 日文不用合成斜体（日文字体没有真正的意大利字形，斜体只是机械倾斜），
+   改用字重强调；同样排除图标字体。 */
+:lang(ja) em,
+:lang(ja) i:not([class*="fa" i]):not([class*="icon" i]) {
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* ===== 三语切换器 =====
+   scripts/i18n-render.js 在文章页 </body> 前注入，固定悬浮在右上角。
+   类名契约（注入的 HTML 必须一致）：
+   <nav class="i18n-switcher" aria-label="语言">
+     <a href="…" hreflang="zh-CN">中文</a>
+     <a href="…" hreflang="ja" class="is-active" aria-current="page">日本語</a>
+     <span class="is-missing">English</span>
+   </nav>
+   · .i18n-switcher      容器
+   · 容器内 <a>          可切换的语种
+   · <a>.is-active       当前语种
+   · .is-missing         无该语种译文（惰性 span，不可点） */
+
+/* 导航栏里紧挨搜索按钮的一项，桌面和移动端都在导航里，不做独立悬浮。
+   移动端主题只收起 .menus_items 和搜索按钮文字，搜索与日夜按钮本身仍在，
+   所以这里不需要换形态，只把尺寸压紧，避免窄屏挤不下。 */
+.i18n-switcher {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  padding: 2px 4px;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: nowrap;
+  border: 1px solid var(--dark-grey);
+  border-radius: 999px;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .i18n-switcher {
+    margin-right: 4px;
+    padding: 1px 2px;
+    font-size: 12px;
+  }
+
+  .i18n-switcher a,
+  .i18n-switcher .is-active,
+  .i18n-switcher .is-missing {
+    padding: 1px 4px;
+  }
+
+  .i18n-switcher > * + *::before {
+    margin-right: 4px;
+  }
+}
+
+/* 三项之间画竖线分隔（用伪元素而非 border，避免圆角容器上出现弧线） */
+.i18n-switcher > * + *::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 0.9em;
+  margin-right: 8px;
+  vertical-align: -0.1em;
+  background-color: var(--dark-grey);
+}
+
+/* <a> 可点；当前语言无版本文件、或该语言无译文时，i18n-render.js 会输出
+   span.is-active / span.is-missing，所以三种都要有相同的盒模型与字色 */
+.i18n-switcher a,
+.i18n-switcher .is-active,
+.i18n-switcher .is-missing {
+  display: inline-block;
+  padding: 1px 10px;
+  color: var(--font-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+/* 悬停：主题色 + 下划线，文字色不改，深浅背景都看得清 */
+.i18n-switcher a:hover {
+  color: var(--theme-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* 当前语种：加粗 + 主题色下划线 */
+.i18n-switcher .is-active {
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--theme-color);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  cursor: default;
+}
+
+/* 无译文：不可点，压暗 */
+.i18n-switcher .is-missing {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* 各语种标签用各自的字体栈（中文页上的「日本語」不再用简体字形） */
+.i18n-switcher [hreflang="ja"] {
+  font-family: var(--cjk-font-ja);
+}
+
+.i18n-switcher [hreflang="zh-CN"],
+.i18n-switcher [hreflang="zh"] {
+  font-family: var(--cjk-font-zh);
+}
+
+/* 黑夜模式：底色与文字已走主题变量，这里只把阴影加深，浮层才压得住暗背景 */
+[data-theme="dark"] .i18n-switcher {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+}
+
+/* 窄屏：缩小并贴边，避免压住标题与正文 */
+@media (max-width: 768px) {
+  .i18n-switcher {
+    top: 64px;
+    right: 8px;
+    font-size: 12px;
+  }
+
+  .i18n-switcher a,
+  .i18n-switcher .is-active,
+  .i18n-switcher .is-missing {
+    padding: 1px 7px;
+  }
+
+  .i18n-switcher > * + *::before {
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .i18n-switcher {
+    font-size: 11px;
+  }
+
+  .i18n-switcher a,
+  .i18n-switcher .is-active,
+  .i18n-switcher .is-missing {
+    padding: 1px 5px;
+  }
+}
+
+/* 浮动控件不进打印稿 */
+@media print {
+  .i18n-switcher {
+    display: none;
+  }
+}

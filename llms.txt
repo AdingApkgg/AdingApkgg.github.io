@@ -4,7 +4,9 @@
 
 本文件为 AI / LLM 提供站点主要内容的结构化索引（llms.txt 提案格式）。站点：https://blog.saop.cc
 
-## 技术开发
+## 中文
+
+### 技术开发
 
 - [八条线同时跑的时候，我在干什么](https://blog.saop.cc/p/30870/): 用 AI 并行维护一堆技术栈完全不同的项目：规则怎么分层、任务怎么隔离、代价记在哪
 - [合并之后 typecheck 是绿的](https://blog.saop.cc/p/28388/): 一次没冲突、没报错的 merge 把 292 行广告归因运行时整段删掉，靠一行 grep 才发现；顺手记下把 8 个事件分车道时定的那些规则
@@ -43,7 +45,7 @@
 - [安装 ImageMagick 扩展](https://blog.saop.cc/p/8ba6/): 安装ImageMagick扩展以供WP使用
 - [Hello World](https://blog.saop.cc/p/hello-world/): 你好，世界！
 
-## 工具与系统
+### 工具与系统
 
 - [macOS Tahoe 如何用自己的视频做动态壁纸（替换 Aerial 方法）](https://blog.saop.cc/p/26508/): 在 macOS 26.2（Tahoe）里，用 ffmpeg 把 webm 转成 mov，然后替换系统 aerials 文件夹里的文件，实现自定义视频动态壁纸。附带实际路径和注意事项，小心备份哦。
 - [创建 Swap 文件](https://blog.saop.cc/p/8360/): 如何在 Linux 系统中创建和使用 Swap 文件
@@ -61,7 +63,7 @@
 - [VScode递增减数字或字母插件](https://blog.saop.cc/p/e97d/): VScode同时编辑多行，插入递增数字，递减数字，递增字母，递减字母插件
 - [ASCII 字符画生成](https://blog.saop.cc/p/c9df/): 生成 ASCII 字符画字符图案
 
-## 游戏
+### 游戏
 
 - [入坑舞萌 DX 历时两月终抵 w0 与首鸟加](https://blog.saop.cc/p/32982/): 入坑舞萌 maimai DX 历时两月终抵 w0 与 SSS+ 首鸟加
 - [原神五周年纪念](https://blog.saop.cc/p/40844/): 原神五周年追迹寻心纪念图册
@@ -80,20 +82,20 @@
 - [原神私服常用指令](https://blog.saop.cc/p/5b6e/): 原神私服常用指令分享
 - [原神私服游玩教程整合](https://blog.saop.cc/p/3155/): 原神私服游玩教程整合与相关工具的使用
 
-## 生活记录
+### 生活记录
 
 - [多邻国 600 天连胜](https://blog.saop.cc/p/2668/): 多邻国坚持了 600 天连胜，可以卸载了！
 - [起飞日志](https://blog.saop.cc/p/10876/): 搞什么飞机，这有啥好记的...
 - [记第二次清醒控梦体验](https://blog.saop.cc/p/10db/): 记录一下前段时间经历自己人生中第二次有关于清醒梦的控梦体验过程..
 - [博客成立一周年了！](https://blog.saop.cc/p/8b7e/): 庆祝博客成立的首个周年！抽送一些东西
 
-## 二次元
+### 二次元
 
 - [Asuna 成年生日](https://blog.saop.cc/p/21255/): Asuna 18 岁成年生日礼快乐
 - [一位动漫迷的追番日志与热情之旅](https://blog.saop.cc/p/29369/): 通过一位狂热动漫迷的视角，探索多彩的动漫世界！这篇博文记录了一份详尽的待追和已追动漫列表，从备受期待的《Clannad》、《魔法少女小圆》到已完成的《鬼灭之刃》、《刀剑神域》和《你的名字》等经典作品。…
 - [关于niconico上兄贵本篇的收集](https://blog.saop.cc/p/7b61/): 关于niconico动画网站上兄贵本篇的收集
 
-## 文学与书评
+### 文学与书评
 
 - [《三体III：死神永生》](https://blog.saop.cc/p/59189/): 《三体I：地球往事》、《三体II：黑暗森林》、《三体III：死神永生》 长篇小说转载
 - [《三体II：黑暗森林》](https://blog.saop.cc/p/23780/): 《三体I：地球往事》、《三体II：黑暗森林》、《三体III：死神永生》 长篇小说转载
@@ -101,7 +103,7 @@
 - [《三体I：地球往事》](https://blog.saop.cc/p/1890/): 《三体I：地球往事》、《三体II：黑暗森林》、《三体III：死神永生》 长篇小说转载
 - [《流浪地球》](https://blog.saop.cc/p/7dab/): 《流浪地球》中篇小说转载
 
-## 参考手册
+### 参考手册
 
 - [HTML转义字符对照表](https://blog.saop.cc/p/85e4/): HTML转义字符对照表
 - [HTTP Content-type对照表](https://blog.saop.cc/p/8d9f/): HTTP Content type对照表
@@ -112,3 +114,219 @@
 - [Hexo 下 Markdown 语法失效总结](https://blog.saop.cc/p/b45a/): Hexo 框架下的 Markdown 语法失效问题总结
 - [CDN整理汇总](https://blog.saop.cc/p/7d0c/): 常用的CDN整理汇总
 - [使 WP 的 URL 链接支持中文](https://blog.saop.cc/p/7e2d/): 使 WordPress 的 URL 链接支持中文教程
+
+## 日本語
+
+### 技術開発
+
+- [8つの作業ラインが同時に走っているとき、私は何をしているのか](https://blog.saop.cc/ja/p/30870/): AI を使って技術スタックが全く異なる多数のプロジェクトを並行して保守する：ルールをどう階層化するか、タスクをどう分離するか、コストをどこに記録するか
+- [マージ後、typecheck はグリーンだった](https://blog.saop.cc/ja/p/28388/): コンフリクトもエラーもない一度のマージが、292行の広告アトリビューション実行時コードを丸ごと削除していた。grep一行でようやく気づいた話と、8つのイベントをレーン分けする際に決めたルールの記録
+- [トンネルの後ろにあるサーバーは自分がhttpの中にいると思っている](https://blog.saop.cc/ja/p/19237/): リバースプロキシを通した後、originがhttpになり、コンテナ内にホストのプロキシがない。どちらも実行時設定で解決する
+- [Service Worker を自ら降板させる](https://blog.saop.cc/ja/p/10258/): 古いキャッシュでまだ動いている SW は、そのまま削除するわけにもいかず、残しておくわけにもいかない。1107 行の削除に至った退役までの過程を記録する
+- [EXISTS を FILTER の外に出したあと](https://blog.saop.cc/ja/p/23192/): 統計用 SQL が 1.5 秒から 0.64 秒に短縮。その代わりに、Postgres の汎用プランと JIT にはそれぞれ独自のタイミングがあると気づくことになった
+- [本番停止と引き換えに得たあのコメント](https://blog.saop.cc/ja/p/18687/): 「安全な失敗方向」の判断を一度誤り、サイト全体をダウンさせてしまった。マイグレーションファイルのロック戦略をどう変更したかの記録
+- [_config.yml から鍵を移した後、すべてのコマンドで別の設定を指定するのを忘れられなくなった](https://blog.saop.cc/ja/p/58604/): 設定からの機密情報除去、llms.txt と AI クローラーの許可に関する記録、そして「公開される設定」と「ビルドできる設定」は別物だということ
+- [188個のプレイヤー、0個が鳴る：テーマアップグレードで露呈した旧不具合](https://blog.saop.cc/ja/p/74213/): Butterfly 5.7 で APlayer サポートが削除された後、0 から 167 まで修正した話、そしてデフォルトバックエンドがとっくにサービス停止していた件
+- [日付入力欄の年越しトラップ：保存する前にその年を読み戻す](https://blog.saop.cc/ja/p/63890/): 公開された毎日の回数と年間ヒートマップ、そして 0 が値でもありデフォルト値でもあるときに最も上書きされやすいもの
+- [Vercel から移った後、プラットフォームが代わりに支えていた部分が一つずつ露わになってきた](https://blog.saop.cc/ja/p/95117/): VPS セルフホスティング移行の二夜：0.0.0.0 リダイレクト、イメージタグ、BuildKit キャッシュ、空対空検証、公開バケットのバックアップ
+- [レート制限が書き込み行の前に立ちはだかる：確認コードが自ら無効化された一件の調査](https://blog.saop.cc/ja/p/82406/): better auth の OTP 行、パスワードリセットの登録オラクル、そして「拒否には必ず出口が必要」
+- [クライアント CSV こそが唯一の真実の情報源：C1 から C68 まで、数値を一つずつ返していく](https://blog.saop.cc/ja/p/71342/): プライベートサーバーのフロントエンドが数値を手作業で写すのをやめるまでの 68 ステップと、「読んだかどうか」を赤くなる oracle にする方法
+- [AIは機能を書けてもDockerfileはうまく書けない：Next.jsセルフホストのつまずき記録](https://blog.saop.cc/ja/p/48603/): standaloneイメージ、イメージミラー、PM2とsystemd、Service Worker、いくつかのプロジェクトのデプロイ段階で試行錯誤した記録
+- [複数のAIが一緒にコードを書くとき、私が引いた境界線](https://blog.saop.cc/ja/p/45365/): ルールファイルの分裂、pre commitゲート、AIの成果物をどう人間のレビューに通すか、いくつかのプロジェクトでのやり方を記録
+- [9 個のコミット、人間の作者は一人もいない：AI が独力で一つのプロジェクトを書き終えたその後](https://blog.saop.cc/ja/p/13487/): git log がすべて同じ AI author で埋め尽くされたプロジェクトを引き継ぎ、AI がうまくやったことと失敗したことを記録する
+- [Next.js レンダリングモード調査メモ：force-dynamic、ハイドレーション、そしてビルド時にデータベースがない件](https://blog.saop.cc/ja/p/39074/): Next.js プロジェクトで繰り返し遭遇したレンダリングモードの問題をいくつか記録したものです
+- [Claude にデータ層のミスを減らさせる：Prisma、Drizzle と数条の構造化されたやり方](https://blog.saop.cc/ja/p/18875/): 同じ AI でも Prisma、Drizzle、生の SQL では犯すミスがまったく異なる。私が保険として使っている数条のやり方を記録しておく
+- [私のCLAUDE.mdはたった1行：規約ファイルには一体何を書くべきか](https://blog.saop.cc/ja/p/6494/): create next appから公開までわずか13コミット。ついでに、知識は一体どこに残すべきかを記録する
+- [同じ月に、トップページを Next.js から移し、Hugo サイトをこちらへ移した](https://blog.saop.cc/ja/p/42765/): 方向性の異なる2つの移行。ついでに、どんなサイトにサーバー側が必要で、どんなサイトには不要なのかをはっきりさせる
+- [Podman Compose よく使うコマンド早見表](https://blog.saop.cc/ja/p/61957/): Podman Compose のよく使うコマンド早見表
+- [Hugo 中国語の読了時間計算テンプレート](https://blog.saop.cc/ja/p/35045/): Plain メソッドと strings.RuneCount 機能を使用して CJK 言語の読了時間を計算
+- [不蒜子カウントを手動で再読み込み](https://blog.saop.cc/ja/p/20816/): busuanzi 不蒜子カウントを手動で再読み込み
+- [WebページにLive2D看板娘を追加](https://blog.saop.cc/ja/p/3a1f/): HexoフレームワークのNexTとButterflyテーマサイトでCDN方式を使ってLive2D看板娘アスナを導入・インストールした際の過程を少し記録します。汎用HTMLの書き方にも対応できます。
+- [Twikooコメントシステムのバックアップとデータ変更](https://blog.saop.cc/ja/p/3ef1/): Twikooコメントシステムで、コメントデータのバックアップと変更を行う
+- [Hexoプッシュ時のspawn failedエラーの解決](https://blog.saop.cc/ja/p/a69f/): Hexoでhexo dコマンドを使用してプッシュする際に発生するspawn failedエラーの解決
+- [Butterfly テーマのカルーセルプラグイン美化](https://blog.saop.cc/ja/p/4d82/): Butterfly テーマの SwiperBar カルーセルプラグイン、記事のピン留めスクロールバーを美化・微調整した記録
+- [当サイトで使用しているいくつかの npm モジュールプラグイン](https://blog.saop.cc/ja/p/5b01/): 当サイトで使用している npm モジュールプラグインをいくつか紹介します
+- [Butterflyテーマの告知欄にaタグボタンを挿入する](https://blog.saop.cc/ja/p/7a98/): HexoのButterflyテーマのaside告知欄にaタグボタンを挿入する
+- [Meting-APIをデプロイ](https://blog.saop.cc/ja/p/300/): サーバーレスで自分専用のMeting APIサービスをデプロイする
+- [ブログのフォントをHarmonyOS Sansに変更する](https://blog.saop.cc/ja/p/9195/): Hexoブログの中国語・英語フォントをHarmonyOS Sansに変更します
+- [サーバーレスでGoogleミラーをデプロイ](https://blog.saop.cc/ja/p/bcec/): VercelプラットフォームのWebホスティングサービスを利用して自分専用のGoogleミラーサイトをデプロイし、中国国内からGoogle検索エンジンへ正常にアクセスできるようにします
+- [質問の智慧](https://blog.saop.cc/ja/p/8778/): ハッカーの世界では、技術的な質問を投げかけたとき、最終的に有用な回答を得られるかどうかは、あなたの質問の仕方や追加質問の仕方に大きく左右されます。本ガイドでは、満足のいく答えを得るために正しく質問する…
+- [Butterfly テーマ HTML5 音楽プレーヤー APlayer 美化調整](https://blog.saop.cc/ja/p/8dc9/): Butterfly テーマの HTML5 プレーヤー APlayer を美化・調整した過程の記録、ついでにデバッグ
+- [WordPress 個人用プラグインとテーマのおすすめ](https://blog.saop.cc/ja/p/22/): WordPress で自分用に使っているプラグインとテーマのおすすめについて
+- [ImageMagick 拡張機能のインストール](https://blog.saop.cc/ja/p/8ba6/): WordPress で使用するために ImageMagick 拡張機能をインストールする
+- [Hello World](https://blog.saop.cc/ja/p/hello-world/): こんにちは、世界！
+
+### ツールとシステム
+
+- [macOS Tahoeで自分の動画を動く壁紙にする方法（Aerialを置き換える方法）](https://blog.saop.cc/ja/p/26508/): macOS 26.2（Tahoe）で、ffmpegを使ってwebmをmovに変換し、システムのaerialsフォルダー内のファイルを置き換えることで、カスタム動画の動く壁紙を実現します。実際のパスと注…
+- [Swap ファイルの作成](https://blog.saop.cc/ja/p/8360/): Linux システムで Swap ファイルを作成・使用する方法
+- [Cursor 2025](https://blog.saop.cc/ja/p/65212/): Cursor 2025年の振り返り
+- [Reflector ミラーリスト更新でよく使うコマンドと設定ファイル](https://blog.saop.cc/ja/p/59587/): Reflector を使って Arch Linux のミラーリストを自動更新し、中国地域で最新かつ最速の 5 つのミラーを絞り込んで /etc/pacman.d/mirrorlist ファイルに保存し…
+- [個人利用 rsync ファイル同期のよく使うコマンド](https://blog.saop.cc/ja/p/30664/): ここには、ブロガーが個人利用している rsync ファイル同期のよく使うコマンドを記録しており、ブロガーがいつでも任意の端末で参照できるようにしています..
+- [Arch Linux 個人的によく使うコマンド記録](https://blog.saop.cc/ja/p/21346/): 当サイト管理者が Arch Linux でよく使うコマンドの記録
+- [ダブル11で衝動買いした铠侠RC20 SSDの使用体験](https://blog.saop.cc/ja/p/1cf1/): 古いSSDが寿命を迎えたため、新しいSSD「铠侠RC20」を購入し、引き続きパソコンを輝かせ続けます！
+- [モニター画面の輝度調整ツールのおすすめ](https://blog.saop.cc/ja/p/245f/): Monitorianツールを使ってモニター画面の輝度を調整する
+- [よく使うプロキシ設定まとめ](https://blog.saop.cc/ja/p/2633/): よく使うプロキシ設定コマンドのまとめ
+- [IEを開くとEdgeブラウザへ強制リダイレクトされる問題を解決](https://blog.saop.cc/ja/p/caaa/): Internet Explorerを開くとMicrosoft Edgeブラウザへ強制リダイレクトされる問題を解決
+- [ChatGPT 登録&使用&調教&ミラー統合](https://blog.saop.cc/ja/p/cb39/): ChatGPT 3.5の登録と使用、調教&ミラー統合
+- [天翼キャンパスネットワークの制限を突破してモバイルホットスポットを有効にする](https://blog.saop.cc/ja/p/950c/): 天翼キャンパスネットワークでモバイルホットスポットを有効にすると検出される制限を突破する
+- [Gitでよく使う基本コマンドの詳細大全](https://blog.saop.cc/ja/p/4b08/): Gitでよく使う基本コマンドの使い方を詳しくまとめた大全
+- [VS Code で数値や文字をインクリメント・デクリメントするプラグイン](https://blog.saop.cc/ja/p/e97d/): VS Code で複数行を同時編集し、数値のインクリメント・デクリメント、文字のインクリメント・デクリメントを挿入するプラグイン
+- [ASCII アート生成](https://blog.saop.cc/ja/p/c9df/): ASCII アートの文字パターンを生成
+
+### ゲーム
+
+- [舞萌 DX を始めて2か月、ついに w0 と初の SSS+ に到達](https://blog.saop.cc/ja/p/32982/): 舞萌 maimai DX を始めて2か月、ついに w0 と初の SSS+ に到達
+- [原神五周年記念](https://blog.saop.cc/ja/p/40844/): 原神五周年「追跡尋心」記念画集
+- [绝区零に別れを告げる](https://blog.saop.cc/ja/p/40152/): 『绝区零』を引退した感想をつづり、ガチャのスクリーンショットを記念に共有し、『原神』のUGC実装で味わえる新たな楽しみに期待しています。
+- [サイト管理者が18歳になりました！](https://blog.saop.cc/ja/p/19676/): サイト管理者が18歳になったことをお祝いします！人生最後の大きな転機
+- [千日を経て原神、深境螺旋についに満星到達](https://blog.saop.cc/ja/p/59721/): 原神を始めてから今まで、千日の時を経て、ついにスムーズに深境螺旋の星を満点まで取れるようになりました！初めて満星を取ってからもうかなり経ちます..
+- [Minecraft 15周年の大幅値引きで正規版を購入](https://blog.saop.cc/ja/p/3403/): Minecraft（我的世界）の15周年大幅値引き価格に心惹かれ、正規版を購入しました
+- [晶蝶をついにx9999の上限まで集めた！](https://blog.saop.cc/ja/p/26b4/): 長い時間をかけて、原神の晶蝶がついに9999個まで集まった！バッグ内の単一アイテムの所持上限を満たして、本当に最高..
+- [ついに霧切が出た！](https://blog.saop.cc/ja/p/d9c4/): わーい、約2年越しに念願の霧切がついに出た！2024年の初日から幸運で、青ガチャでずっと持っていなかったモナもついでに引けた！
+- [原神60レベル卒業しました！](https://blog.saop.cc/ja/p/7806/): 614日間の長いレベル上げの道を経て、ついに原神60レベルを卒業しました！
+- [サイト管理者が16歳になりました！](https://blog.saop.cc/ja/p/c2ca/): サイト管理者が16歳を迎えたことをお祝いします！人生の新たな転機
+- [万葉の1命を引いた！](https://blog.saop.cc/ja/p/e481/): 【原神ガチャ】万葉の1命を引いた！
+- [原神 mod モジュール導入チュートリアル](https://blog.saop.cc/ja/p/704e/): 原神 mod モジュールの導入に関する詳細なチュートリアル
+- [原神フータオ復刻ガチャ記録](https://blog.saop.cc/ja/p/7cb2/): 原神フータオ復刻ガチャの記録過程を共有します
+- [原神プライベートサーバーよくある質問](https://blog.saop.cc/ja/p/8b22/): 原神プライベートサーバーのよくある問題の解決
+- [原神私服でよく使うコマンド](https://blog.saop.cc/ja/p/5b6e/): 原神私服でよく使うコマンドの共有
+- [原神私服プレイチュートリアルまとめ](https://blog.saop.cc/ja/p/3155/): 原神私服のプレイチュートリアルまとめと関連ツールの使用方法
+
+### 生活記録
+
+- [Duolingo 600日連続記録](https://blog.saop.cc/ja/p/2668/): Duolingoを600日間連続で続けたので、もうアンインストールしてもいい！
+- [離陸日誌](https://blog.saop.cc/ja/p/10876/): なんだってんだ、こんなの何が記録に値するんだか…
+- [2回目の明晰夢コントロール体験を記録](https://blog.saop.cc/ja/p/10db/): 少し前に経験した人生2回目となる明晰夢の夢コントロール体験の過程を記録します..
+- [ブログ開設一周年！](https://blog.saop.cc/ja/p/8b7e/): ブログ開設から初の周年を祝います！いくつかの品を抽選でプレゼント
+
+### 二次元
+
+- [アスナ 成年誕生日](https://blog.saop.cc/ja/p/21255/): アスナ、18歳の成年誕生日おめでとう
+- [あるアニメファンの視聴ログと情熱の旅](https://blog.saop.cc/ja/p/29369/): 熱狂的なアニメファンの視点から、多彩なアニメの世界を探求！このブログ記事は、待望の『Clannad』『魔法少女小圆』から、視聴完了した『鬼灭之刃』『ソードアート・オンライン』『你的名字』などの名作まで…
+- [niconicoにおける兄貴本篇の収集について](https://blog.saop.cc/ja/p/7b61/): niconico動画サイトにおける兄貴本篇の収集について
+
+### リファレンス
+
+- [HTMLエスケープ文字対応表](https://blog.saop.cc/ja/p/85e4/): HTMLエスケープ文字対応表
+- [HTTP Content-type 対照表](https://blog.saop.cc/ja/p/8d9f/): HTTP Content type 対照表
+- [HTTPステータスコードの意味](https://blog.saop.cc/ja/p/f605/): 一般的なHTTPステータスコードの意味
+- [hexo-generator-feedプラグインの中国語ドキュメント](https://blog.saop.cc/ja/p/f65f/): HexoブログのRSS購読ファイルを生成するプラグインの中国語ドキュメント
+- [hexo-filter-nofollowプラグインの中国語ドキュメント](https://blog.saop.cc/ja/p/d4ad/): サイトで使用されるすべての外部リンクにnofollow属性を追加し、サイトのSEOを効果的に強化するとともに、リンクパワーの流出を防ぎます
+- [Markdown 構文と外部タグの記述方法まとめ](https://blog.saop.cc/ja/p/5561/): 本記事は Markdown 形式および外部タグのウェブページ上でのレンダリング効果をまとめたもので、ドキュメントとして参照できます
+- [Hexo での Markdown 構文が無効になる問題のまとめ](https://blog.saop.cc/ja/p/b45a/): Hexo フレームワークにおける Markdown 構文が無効になる問題のまとめ
+- [CDNまとめ一覧](https://blog.saop.cc/ja/p/7d0c/): よく使われるCDNのまとめ
+- [WordPress の URL リンクを中国語に対応させる](https://blog.saop.cc/ja/p/7e2d/): WordPress の URL リンクを中国語に対応させるチュートリアル
+
+### 文学と書評
+
+- [テクノロジー革新に関する未来世界の小説。(ChatGPT)](https://blog.saop.cc/ja/p/cf72/): ChatGPT 3.5 turboによって書かれた、科学技術革新に関する未来世界の小説。
+- [『流転の地球』](https://blog.saop.cc/ja/p/7dab/): 『流転の地球』中編小説の転載
+
+## English
+
+### Tech Development
+
+- [What I'm Doing When Eight Tracks Run in Parallel](https://blog.saop.cc/en/p/30870/): Using AI to maintain a bunch of projects with completely different tech stacks in parallel: how rule…
+- [The Typecheck Was Green After the Merge](https://blog.saop.cc/en/p/28388/): A merge with no conflicts and no errors wiped out 292 lines of ad attribution runtime in one go, and…
+- [The server behind the tunnel thinks it's in HTTP](https://blog.saop.cc/en/p/19237/): After the reverse proxy comes in, the origin becomes HTTP, and there's no host proxy inside the cont…
+- [Letting Service Worker Step Down on Its Own](https://blog.saop.cc/en/p/10258/): A Service Worker still running old caches can neither be deleted directly nor kept; a record of a re…
+- [After Pulling EXISTS Out of the FILTER](https://blog.saop.cc/en/p/23192/): A statistics SQL query went from 1.5 seconds down to 0.64 seconds, at the cost of discovering that P…
+- [That One Comment Earned at the Cost of Production Downtime](https://blog.saop.cc/en/p/18687/): A misjudged "safe failure direction" took the whole site offline; notes on how a migration file's lo…
+- [After moving the secret key out of _config.yml, every command has to remember to include the other config file](https://blog.saop.cc/en/p/58604/): A record of sanitizing the configuration, llms.txt, and allowing AI crawlers — and how "a public con…
+- [188 Players, 0 That Play Sound: An Old Bug Exposed by a Theme Upgrade](https://blog.saop.cc/en/p/74213/): After Butterfly 5.7 removed APlayer support, fixing from 0 to 167, and the fact that the default bac…
+- [The Year-Rollover Trap of a Date Input: Read the Year Back Before Saving](https://blog.saop.cc/en/p/63890/): Public daily counts and a yearly heatmap, and what is easiest to overwrite when 0 is both a value an…
+- [After Moving Off Vercel, the Safety Nets the Platform Provided Started Showing One by One](https://blog.saop.cc/en/p/95117/): Two nights during a VPS self hosting migration: 0.0.0.0 redirects, image tags, BuildKit cache, empty…
+- [Rate Limiting Before the Write: Debugging a Verification Code Invalidated by Itself](https://blog.saop.cc/en/p/82406/): better auth's OTP row, the registration oracle in password recovery, and "rejection must have a way …
+- [The Client CSV Is the Single Source of Truth: C1 to C68, Handing Back Each Value One by One](https://blog.saop.cc/en/p/71342/): The 68 steps a private server frontend took to stop hand copying values, and how to turn 'whether it…
+- [AI Can Write Features but Not Dockerfiles: Next.js Self-Hosting Pitfall Notes](https://blog.saop.cc/en/p/48603/): Standalone images, image registries, PM2 and systemd, Service Worker — notes on the back and forth d…
+- [When Multiple AIs Write Code Together, the Boundaries I Draw for Them](https://blog.saop.cc/en/p/45365/): Rule file fragmentation, pre commit gates, and how AI output passes human review; notes on practices…
+- [9 Commits, Not a Single Human Author: After an AI Wrote an Entire Project Alone](https://blog.saop.cc/en/p/13487/): Taking over a project whose git log is filled with the same AI author, documenting what it did well …
+- [Next.js Rendering Mode Troubleshooting Notes: force-dynamic, hydration, and No Database at Build Time](https://blog.saop.cc/en/p/39074/): Notes on several rendering mode issues I kept running into across Next.js projects
+- [Getting Claude to Make Fewer Data-Layer Mistakes: Prisma, Drizzle, and a Few Structured Practices](https://blog.saop.cc/en/p/18875/): The same AI makes completely different mistakes on Prisma, Drizzle, and raw SQL, so I'm writing down…
+- [My CLAUDE.md Is Only One Line: How Much Should a Convention File Actually Contain](https://blog.saop.cc/en/p/6494/): From create next app to launch took just 13 commits, plus a note on where knowledge should actually …
+- [In the Same Month, I Moved My Homepage Out of Next.js and Moved a Hugo Site In](https://blog.saop.cc/en/p/42765/): Two migrations in opposite directions, and along the way a clear explanation of which sites need a s…
+- [Podman Compose Common Commands Quick Reference](https://blog.saop.cc/en/p/61957/): A quick reference table for common Podman Compose commands
+- [Hugo Chinese Reading Time Calculation Template](https://blog.saop.cc/en/p/35045/): Using the Plain method and strings.RuneCount function to calculate reading time for CJK languages
+- [Manually Reload Busuanzi Counter](https://blog.saop.cc/en/p/20816/): Manually reload the busuanzi counter
+- [Adding a Live2D Mascot to a Webpage](https://blog.saop.cc/en/p/3a1f/): A record of the process of adding and installing the Live2D mascot Asuna via CDN on sites using the …
+- [Twikoo Comment System Backup and Modify Data](https://blog.saop.cc/en/p/3ef1/): Twikoo comment system, backing up and modifying comment data
+- [Resolving the spawn failed error when pushing with Hexo](https://blog.saop.cc/en/p/a69f/): Resolving the spawn failed error that occurs when using the hexo d command to push with Hexo
+- [Carousel Plugin Beautification Based on the Butterfly Theme](https://blog.saop.cc/en/p/4d82/): A SwiperBar carousel plugin based on the Butterfly theme; a record of beautification and fine tuning…
+- [Some npm module plugins used on this site](https://blog.saop.cc/en/p/5b01/): Sharing some npm module plugins used on this site
+- [Insert an a tag button into the Butterfly theme announcement bar](https://blog.saop.cc/en/p/7a98/): Insert an a tag button into the aside announcement bar of the Butterfly theme in Hexo.
+- [Deploying Meting-API](https://blog.saop.cc/en/p/300/): Serverless deployment of your own Meting API service
+- [Change the Font of Your Blog to HarmonyOS Sans](https://blog.saop.cc/en/p/9195/): Replace the Chinese and English fonts of your Hexo blog with HarmonyOS Sans
+- [Serverless Deployment of a Google Mirror](https://blog.saop.cc/en/p/bcec/): Use the Vercel platform's web hosting service to deploy your own Google mirror site, enabling normal…
+- [How to Ask Questions the Smart Way](https://blog.saop.cc/en/p/8778/): In the hacker world, when you throw out a technical question, whether you ultimately get a useful an…
+- [Butterfly Theme HTML5 Music Player APlayer Beautification and Adjustments](https://blog.saop.cc/en/p/8dc9/): A record of the beautification and adjustment process for the Butterfly theme HTML5 player APlayer, …
+- [Recommended WordPress Plugins and Themes for Personal Use](https://blog.saop.cc/en/p/22/): Some recommendations for WordPress plugins and themes for personal use
+- [Install ImageMagick Extension](https://blog.saop.cc/en/p/8ba6/): Install ImageMagick extension for WordPress use
+- [Hello World](https://blog.saop.cc/en/p/hello-world/): Hello, world!
+
+### Tools & Systems
+
+- [How to Use Your Own Video as a Dynamic Wallpaper on macOS Tahoe (Aerial Replacement Method)](https://blog.saop.cc/en/p/26508/): In macOS 26.2 (Tahoe), use ffmpeg to convert webm to mov, then replace files in the system aerials f…
+- [Creating a Swap File](https://blog.saop.cc/en/p/8360/): How to create and use a swap file on a Linux system
+- [Cursor 2025](https://blog.saop.cc/en/p/65212/): Cursor 2025 year in review
+- [Common Commands and Configuration Files for Updating the Reflector Mirror List](https://blog.saop.cc/en/p/59587/): Use Reflector to automatically update the Arch Linux mirror list, filter the 5 newest and fastest mi…
+- [Commonly used rsync file synchronization commands for personal use](https://blog.saop.cc/en/p/30664/): Here are some rsync file synchronization commands commonly used by the blogger personally, so that t…
+- [Arch Linux Personal Commonly Used Commands Record](https://blog.saop.cc/en/p/21346/): Some commonly used commands recorded by the site owner on Arch Linux
+- [Double 11 Impulse Purchase: Kioxia RC20 SSD Experience](https://blog.saop.cc/en/p/1cf1/): Since the old SSD has reached the end of its life, I bought a new SSD, the 'Kioxia RC20,' to keep my…
+- [Recommended Tools for Adjusting Monitor Screen Brightness](https://blog.saop.cc/en/p/245f/): Use the Monitorian tool to adjust monitor screen brightness
+- [Common Proxy Settings Summary](https://blog.saop.cc/en/p/2633/): A summary of commonly used proxy settings commands
+- [Fix IE Forcibly Redirecting to Edge Browser When Opened](https://blog.saop.cc/en/p/caaa/): Fix Internet Explorer forcibly redirecting to Microsoft Edge browser when opened
+- [ChatGPT Registration & Usage & Tuning & Mirror Integration](https://blog.saop.cc/en/p/cb39/): ChatGPT 3.5 registration, usage, and tuning & mirror integration
+- [Bypassing Tianyi Campus Network Restrictions to Enable Mobile Hotspot](https://blog.saop.cc/en/p/950c/): Bypass the restriction that detects enabling a mobile hotspot on Tianyi Campus Network
+- [A Detailed Complete Guide to Common Basic Git Commands](https://blog.saop.cc/en/p/4b08/): A detailed complete guide to a bunch of common basic Git command usages
+- [VS Code Extension for Incrementing or Decrementing Numbers or Letters](https://blog.saop.cc/en/p/e97d/): A VS Code extension for editing multiple lines at once, inserting incrementing numbers, decrementing…
+- [ASCII Art Generation](https://blog.saop.cc/en/p/c9df/): Generate ASCII art character patterns
+
+### Games
+
+- [Two Months Into maimai DX: Finally Reaching w0 and My First SSS+](https://blog.saop.cc/en/p/32982/): Two months after starting maimai DX, I finally reached w0 and earned my first SSS+.
+- [Genshin Impact 5th Anniversary](https://blog.saop.cc/en/p/40844/): Genshin Impact 5th anniversary "Traces of the Heart" commemorative artbook
+- [Farewell to Zenless Zone Zero](https://blog.saop.cc/en/p/40152/): Recording the little feelings and moments from quitting Zenless Zone Zero, sharing gacha screenshots…
+- [The site owner is 18 years old!](https://blog.saop.cc/en/p/19676/): Celebrating the site owner reaching 18 years old! The last major turning point in life
+- [After a Thousand Days of Genshin Impact, Finally Reached Full Stars in the Abyss](https://blog.saop.cc/en/p/59721/): From starting Genshin Impact until now, it has been a thousand days, and I can finally smoothly grin…
+- [Buying Minecraft Legit at the 15th Anniversary Rock-Bottom Price](https://blog.saop.cc/en/p/3403/): The rock bottom price for Minecraft's 15th anniversary tempted me, so I finally bought a legit copy.
+- [Finally collected Crystalflies to the x9999 cap!](https://blog.saop.cc/en/p/26b4/): After a long time, I've finally collected 9999 Crystalflies in Genshin Impact! Maxing out the invent…
+- [Finally got 雾切!](https://blog.saop.cc/en/p/d9c4/): Wuhu After about two years, the long awaited 雾切 finally arrived! The first day of 2024 was lucky—I a…
+- [Genshin Impact Level 60 Graduation!](https://blog.saop.cc/en/p/7806/): After 614 days on the long leveling journey, I've finally graduated at Genshin Impact level 60!
+- [The Site Owner Is 16 Years Old!](https://blog.saop.cc/en/p/c2ca/): Celebrating the site owner turning 16! Another turning point in life.
+- [Pulled C1 Kazuha!](https://blog.saop.cc/en/p/e481/): [Genshin Impact Gacha] Pulled C1 Kazuha!
+- [Genshin Impact Mod Installation Tutorial](https://blog.saop.cc/en/p/704e/): A detailed tutorial on installing Genshin Impact mods
+- [Genshin Impact Hu Tao Rerun Gacha Record](https://blog.saop.cc/en/p/7cb2/): Sharing the process of the Genshin Impact Hu Tao rerun gacha record
+- [Genshin Impact Private Server FAQ](https://blog.saop.cc/en/p/8b22/): Solutions to common Genshin Impact private server issues
+- [Common Commands for Genshin Impact Private Servers](https://blog.saop.cc/en/p/5b6e/): Sharing common commands for Genshin Impact private servers
+- [Genshin Impact Private Server Gameplay Tutorial Compilation](https://blog.saop.cc/en/p/3155/): A compilation of Genshin Impact private server gameplay tutorials and the use of related tools
+
+### Life Logs
+
+- [Duolingo 600-Day Streak](https://blog.saop.cc/en/p/2668/): Kept a 600 day streak on Duolingo — time to uninstall it!
+- [Takeoff Log](https://blog.saop.cc/en/p/10876/): What the heck, there's nothing worth recording here...
+- [A Record of My Second Lucid Dream Control Experience](https://blog.saop.cc/en/p/10db/): Recording the process of my second experience with controlling a lucid dream in my life some time ag…
+- [The Blog's First Anniversary!](https://blog.saop.cc/en/p/8b7e/): Celebrating the blog's first anniversary! Giving away some items
+
+### Anime & Manga
+
+- [Asuna's Coming-of-Age Birthday](https://blog.saop.cc/en/p/21255/): Happy 18th coming of age birthday, Asuna
+- [An Anime Fan's Watch Log and Passionate Journey](https://blog.saop.cc/en/p/29369/): Explore the colorful world of anime through the eyes of a passionate anime fan! This blog post recor…
+- [On the Collection of Aniki Original Videos on Niconico](https://blog.saop.cc/en/p/7b61/): On the collection of Aniki original videos on the Niconico animation website
+
+### Reference
+
+- [HTML Escape Character Reference Table](https://blog.saop.cc/en/p/85e4/): HTML Escape Character Reference Table
+- [HTTP Content-type Comparison Table](https://blog.saop.cc/en/p/8d9f/): HTTP Content type Comparison Table
+- [HTTP Status Code Definitions](https://blog.saop.cc/en/p/f605/): Common HTTP status code definitions
+- [hexo-generator-feed Plugin Chinese Documentation](https://blog.saop.cc/en/p/f65f/): Chinese documentation for the Hexo blog RSS feed generation plugin
+- [Chinese documentation for the hexo-filter-nofollow plugin](https://blog.saop.cc/en/p/d4ad/): Add the nofollow attribute to all external links used on the website, which can effectively strength…
+- [A Summary of Markdown Syntax and External Tag Usage](https://blog.saop.cc/en/p/5561/): This article summarizes how Markdown formatting and external tags are rendered on the web, and can b…
+- [Summary of Markdown Syntax Failures Under Hexo](https://blog.saop.cc/en/p/b45a/): A summary of Markdown syntax failure issues under the Hexo framework
+- [CDN Compilation Summary](https://blog.saop.cc/en/p/7d0c/): A compilation of commonly used CDNs
+- [Make WP URL Links Support Chinese](https://blog.saop.cc/en/p/7e2d/): Tutorial on making WordPress URL links support Chinese
+
+### Literature & Book Reviews
+
+- [A Novel About a Future World of Technological Innovation. (ChatGPT)](https://blog.saop.cc/en/p/cf72/): A novel about a future world of technological innovation written by ChatGPT 3.5 turbo.
+- [The Wandering Earth](https://blog.saop.cc/en/p/7dab/): Reprint of the novella The Wandering Earth
