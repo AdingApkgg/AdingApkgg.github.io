@@ -6,8 +6,35 @@
 
 ## 中文
 
+### 工具与系统
+
+- [在平板上跑 KDE：能，但先把代价认了](https://blog.saop.cc/p/86020/): 小米平板 6S Pro 上用 Termux + Termux:X11 chroot 一个 Debian 13：Mesa 必须换、X 要按姿势起、root 不给调度权重
+- [补丁打在 boot 上的时候，工具还替它造了个 ramdisk](https://blog.saop.cc/p/23011/): 两轮「未安装」之后才承认刷错分区：GKI 设备的 ramdisk 在 init boot、SukiSU 的 LKM 与 GKI 两条分支，以及每次 OTA 要重做的事
+- [空 userdata、双槽 abl 和 init_boot 的位置](https://blog.saop.cc/p/70289/): 解锁之后的三个卡点，以及「刷哪个分区」这件事到底怎么判断：A/B 槽、boot 与 init boot、fastboot fetch 不支持的绕法
+- [四条路里只有一条不赌主板](https://blog.saop.cc/p/77205/): 309 的小米 13 解锁 BL：两个成品工具为什么都失效、Settings 回滚被什么挡住、为什么最后选工程 ABL 而不是 9008
+- [macOS Tahoe 如何用自己的视频做动态壁纸（替换 Aerial 方法）](https://blog.saop.cc/p/26508/): 在 macOS 26.2（Tahoe）里，用 ffmpeg 把 webm 转成 mov，然后替换系统 aerials 文件夹里的文件，实现自定义视频动态壁纸。附带实际路径和注意事项，小心备份哦。
+- [创建 Swap 文件](https://blog.saop.cc/p/8360/): 如何在 Linux 系统中创建和使用 Swap 文件
+- [Cursor 2025](https://blog.saop.cc/p/65212/): Cursor 2025 年度回顾
+- [Reflector 镜像列表更新常用命令与配置文件](https://blog.saop.cc/p/59587/): 使用 Reflector 自动更新 Arch Linux 镜像列表，筛选中国地区最新且速度最快的 5 个镜像，并保存至 /etc/pacman.d/mirrorlist 文件，提升软件包下载效率。
+- [个人自用 rsync 文件同步常用命令](https://blog.saop.cc/p/30664/): 这里记录了些博主个人自用的 rsync 文件同步常用命令，以便博主随时在任何终端上查阅..
+- [Arch Linux 个人常用命令记录](https://blog.saop.cc/p/21346/): 站长 Arch Linux 的一些常用命令记录
+- [双11剁手铠侠RC20固态体验](https://blog.saop.cc/p/1cf1/): 因旧固态步入终年，所以购入新固态硬盘“铠侠RC20”继续让电脑发光发热！
+- [显示器屏幕亮度调节工具推荐](https://blog.saop.cc/p/245f/): 使用Monitorian工具调节显示器屏幕亮度
+- [常用代理设置汇总](https://blog.saop.cc/p/2633/): 常用的代理设置指令汇总
+- [解决打开IE强制跳转Edge浏览器](https://blog.saop.cc/p/caaa/): 解决打开Internet Explorer会强制跳转Microsoft Edge浏览器
+- [ChatGPT注册&使用&调教&镜像整合](https://blog.saop.cc/p/cb39/): ChatGPT 3.5的注册与使用和调教&镜像整合
+- [突破天翼校园网限制开启移动热点](https://blog.saop.cc/p/950c/): 突破天翼校园网开启移动热点被检测的限制
+- [Git常用基本命令使用详细大全](https://blog.saop.cc/p/4b08/): 亿些Git常用基本命令使用详细大全
+- [VScode递增减数字或字母插件](https://blog.saop.cc/p/e97d/): VScode同时编辑多行，插入递增数字，递减数字，递增字母，递减字母插件
+- [ASCII 字符画生成](https://blog.saop.cc/p/c9df/): 生成 ASCII 字符画字符图案
+
 ### 技术开发
 
+- [删之前先读一遍，删之后再读一遍](https://blog.saop.cc/p/60525/): 一次换后端之后的残留清理：31 个计划任务、一条指向已消失目录的 Caddy root、36 个旧脚本，以及每一步的「先存档再删」
+- [把存档搬进对象存储，先想好怎么反悔](https://blog.saop.cc/p/71620/): 一份 CAS 去重的迁移：CF 的机器人挑战、中断的上传、265 秒冻结窗口，以及「回退不能靠还原数据库」这件事
+- [调试器给我的正文，不一定是网络上那份](https://blog.saop.cc/p/20508/): 一次「零缓存冷启动」验收：三个假绿，一个 BOM，以及最后怎么把通过重新绑回原始字节
+- [空闲五分钟后，那条路就不通了](https://blog.saop.cc/p/77993/): 给两台机器加 Peer Relay、自建一个私有 DERP，以及 Tailscale 跟 WARP 抢路由表时怎么让两边都活着
+- [磁盘满之后，先救哪个](https://blog.saop.cc/p/41259/): 一次 ENOSPC 打崩四个服务之后：先取证还是先重启、Docker 的孤立端点怎么清、全零的 journal 文件，以及哪些结论事后补不回来
 - [八条线同时跑的时候，我在干什么](https://blog.saop.cc/p/30870/): 用 AI 并行维护一堆技术栈完全不同的项目：规则怎么分层、任务怎么隔离、代价记在哪
 - [合并之后 typecheck 是绿的](https://blog.saop.cc/p/28388/): 一次没冲突、没报错的 merge 把 292 行广告归因运行时整段删掉，靠一行 grep 才发现；顺手记下把 8 个事件分车道时定的那些规则
 - [隧道后面的服务器以为自己在 http 里](https://blog.saop.cc/p/19237/): 反向代理进来之后 origin 变 http、容器里没有宿主机的代理；两个都在运行时配置解决
@@ -44,24 +71,6 @@
 - [WordPress自用插件和主题推荐](https://blog.saop.cc/p/22/): 关于WordPress自用的一些插件和主题推荐
 - [安装 ImageMagick 扩展](https://blog.saop.cc/p/8ba6/): 安装ImageMagick扩展以供WP使用
 - [Hello World](https://blog.saop.cc/p/hello-world/): 你好，世界！
-
-### 工具与系统
-
-- [macOS Tahoe 如何用自己的视频做动态壁纸（替换 Aerial 方法）](https://blog.saop.cc/p/26508/): 在 macOS 26.2（Tahoe）里，用 ffmpeg 把 webm 转成 mov，然后替换系统 aerials 文件夹里的文件，实现自定义视频动态壁纸。附带实际路径和注意事项，小心备份哦。
-- [创建 Swap 文件](https://blog.saop.cc/p/8360/): 如何在 Linux 系统中创建和使用 Swap 文件
-- [Cursor 2025](https://blog.saop.cc/p/65212/): Cursor 2025 年度回顾
-- [Reflector 镜像列表更新常用命令与配置文件](https://blog.saop.cc/p/59587/): 使用 Reflector 自动更新 Arch Linux 镜像列表，筛选中国地区最新且速度最快的 5 个镜像，并保存至 /etc/pacman.d/mirrorlist 文件，提升软件包下载效率。
-- [个人自用 rsync 文件同步常用命令](https://blog.saop.cc/p/30664/): 这里记录了些博主个人自用的 rsync 文件同步常用命令，以便博主随时在任何终端上查阅..
-- [Arch Linux 个人常用命令记录](https://blog.saop.cc/p/21346/): 站长 Arch Linux 的一些常用命令记录
-- [双11剁手铠侠RC20固态体验](https://blog.saop.cc/p/1cf1/): 因旧固态步入终年，所以购入新固态硬盘“铠侠RC20”继续让电脑发光发热！
-- [显示器屏幕亮度调节工具推荐](https://blog.saop.cc/p/245f/): 使用Monitorian工具调节显示器屏幕亮度
-- [常用代理设置汇总](https://blog.saop.cc/p/2633/): 常用的代理设置指令汇总
-- [解决打开IE强制跳转Edge浏览器](https://blog.saop.cc/p/caaa/): 解决打开Internet Explorer会强制跳转Microsoft Edge浏览器
-- [ChatGPT注册&使用&调教&镜像整合](https://blog.saop.cc/p/cb39/): ChatGPT 3.5的注册与使用和调教&镜像整合
-- [突破天翼校园网限制开启移动热点](https://blog.saop.cc/p/950c/): 突破天翼校园网开启移动热点被检测的限制
-- [Git常用基本命令使用详细大全](https://blog.saop.cc/p/4b08/): 亿些Git常用基本命令使用详细大全
-- [VScode递增减数字或字母插件](https://blog.saop.cc/p/e97d/): VScode同时编辑多行，插入递增数字，递减数字，递增字母，递减字母插件
-- [ASCII 字符画生成](https://blog.saop.cc/p/c9df/): 生成 ASCII 字符画字符图案
 
 ### 游戏
 
@@ -106,8 +115,8 @@
 ### 参考手册
 
 - [HTML转义字符对照表](https://blog.saop.cc/p/85e4/): HTML转义字符对照表
-- [HTTP Content-type对照表](https://blog.saop.cc/p/8d9f/): HTTP Content type对照表
 - [HTTP状态码释义](https://blog.saop.cc/p/f605/): 常见HTTP状态码释义
+- [HTTP Content-type对照表](https://blog.saop.cc/p/8d9f/): HTTP Content type对照表
 - [hexo-generator-feed插件中文文档](https://blog.saop.cc/p/f65f/): Hexo博客RSS订阅文件生成的插件中文文档
 - [hexo-filter-nofollow插件中文文档](https://blog.saop.cc/p/d4ad/): 为网站使用到的所有外链添加nofollow属性, 可以有效地加强网站SEO和防止权重流失
 - [Markdown 语法与外置标签写法汇总](https://blog.saop.cc/p/5561/): 本文汇总 Markdown 格式以及外置标签在网页端的渲染效果，可作为文档进行查询
@@ -117,8 +126,35 @@
 
 ## 日本語
 
+### ツールとシステム
+
+- [タブレットで KDE を動かす：できるが、まず代償を認めよう](https://blog.saop.cc/ja/p/86020/): 小米平板 6S Pro 上で Termux + Termux:X11 を使って Debian 13 を chroot：Mesa は必ず差し替え、X は作法どおりに起動し、root にはスケジューリング…
+- [boot にパッチを当てたとき、ツールはさらに ramdisk まで作ってしまった](https://blog.saop.cc/ja/p/23011/): 二度の「未インストール」を経てようやくパーティションを間違えて書き込んだと認めた：GKI デバイスの ramdisk は init boot にあり、SukiSU の LKM と GKI の二つのブラ…
+- [空のuserdata、デュアルスロットablとinit_bootの位置](https://blog.saop.cc/ja/p/70289/): ロック解除後の3つの詰まりポイント、そして「どのパーティションを書き込むか」をどう判断するか：A/Bスロット、bootとinit boot、fastboot fetch非対応の回避方法
+- [4つのルートのうち、マザーボードを賭けなくて済むのは1つだけ](https://blog.saop.cc/ja/p/77205/): 309の小米13でBL解除：2つの完成品ツールがなぜどちらも機能しなかったのか、Settingsのロールバックは何に阻まれたのか、なぜ最終的に9008ではなくエンジニアリングABLを選んだのか
+- [macOS Tahoeで自分の動画を動く壁紙にする方法（Aerialを置き換える方法）](https://blog.saop.cc/ja/p/26508/): macOS 26.2（Tahoe）で、ffmpegを使ってwebmをmovに変換し、システムのaerialsフォルダー内のファイルを置き換えることで、カスタム動画の動く壁紙を実現します。実際のパスと注…
+- [Swap ファイルの作成](https://blog.saop.cc/ja/p/8360/): Linux システムで Swap ファイルを作成・使用する方法
+- [Cursor 2025](https://blog.saop.cc/ja/p/65212/): Cursor 2025年の振り返り
+- [Reflector ミラーリスト更新でよく使うコマンドと設定ファイル](https://blog.saop.cc/ja/p/59587/): Reflector を使って Arch Linux のミラーリストを自動更新し、中国地域で最新かつ最速の 5 つのミラーを絞り込んで /etc/pacman.d/mirrorlist ファイルに保存し…
+- [個人利用 rsync ファイル同期のよく使うコマンド](https://blog.saop.cc/ja/p/30664/): ここには、ブロガーが個人利用している rsync ファイル同期のよく使うコマンドを記録しており、ブロガーがいつでも任意の端末で参照できるようにしています..
+- [Arch Linux 個人的によく使うコマンド記録](https://blog.saop.cc/ja/p/21346/): 当サイト管理者が Arch Linux でよく使うコマンドの記録
+- [ダブル11で衝動買いした铠侠RC20 SSDの使用体験](https://blog.saop.cc/ja/p/1cf1/): 古いSSDが寿命を迎えたため、新しいSSD「铠侠RC20」を購入し、引き続きパソコンを輝かせ続けます！
+- [モニター画面の輝度調整ツールのおすすめ](https://blog.saop.cc/ja/p/245f/): Monitorianツールを使ってモニター画面の輝度を調整する
+- [よく使うプロキシ設定まとめ](https://blog.saop.cc/ja/p/2633/): よく使うプロキシ設定コマンドのまとめ
+- [IEを開くとEdgeブラウザへ強制リダイレクトされる問題を解決](https://blog.saop.cc/ja/p/caaa/): Internet Explorerを開くとMicrosoft Edgeブラウザへ強制リダイレクトされる問題を解決
+- [ChatGPT 登録&使用&調教&ミラー統合](https://blog.saop.cc/ja/p/cb39/): ChatGPT 3.5の登録と使用、調教&ミラー統合
+- [天翼キャンパスネットワークの制限を突破してモバイルホットスポットを有効にする](https://blog.saop.cc/ja/p/950c/): 天翼キャンパスネットワークでモバイルホットスポットを有効にすると検出される制限を突破する
+- [Gitでよく使う基本コマンドの詳細大全](https://blog.saop.cc/ja/p/4b08/): Gitでよく使う基本コマンドの使い方を詳しくまとめた大全
+- [VS Code で数値や文字をインクリメント・デクリメントするプラグイン](https://blog.saop.cc/ja/p/e97d/): VS Code で複数行を同時編集し、数値のインクリメント・デクリメント、文字のインクリメント・デクリメントを挿入するプラグイン
+- [ASCII アート生成](https://blog.saop.cc/ja/p/c9df/): ASCII アートの文字パターンを生成
+
 ### 技術開発
 
+- [削除する前に一度読み、削除した後にもう一度読む](https://blog.saop.cc/ja/p/60525/): バックエンドを切り替えた後の残留クリーンアップ：31 個のスケジュールタスク、消えたディレクトリを指す Caddy root 1 件、36 個の旧スクリプト、そして各手順での「まずアーカイブしてから削…
+- [セーブデータをオブジェクトストレージへ移す前に、どう巻き戻すかを考えておく](https://blog.saop.cc/ja/p/71620/): CAS 重複排除を伴う移行：CF のボットチャレンジ、中断されたアップロード、265 秒の凍結ウィンドウ、そして「ロールバックはデータベースの復元に頼れない」ということ
+- [デバッガーが返す本文は、ネット上にあるものとは限らない](https://blog.saop.cc/ja/p/20508/): ある「ゼロキャッシュ・コールドスタート」受け入れ：3つの偽グリーン、1つのBOM、そして最後に合格を元のバイト列へどう結び直したか
+- [5分間アイドル状態になると、その経路は不通になる](https://blog.saop.cc/ja/p/77993/): 2台のマシンにPeer Relayを追加し、プライベートDERPを自前で構築し、TailscaleとWARPがルーティングテーブルを奪い合うときに両方を生かす方法
+- [ディスクが満杯になった後、まず何を救うか](https://blog.saop.cc/ja/p/41259/): 一度の ENOSPC で4つのサービスが落ちた後：先に証拠保全か先に再起動か、Docker の孤立エンドポイントの掃除方法、すべてゼロの journal ファイル、そして後からでは補えない結論
 - [8つの作業ラインが同時に走っているとき、私は何をしているのか](https://blog.saop.cc/ja/p/30870/): AI を使って技術スタックが全く異なる多数のプロジェクトを並行して保守する：ルールをどう階層化するか、タスクをどう分離するか、コストをどこに記録するか
 - [マージ後、typecheck はグリーンだった](https://blog.saop.cc/ja/p/28388/): コンフリクトもエラーもない一度のマージが、292行の広告アトリビューション実行時コードを丸ごと削除していた。grep一行でようやく気づいた話と、8つのイベントをレーン分けする際に決めたルールの記録
 - [トンネルの後ろにあるサーバーは自分がhttpの中にいると思っている](https://blog.saop.cc/ja/p/19237/): リバースプロキシを通した後、originがhttpになり、コンテナ内にホストのプロキシがない。どちらも実行時設定で解決する
@@ -156,24 +192,6 @@
 - [ImageMagick 拡張機能のインストール](https://blog.saop.cc/ja/p/8ba6/): WordPress で使用するために ImageMagick 拡張機能をインストールする
 - [Hello World](https://blog.saop.cc/ja/p/hello-world/): こんにちは、世界！
 
-### ツールとシステム
-
-- [macOS Tahoeで自分の動画を動く壁紙にする方法（Aerialを置き換える方法）](https://blog.saop.cc/ja/p/26508/): macOS 26.2（Tahoe）で、ffmpegを使ってwebmをmovに変換し、システムのaerialsフォルダー内のファイルを置き換えることで、カスタム動画の動く壁紙を実現します。実際のパスと注…
-- [Swap ファイルの作成](https://blog.saop.cc/ja/p/8360/): Linux システムで Swap ファイルを作成・使用する方法
-- [Cursor 2025](https://blog.saop.cc/ja/p/65212/): Cursor 2025年の振り返り
-- [Reflector ミラーリスト更新でよく使うコマンドと設定ファイル](https://blog.saop.cc/ja/p/59587/): Reflector を使って Arch Linux のミラーリストを自動更新し、中国地域で最新かつ最速の 5 つのミラーを絞り込んで /etc/pacman.d/mirrorlist ファイルに保存し…
-- [個人利用 rsync ファイル同期のよく使うコマンド](https://blog.saop.cc/ja/p/30664/): ここには、ブロガーが個人利用している rsync ファイル同期のよく使うコマンドを記録しており、ブロガーがいつでも任意の端末で参照できるようにしています..
-- [Arch Linux 個人的によく使うコマンド記録](https://blog.saop.cc/ja/p/21346/): 当サイト管理者が Arch Linux でよく使うコマンドの記録
-- [ダブル11で衝動買いした铠侠RC20 SSDの使用体験](https://blog.saop.cc/ja/p/1cf1/): 古いSSDが寿命を迎えたため、新しいSSD「铠侠RC20」を購入し、引き続きパソコンを輝かせ続けます！
-- [モニター画面の輝度調整ツールのおすすめ](https://blog.saop.cc/ja/p/245f/): Monitorianツールを使ってモニター画面の輝度を調整する
-- [よく使うプロキシ設定まとめ](https://blog.saop.cc/ja/p/2633/): よく使うプロキシ設定コマンドのまとめ
-- [IEを開くとEdgeブラウザへ強制リダイレクトされる問題を解決](https://blog.saop.cc/ja/p/caaa/): Internet Explorerを開くとMicrosoft Edgeブラウザへ強制リダイレクトされる問題を解決
-- [ChatGPT 登録&使用&調教&ミラー統合](https://blog.saop.cc/ja/p/cb39/): ChatGPT 3.5の登録と使用、調教&ミラー統合
-- [天翼キャンパスネットワークの制限を突破してモバイルホットスポットを有効にする](https://blog.saop.cc/ja/p/950c/): 天翼キャンパスネットワークでモバイルホットスポットを有効にすると検出される制限を突破する
-- [Gitでよく使う基本コマンドの詳細大全](https://blog.saop.cc/ja/p/4b08/): Gitでよく使う基本コマンドの使い方を詳しくまとめた大全
-- [VS Code で数値や文字をインクリメント・デクリメントするプラグイン](https://blog.saop.cc/ja/p/e97d/): VS Code で複数行を同時編集し、数値のインクリメント・デクリメント、文字のインクリメント・デクリメントを挿入するプラグイン
-- [ASCII アート生成](https://blog.saop.cc/ja/p/c9df/): ASCII アートの文字パターンを生成
-
 ### ゲーム
 
 - [舞萌 DX を始めて2か月、ついに w0 と初の SSS+ に到達](https://blog.saop.cc/ja/p/32982/): 舞萌 maimai DX を始めて2か月、ついに w0 と初の SSS+ に到達
@@ -208,8 +226,8 @@
 
 ### リファレンス
 
-- [HTTP Content-type 対照表](https://blog.saop.cc/ja/p/8d9f/): HTTP Content type 対照表
 - [HTMLエスケープ文字対応表](https://blog.saop.cc/ja/p/85e4/): HTMLエスケープ文字対応表
+- [HTTP Content-type 対照表](https://blog.saop.cc/ja/p/8d9f/): HTTP Content type 対照表
 - [HTTPステータスコードの意味](https://blog.saop.cc/ja/p/f605/): 一般的なHTTPステータスコードの意味
 - [hexo-generator-feedプラグインの中国語ドキュメント](https://blog.saop.cc/ja/p/f65f/): HexoブログのRSS購読ファイルを生成するプラグインの中国語ドキュメント
 - [hexo-filter-nofollowプラグインの中国語ドキュメント](https://blog.saop.cc/ja/p/d4ad/): サイトで使用されるすべての外部リンクにnofollow属性を追加し、サイトのSEOを効果的に強化するとともに、リンクパワーの流出を防ぎます
@@ -225,8 +243,35 @@
 
 ## English
 
+### Tools & Systems
+
+- [Running KDE on a tablet: you can, but accept the cost first](https://blog.saop.cc/en/p/86020/): chrooting a Debian 13 on a Xiaomi Pad 6S Pro with Termux + Termux:X11: Mesa has to be swapped out, X…
+- [When the patch was applied to boot, the tool even built a ramdisk for it](https://blog.saop.cc/en/p/23011/): Only after two rounds of "not installed" did it admit the wrong partition had been flashed: on GKI d…
+- [Empty userdata, dual-slot abl, and the location of init_boot](https://blog.saop.cc/en/p/70289/): Three blockers after unlocking, and how to actually determine "which partition to flash": A/B slots,…
+- [Only One of Four Paths Doesn't Gamble on the Motherboard](https://blog.saop.cc/en/p/77205/): Unlocking the bootloader on a 309 Xiaomi 13: why both ready made tools failed, what blocked the Sett…
+- [How to Use Your Own Video as a Dynamic Wallpaper on macOS Tahoe (Aerial Replacement Method)](https://blog.saop.cc/en/p/26508/): In macOS 26.2 (Tahoe), use ffmpeg to convert webm to mov, then replace files in the system aerials f…
+- [Creating a Swap File](https://blog.saop.cc/en/p/8360/): How to create and use a swap file on a Linux system
+- [Cursor 2025](https://blog.saop.cc/en/p/65212/): Cursor 2025 year in review
+- [Common Commands and Configuration Files for Updating the Reflector Mirror List](https://blog.saop.cc/en/p/59587/): Use Reflector to automatically update the Arch Linux mirror list, filter the 5 newest and fastest mi…
+- [Commonly used rsync file synchronization commands for personal use](https://blog.saop.cc/en/p/30664/): Here are some rsync file synchronization commands commonly used by the blogger personally, so that t…
+- [Arch Linux Personal Commonly Used Commands Record](https://blog.saop.cc/en/p/21346/): Some commonly used commands recorded by the site owner on Arch Linux
+- [Double 11 Impulse Purchase: Kioxia RC20 SSD Experience](https://blog.saop.cc/en/p/1cf1/): Since the old SSD has reached the end of its life, I bought a new SSD, the 'Kioxia RC20,' to keep my…
+- [Recommended Tools for Adjusting Monitor Screen Brightness](https://blog.saop.cc/en/p/245f/): Use the Monitorian tool to adjust monitor screen brightness
+- [Common Proxy Settings Summary](https://blog.saop.cc/en/p/2633/): A summary of commonly used proxy settings commands
+- [Fix IE Forcibly Redirecting to Edge Browser When Opened](https://blog.saop.cc/en/p/caaa/): Fix Internet Explorer forcibly redirecting to Microsoft Edge browser when opened
+- [ChatGPT Registration & Usage & Tuning & Mirror Integration](https://blog.saop.cc/en/p/cb39/): ChatGPT 3.5 registration, usage, and tuning & mirror integration
+- [Bypassing Tianyi Campus Network Restrictions to Enable Mobile Hotspot](https://blog.saop.cc/en/p/950c/): Bypass the restriction that detects enabling a mobile hotspot on Tianyi Campus Network
+- [A Detailed Complete Guide to Common Basic Git Commands](https://blog.saop.cc/en/p/4b08/): A detailed complete guide to a bunch of common basic Git command usages
+- [VS Code Extension for Incrementing or Decrementing Numbers or Letters](https://blog.saop.cc/en/p/e97d/): A VS Code extension for editing multiple lines at once, inserting incrementing numbers, decrementing…
+- [ASCII Art Generation](https://blog.saop.cc/en/p/c9df/): Generate ASCII art character patterns
+
 ### Tech Development
 
+- [Read It Once Before Deleting, Read It Again After Deleting](https://blog.saop.cc/en/p/60525/): Leftover cleanup after a backend swap: 31 scheduled tasks, a Caddy root pointing at a directory that…
+- [Moving saves into object storage: plan your rollback first](https://blog.saop.cc/en/p/71620/): A CAS deduplicated migration: Cloudflare's bot challenge, interrupted uploads, a 265 second freeze w…
+- [The response body the debugger hands me isn't necessarily the one on the wire](https://blog.saop.cc/en/p/20508/): A "zero cache cold start" acceptance run: three false greens, one BOM, and how the pass was finally …
+- [Five minutes idle, and that route stops working](https://blog.saop.cc/en/p/77993/): Adding Peer Relay to two machines, self hosting a private DERP, and how to keep both sides alive whe…
+- [After the Disk Fills Up, Which One Do You Save First?](https://blog.saop.cc/en/p/41259/): After a single ENOSPC crashed four services: whether to collect evidence first or restart first, how…
 - [What I'm Doing When Eight Tracks Run in Parallel](https://blog.saop.cc/en/p/30870/): Using AI to maintain a bunch of projects with completely different tech stacks in parallel: how rule…
 - [The Typecheck Was Green After the Merge](https://blog.saop.cc/en/p/28388/): A merge with no conflicts and no errors wiped out 292 lines of ad attribution runtime in one go, and…
 - [The server behind the tunnel thinks it's in HTTP](https://blog.saop.cc/en/p/19237/): After the reverse proxy comes in, the origin becomes HTTP, and there's no host proxy inside the cont…
@@ -263,24 +308,6 @@
 - [Recommended WordPress Plugins and Themes for Personal Use](https://blog.saop.cc/en/p/22/): Some recommendations for WordPress plugins and themes for personal use
 - [Install ImageMagick Extension](https://blog.saop.cc/en/p/8ba6/): Install ImageMagick extension for WordPress use
 - [Hello World](https://blog.saop.cc/en/p/hello-world/): Hello, world!
-
-### Tools & Systems
-
-- [How to Use Your Own Video as a Dynamic Wallpaper on macOS Tahoe (Aerial Replacement Method)](https://blog.saop.cc/en/p/26508/): In macOS 26.2 (Tahoe), use ffmpeg to convert webm to mov, then replace files in the system aerials f…
-- [Creating a Swap File](https://blog.saop.cc/en/p/8360/): How to create and use a swap file on a Linux system
-- [Cursor 2025](https://blog.saop.cc/en/p/65212/): Cursor 2025 year in review
-- [Common Commands and Configuration Files for Updating the Reflector Mirror List](https://blog.saop.cc/en/p/59587/): Use Reflector to automatically update the Arch Linux mirror list, filter the 5 newest and fastest mi…
-- [Commonly used rsync file synchronization commands for personal use](https://blog.saop.cc/en/p/30664/): Here are some rsync file synchronization commands commonly used by the blogger personally, so that t…
-- [Arch Linux Personal Commonly Used Commands Record](https://blog.saop.cc/en/p/21346/): Some commonly used commands recorded by the site owner on Arch Linux
-- [Double 11 Impulse Purchase: Kioxia RC20 SSD Experience](https://blog.saop.cc/en/p/1cf1/): Since the old SSD has reached the end of its life, I bought a new SSD, the 'Kioxia RC20,' to keep my…
-- [Recommended Tools for Adjusting Monitor Screen Brightness](https://blog.saop.cc/en/p/245f/): Use the Monitorian tool to adjust monitor screen brightness
-- [Common Proxy Settings Summary](https://blog.saop.cc/en/p/2633/): A summary of commonly used proxy settings commands
-- [Fix IE Forcibly Redirecting to Edge Browser When Opened](https://blog.saop.cc/en/p/caaa/): Fix Internet Explorer forcibly redirecting to Microsoft Edge browser when opened
-- [ChatGPT Registration & Usage & Tuning & Mirror Integration](https://blog.saop.cc/en/p/cb39/): ChatGPT 3.5 registration, usage, and tuning & mirror integration
-- [Bypassing Tianyi Campus Network Restrictions to Enable Mobile Hotspot](https://blog.saop.cc/en/p/950c/): Bypass the restriction that detects enabling a mobile hotspot on Tianyi Campus Network
-- [A Detailed Complete Guide to Common Basic Git Commands](https://blog.saop.cc/en/p/4b08/): A detailed complete guide to a bunch of common basic Git command usages
-- [VS Code Extension for Incrementing or Decrementing Numbers or Letters](https://blog.saop.cc/en/p/e97d/): A VS Code extension for editing multiple lines at once, inserting incrementing numbers, decrementing…
-- [ASCII Art Generation](https://blog.saop.cc/en/p/c9df/): Generate ASCII art character patterns
 
 ### Games
 
